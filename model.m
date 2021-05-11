@@ -37,6 +37,9 @@ motor1 = simplify(norm(rC1B1));
 motor2 = simplify(norm(rC2B2));
 motor3 = simplify(norm(rC3B3));
 
-z1 = ((z_C - r*sin(theta_2))^2 + (r*(cos(theta_2) - 1))^2)^(1/2);
-z2 = ((z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + (r/2 - (r*cos(theta_2))/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2);
-z3 = ((z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + ((r*cos(theta_2))/2 - r/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2);
+z1 = z_C - r*sin(theta_2);
+z2 = z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2;
+z3 = z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2;
+z1dot = diff(z1,t)
+z2dot = diff(z2,t)
+z3dot = diff(z3,t)

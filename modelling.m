@@ -6,7 +6,7 @@ clear all; clc;
 syms r r_b m_m m_p I_p m_b I_b r_b;
 
 %% Define variables
-syms theta_1(t) theta_2(t) theta_3(t) z_C(t) x(t) y(t) z_b(t) omega1 omega2;
+syms theta_1(t) theta_2(t) theta_3(t) z_C x(t) y(t) z_b(t) omega1 omega2;
 
 % Motor positions
 z1 = ((z_C - r*sin(theta_2))^2 + (r*(cos(theta_2) - 1))^2)^(1/2);
