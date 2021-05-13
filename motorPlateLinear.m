@@ -10,21 +10,19 @@ syms theta_1 theta_2 omega_1 omega_2 z_C dz_C F_1 F_2 F_3 K C_v I_1 I_2 I_3 s;
 
 
 % Motor positions
-%z1 = ((z_C - r*sin(theta_2))^2 + (r*(cos(theta_2) - 1))^2)^(1/2);
-%z2 = ((z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + (r/2 - (r*cos(theta_2))/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2);
-%z3 = ((z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + ((r*cos(theta_2))/2 - r/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2);
-z1 = z_C - r*sin(theta_2);
-z2 = z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2;
-z3 = z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2;
+% Motor positions and velocities
+z1 = z_C - r*theta_2;
+z2 = z_C + r/2*theta_2 + sqrt(3)/2*r*theta_1;
+z3 = z_C + r/2*theta_2 - sqrt(3)/2*r*theta_1;
 
 % Motor velocities
 %z1dot = -(2*r*cos(theta_2)*(z_C - r*sin(theta_2))*omega_2 + 2*r^2*sin(theta_2)*(cos(theta_2) - 1)*omega_2)/(2*(r^2*(cos(theta_2) - 1)^2 + (z_C - r*sin(theta_2))^2)^(1/2));
 %z2dot = (2*(r/2 - (r*cos(theta_2))/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)*((r*sin(theta_2)*omega_2)/2 + (3^(1/2)*r*cos(theta_1)*sin(theta_2)*omega_1)/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1)*omega_2)/2) + 2*((r*cos(theta_2)*omega_2)/2 + (3^(1/2)*r*cos(theta_1)*cos(theta_2)*omega_1)/2 - (3^(1/2)*r*sin(theta_1)*sin(theta_2)*omega_2)/2)*(z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2) + 3^(1/2)*r*sin(theta_1)*((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)*omega_1)/(2*((z_C + (r*sin(theta_2))/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + (r/2 - (r*cos(theta_2))/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2));
 %z3dot = (2*((r*cos(theta_2))/2 - r/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)*((3^(1/2)*r*cos(theta_1)*sin(theta_2)*omega_1)/2 - (r*sin(theta_2)*omega_2)/2 + (3^(1/2)*r*cos(theta_2)*sin(theta_1)*omega_2)/2) + 2*((r*cos(theta_2)*omega_2)/2 - (3^(1/2)*r*cos(theta_1)*cos(theta_2)*omega_1)/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2)*omega_2)/2)*(z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2) + 3^(1/2)*r*sin(theta_1)*((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)*omega_1)/(2*((z_C + (r*sin(theta_2))/2 - (3^(1/2)*r*cos(theta_2)*sin(theta_1))/2)^2 + ((3^(1/2)*r)/2 - (3^(1/2)*r*cos(theta_1))/2)^2 + ((r*cos(theta_2))/2 - r/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2))/2)^2)^(1/2));
 
-z1dot = dz_C - r*cos(theta_2)*omega_2;
-z2dot = dz_C + (r*cos(theta_2)*omega_2)/2 + (3^(1/2)*r*cos(theta_1)*cos(theta_2)*omega_1)/2 - (3^(1/2)*r*sin(theta_1)*sin(theta_2)*omega_2)/2;
-z3dot = dz_C + (r*cos(theta_2)*omega_2)/2 - (3^(1/2)*r*cos(theta_1)*cos(theta_2)*omega_1)/2 + (3^(1/2)*r*sin(theta_1)*sin(theta_2)*omega_2)/2;
+z1dot = dz_C - r*omega_2;
+z2dot = dz_C + r/2*omega_2 + sqrt(3)/2*r*omega_1;
+z3dot = dz_C + r/2*omega_2 - sqrt(3)/2*r*omega_1;
 
 
 % Kinetic energy
@@ -60,11 +58,12 @@ qdot_f = [omega_1f;omega_2f;dz_Cf];
 
 % replace the variables with the functions
 dTdqdotf = subs(dTdqdot,[q;qdot],[q_f;qdot_f]);
-dTdqdotf = subs(dTdqdotf,q,q_f);
-dTdqf    = subs(dTdq,q,q_f);
-dVdqf    = subs(dVdq,q,q_f);
-Qnc_subs = subs(Qnc_subs,q,q_f);
+dTdqf    = subs(dTdq,[q;qdot],[q_f;qdot_f]);
+dVdqf    = subs(dVdq,[q;qdot],[q_f;qdot_f]);
+Qnc_subs = subs(Qnc_subs,[q;qdot],[q_f;qdot_f]);
 
-eqn = diff(dTdqdotf,t)-dTdqf+dVdqf==Qnc_subs.';
+eqn1 = diff(dTdqdotf,t)-dTdqf+dVdqf==Qnc_subs.';
+eqn2 = diff(q_f,t)==qdot_f;
 
-[V,S] = odeToVectorField(eqn)
+[V,S] = odeToVectorField([eqn1 eqn2.']);
+M = matlabFunction(V,'vars',{'t','Y','C_v','I_1','I_2','I_3','I_p','K','g','m_m','m_p','r'},'file','motorPlateODElinear.m','Comments','Y=[theta_1 omega_1 theta_2 omega_2 dz_C z_Cf]^T');
