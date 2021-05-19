@@ -28,7 +28,7 @@ z3dot = dz_C + r/2*omega_2 - sqrt(3)/2*r*omega_1;
 % Kinetic energy
 T = 1/2*(m_p*dz_C^2 +I_p*(omega_1^2+omega_2^2)+m_m*(z1dot^2+z2dot^2+z3dot^2));
 % Potential energy
-V = m_m*g*(z1+z2+z3)+m_p*z_C;
+V = m_m*g*(z1+z2+z3)+m_p*g*z_C;
 
 %% Lagrange
 q = [theta_1;theta_2;z_C];
@@ -48,7 +48,7 @@ end
 
 % Replace F by thrust*current - viscous force
 Qnc_subs = simplify(subs(Qnc,Ftemp,[K*I_1-C_v*z1dot K*I_2-C_v*z2dot K*I_3-C_v*z3dot]));
-
+%latex(Qnc_subs)
 
 % Create symbolic functions
 
