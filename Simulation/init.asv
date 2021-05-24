@@ -14,8 +14,9 @@ I_b = m_b*r_b^2;
 I0 = (m_p+3*m_m)*g/(3*K);
 
 motorPlateInit = [0;0;0;0;0;0.32];
-ballPosInit = [0;0;0;0];
+ballPosInit = [0.1;0;0.1;0];
 %load("mpc_controller.mat");
+%load("mpc1.mat")
 
 % Define system ball & plate system plant
 h = g/(1 + I_b/(m_b*r_b^2));
@@ -31,26 +32,26 @@ sysc = ss(Ac, Bc, Cc, Dc);
 
 % Define MPC controller
 %% create MPC controller object with sample time
-mpc_controller = mpc(sysc, 0.04);
+mpc_controller = mpc(sysc, 0.0);
 %% specify prediction horizon
-mpc_controller.PredictionHorizon = 20;
+mpc_controller.PredictionHorizon = 50;
 %% specify control horizon
 mpc_controller.ControlHorizon = 10;
 %% specify nominal values for inputs and outputs
 mpc_controller.Model.Nominal.U = [0;0];
 mpc_controller.Model.Nominal.Y = [0;0];
 %% specify constraints for MV and MV Rate
-mpc_controller.MV(1).Min = -0.08;
-mpc_controller.MV(1).Max = 0.08;
-mpc_controller.MV(2).Min = -0.08;
-mpc_controller.MV(2).Max = 0.08;
+mpc_controller.MV(1).Min = -0.1;
+mpc_controller.MV(1).Max = 0.1;
+mpc_controller.MV(2).Min = -0.1;
+mpc_controller.MV(2).Max = 0.1;
 %% specify constraints for OV
 mpc_controller.OV(1).Min = -0.3;
 mpc_controller.OV(1).Max = 0.3;
 mpc_controller.OV(2).Min = -0.3;
 mpc_controller.OV(2).Max = 0.3;
 %% specify weights
-mpc_controller.Weights.MV = [0.1 0.1];
+mpc_controller.Weights.MV = [0 0];
 mpc_controller.Weights.MVRate = [0.1 0.1];
 mpc_controller.Weights.OV = [1 1];
 mpc_controller.Weights.ECR = 100000;
@@ -59,7 +60,7 @@ mpc_controller.Weights.ECR = 100000;
 result = sim("totalSystem.slx");
 
 % Visualization
-t = 0:0.001:10;
+t = 0:0.001:40;
 
 figure;
 plot(t, result.P_A, t, result.P_B, t, result.P_C);
@@ -71,20 +72,7 @@ title("Measured position of the 3 motors")
 
 figure;
 plot(result.r_X, result.r_Y)
-title("Reference trajectory of the ball on the plate")
-
-figure;
-r_ball_x = result.r_ball(:, 1);
-r_ball_y = result.r_ball(:, 2);
-P_ball_x = result.P_ball(:, 1);
-P_ball_y = result.P_ball(:, 2);
-
-plot(t, r_ball_x, t, r_ball_y);
-hold on;
-plot(t, P_ball_x, 'LineWidth', 2, 'Color', 'red');
-plot(t, P_ball_y, 'LineWidth', 2, 'Color', 'green');
-legend('r_x', 'r_y', 'P_x', 'P_y');
-title("Reference and measured position of the ball")
+title("Trajectory of the ball on the plate")
 
 
 
