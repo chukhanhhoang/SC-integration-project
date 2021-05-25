@@ -13,7 +13,7 @@ I_b = m_b*r_b^2;
 I0 = (m_p+3*m_m)*g/(3*K);
 
 motorPlateInit = [0;0;0;0;0;0.32];
-ballPosInit = [0;0;0;0];
+ballPosInit = [0.1;0;0;0];
 
 
 %% Controller init
@@ -59,3 +59,11 @@ sisotool(Hp,Hc)
 
 Hc_mi=zpk([-B/3 -B/6],[-3*B -6*B],Kc);
 [numc_mi,denc_mi]=tfdata(Hc_mi,'v');
+
+Ab = [0 1 0 0; 0 0 0 0; 0 0 0 1; 0 0 0 0];
+Bb = [0 0; -g/(1+I_b/(m_b*r_b^2)) 0; 0 0; 0 g/(1+I_b/(m_b*r_b^2))];
+Cb = [1 0 0 0; 0 0 1 0];
+
+ballSystem = ss(Ab,Bb,Cb,zeros(2,2));
+Q = eye(4); R = 0.01*eye(2);
+ballLQRgain = lqr(ballSystem, Q, R);
