@@ -12,7 +12,7 @@ m_b = 0.024;
 % I_b =  m_b*r_b^2;
 r_b = 0.019;
 I_p = m_p*0.04^2/12;
-I_b =  m_b*r_b^2;
+I_b =  m_b*r_b^2; %Has to be changed
 
 
 Zoffset = 0.32;
