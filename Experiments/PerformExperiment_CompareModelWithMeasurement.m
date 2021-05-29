@@ -7,6 +7,7 @@ controllerFilename = "Controller_CompareModelWithMeasurement.slx";
 I_init = 0;
 
 %% Load enviroment settings (Do not change)
+addpath("../Controllers")
 if (SimulateOrMeasure == 0)
     % Simulation 
     addpath("../Simulation/RefferenceModel")
@@ -30,11 +31,11 @@ if (SimulateOrMeasure == 0) % (Do not change)
     ts_BallRef = ts_camera;
 
     % Create reference
-    Pp_Aref_in = zeros(1,t_experiment/ts_plateRef);
-    Pp_Bref_in = zeros(1,t_experiment/ts_plateRef);
-    Pp_Cref_in = zeros(1,t_experiment/ts_plateRef);
-    Pb_Xref_in = zeros(1,t_experiment/ts_BallRef);
-    Pb_Yref_in = zeros(1,t_experiment/ts_BallRef);
+    Pp_Aref_in = zeros(1,round(t_experiment/ts_plateRef));
+    Pp_Bref_in = zeros(1,round(t_experiment/ts_plateRef));
+    Pp_Cref_in = zeros(1,round(t_experiment/ts_plateRef));
+    Pb_Xref_in = zeros(1,round(t_experiment/ts_BallRef));
+    Pb_Yref_in = zeros(1,round(t_experiment/ts_BallRef));
 end % (Do not change)
 
 %% Measurement settings
