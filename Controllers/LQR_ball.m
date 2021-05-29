@@ -24,7 +24,7 @@ ballSystem = ss(Ab,Bb,Cb,zeros(2,2));
 Q = [1 0 0 0;0 0 0 0;0 0 1 0;0 0 0 0];
 R = 0.1*eye(2);
 ballLQRgain = lqr(ballSystem, Q, R);
-controllerFilename = "Template_Controller.slx";
+controllerFilename = "LQG_ball_controller.slx";
 
 %% Overwrite some parameters
 Tdelay_bob = 0;
@@ -76,17 +76,17 @@ end
 subplot(3,2,1);
 plot(out.Pp_Aref);
 hold on;
-plot(out.Pp_A);
+plot(0.32+out.Pp_A);
 title("Plate position motor A")
 subplot(3,2,3);
 plot(out.Pp_Bref);
 hold on;
-plot(out.Pp_B);
+plot(0.32+out.Pp_B);
 title("Plate position motor B")
 subplot(3,2,5);
 plot(out.Pp_Cref);
 hold on;
-plot(out.Pp_C);
+plot(0.32+out.Pp_C);
 title("Plate position motor C")
 
 subplot(3,2,2);
