@@ -29,15 +29,15 @@ controllerFilename = "LQG_ball_controller.slx";
 %% Overwrite some parameters
 Tdelay_bob = 0;
 Tdelay_mp = 0;
-ts_camera = 0.033;
-ts_mp = 0.033;
+ts_camera = 0.03;
+% ts_mp = 0.033;
 Ybop0 = [0.1;0;0;0];
 
 %% Simulation settings
 if (SimulateOrMeasure == 0) % (Do not change)
     UseNonlinearPlant = 1;
-    SimulateEncoders = 0;
-    SimulateCamera = 0;
+    SimulateEncoders = 1;
+    SimulateCamera = 1  ;
     SimulateTimeDelays = 0; % Note: enabling this results in strange behavior
     SimulateFriction = 0; % Note: not jet implemented
     UseUserDefinedPlateReference = 1;
@@ -76,17 +76,17 @@ end
 subplot(3,2,1);
 plot(out.Pp_Aref);
 hold on;
-plot(0.32+out.Pp_A);
+plot(out.Pp_A);
 title("Plate position motor A")
 subplot(3,2,3);
 plot(out.Pp_Bref);
 hold on;
-plot(0.32+out.Pp_B);
+plot(out.Pp_B);
 title("Plate position motor B")
 subplot(3,2,5);
 plot(out.Pp_Cref);
 hold on;
-plot(0.32+out.Pp_C);
+plot(out.Pp_C);
 title("Plate position motor C")
 
 subplot(3,2,2);
