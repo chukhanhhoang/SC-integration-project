@@ -1,2 +1,5 @@
 
+# Matlab temp folder
 slprj/
+# Simulink temp files
+*.slxc
