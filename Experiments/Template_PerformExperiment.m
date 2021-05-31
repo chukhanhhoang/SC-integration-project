@@ -13,7 +13,7 @@ if (SimulateOrMeasure == 0)
     load("ModelParameters.mat")
 else
     % Measurement
-    addpath("../Measurement/RefferenceModel")
+    addpath("../Measurements/RefferenceModel")
 end
   
 %% Simulation settings
