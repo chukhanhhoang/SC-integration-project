@@ -52,7 +52,22 @@ if (SimulateOrMeasure == 0)
     out = sim("BallAndPlateSimulation.slx");
     close_system("BallAndPlateSimulation.slx",0);
 else
-    % Perform measurement, code not jet implemented
+    % Setup measurement system
+    disp("Loading measurement model");
+    load_system("BallAndPlateMeasurement.slx");
+    set_param('BallAndPlateMeasurement/Run/Controller', 'ModelFile', controllerFilename)
+    
+    % Build measurement model
+    disp("Building measurement model");
+    rtwbuild('BallAndPlateMeasurement');
+    close_system("BallAndPlateSimulation.slx",0);
+    
+    % Wait for measurement results
+    disp("Once the measurement is completed and the data is saved to ""Measurement.mat"", press any key to continue.");
+    pause();
+    load("Measurement.mat");
+    % Todo import data
+    
 end
 
 %% Plot results
