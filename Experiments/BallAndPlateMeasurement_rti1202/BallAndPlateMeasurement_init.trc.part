@@ -1,0 +1,10 @@
+
+
+
+-- Type definitions for arrays
+typedef BallAndPlateMeasurement_ArrayDT7_3 uint(32)[3]
+typedef BallAndPlateMeasurement_ArrayDT3_32 uint(8)[32]
+typedef BallAndPlateMeasurement_ArrayDT3_4 uint(8)[4]
+typedef BallAndPlateMeasurement_ArrayDT0_2 flt(64,IEEE)[2]
+
+
