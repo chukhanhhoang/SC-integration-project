@@ -66,4 +66,4 @@ eqn1 = diff(dTdqdotf,t)-dTdqf+dVdqf==Qnc_subs.';
 eqn2 = diff(q_f,t)==qdot_f;
 
 [V,S] = odeToVectorField([eqn1 eqn2.']);
-M = matlabFunction(V,'vars',{'t','Y','C_v','I_1','I_2','I_3','I_p','K','g','m_m','m_p','r'},'file','motorPlateODElinear.m','Comments',char(S));
+% M = matlabFunction(V,'vars',{'t','Y','C_v','I_1','I_2','I_3','I_p','K','g','m_m','m_p','r'},'file','motorPlateODElinear.m','Comments',char(S));
