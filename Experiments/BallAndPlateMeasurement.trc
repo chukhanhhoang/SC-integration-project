@@ -1,0 +1,5264 @@
+-- ****************************************************************************
+--
+--  Trace file: BallAndPlateMeasurement.trc
+--
+--  RTI1202 7.15 (02-Nov-2020)
+--  Tue Jun  1 17:08:16 2021
+--
+--  Copyright 2021, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+--
+--  Trace file format: 3
+
+-- ******** Keywords **********************************************************
+-- _application "BallAndPlateMeasurement.map"
+
+_genname     "RTI"
+_genversion  "7.15"
+_gendate     "06/01/2021 17:08:19"
+_description ""
+_author      "RTI1202 7.15 (02-Nov-2020)"
+_model       "BallAndPlateMeasurement"
+
+-- Default data type formats
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+-- No Data Capture blocks within model: use base sample time as sampling period
+sampling_period[0]
+{
+  value:       0.001
+  alias:       "HostService"
+  increment:   0.001
+  unit:        "s"
+}
+
+
+
+
+-- Type definitions for arrays
+typedef BallAndPlateMeasurement_ArrayDT7_3 uint(32)[3]
+typedef BallAndPlateMeasurement_ArrayDT3_32 uint(8)[32]
+typedef BallAndPlateMeasurement_ArrayDT3_4 uint(8)[4]
+typedef BallAndPlateMeasurement_ArrayDT0_2 flt(64,IEEE)[2]
+typedef BallAndPlateMeasurement_ArrayDT0_3 flt(64,IEEE)[3]
+
+
+-- ******** Simulation control variables **************************************
+
+finalTime
+{
+ type:  flt(64,IEEE)*
+ alias: "finalTime"
+ desc:  "Simulation stop time. When reached, simState switches to STOP."
+ flags:  READONLY
+ unit:  "s"
+ addr:    0x48057E4C
+}
+
+currentTime
+{
+ type:  flt(64,IEEE)*
+ alias: "currentTime"
+ desc:  "Current simulation time. Increments with execution of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+ addr:    0x48057E48
+}
+
+modelStepSize
+{
+ type:  flt(64,IEEE)
+ alias: "modelStepSize"
+ desc:  "Fixed step size of the model, sample time of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+ addr:    0x48057E50
+}
+
+simState
+{
+ type:  int(32)
+ alias: "simState"
+ desc:  "Simulation state: STOP=0 RUN=2"
+ unit:  "-"
+ addr:    0x480567B8
+}
+
+p_msg_last_error_no
+{
+ type:  uint(32)*
+ alias: "errorNumber"
+ desc:  "Error number of last error message (zero if no error)."
+ unit:  "-"
+ flags: READONLY
+ addr:    0x48049258
+}
+
+p_dsts_sum_of_reset_time
+{
+ type:  flt(64,IEEE)*
+ alias: "sumOfResetTime"
+ desc:  "Internal variable for summing up reset time."
+ unit:  "s"
+ flags: READONLY|HIDDEN
+ addr:    0x48049254
+}
+
+
+-- ******** Task Information variables ****************************************
+group "Task Info"
+{
+ 
+}
+  group "Timer Task 1"
+  {
+   
+  }
+
+  pRti_TIMERA_STime
+  {
+   type:  flt(64,IEEE)*
+   alias: "sampleTime"
+   flags: READONLY
+		 addr:    0x48057E74
+		}
+  pRti_TIMERA_TTime
+  {
+   type:  flt(64,IEEE)*
+   alias: "turnaroundTime"
+   flags: READONLY
+ addr:    0x48057E78
+}
+  pRti_TIMERA_TState
+  {
+   type:  int(32)*
+   alias: "state"
+   flags: READONLY
+ addr:    0x48057E7C
+}
+  pRti_TIMERA_OType
+  {
+   type:  int(32)*
+   alias: "overrunCheckType"
+   flags: READONLY
+ addr:    0x48057E80
+}
+  pRti_TIMERA_OMax
+  {
+   type:  int(32)*
+   alias: "overrunQueueMax"
+   flags: READONLY
+ addr:    0x48057E84
+}
+  pRti_TIMERA_ORpt
+  {
+   type:  int(32)*
+   alias: "overrunQueueCount"
+   flags: READONLY
+ addr:    0x48057E88
+}
+  pRti_TIMERA_OCnt
+  {
+   type:  int(32)*
+   alias: "overrunCount"
+   flags: READONLY
+ addr:    0x48057E8C
+}
+  pRti_TIMERA_TCnt
+  {
+   type:  flt(64,IEEE)*
+   alias: "taskCallCount"
+   flags: READONLY
+		 addr:    0x48057E90
+		}
+  pRti_TIMERA_Prio
+  {
+   type:  int(32)*
+   alias: "priority"
+   flags: READONLY
+ addr:    0x48057E94
+}
+  endgroup
+
+
+endgroup
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Status\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DCC
+}
+
+
+
+	endgroup -- block-group "Status\n"
+
+	group "Frames\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DC8
+}
+
+
+
+	endgroup -- block-group "Frames\n"
+
+	group "Pp_A" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_1[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057E3C
+		}
+
+
+
+	endgroup -- block-group "Pp_A"
+
+	group "Pp_B" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_1[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057E3C
+}
+
+
+
+	endgroup -- block-group "Pp_B"
+
+	group "Pp_C" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_1[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057E3C
+}
+
+
+
+	endgroup -- block-group "Pp_C"
+
+	group "Pb_X" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[2]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DD0
+		}
+
+
+
+	endgroup -- block-group "Pb_X"
+
+	group "Pb_Y" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[4]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DD0
+		}
+
+
+
+	endgroup -- block-group "Pb_Y"
+
+	group "I_A" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DC8
+		}
+
+
+
+	endgroup -- block-group "I_A"
+
+	group "I_B" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DC8
+		}
+
+
+
+	endgroup -- block-group "I_B"
+
+	group "I_C" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DC8
+}
+
+
+
+	endgroup -- block-group "I_C"
+
+	group "Pp_Aref" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_3[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057E44
+		}
+
+
+
+	endgroup -- block-group "Pp_Aref"
+
+	group "Pp_Bref" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_3[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057E44
+}
+
+
+
+	endgroup -- block-group "Pp_Bref"
+
+	group "Pp_Cref" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_3[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057E44
+}
+
+
+
+	endgroup -- block-group "Pp_Cref"
+
+	group "Pb_Xref" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_3[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057E44
+		}
+
+
+
+	endgroup -- block-group "Pb_Xref"
+
+	group "Pb_Yref" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_BallAndPlateMeasurement_real_T_3[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057E44
+		}
+
+
+
+	endgroup -- block-group "Pb_Yref"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[45]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[39]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Constant2" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[46]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Constant2"
+
+	group "Constant3" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[47]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Constant3"
+
+	group "Constant4" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[48]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Constant4"
+
+	group "Constant5" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[49]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+	endgroup -- block-group "Constant5"
+
+	group "Init" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_BallAndPlateMeasurement_real_T_0[40]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+	endgroup -- block-group "Init"
+
+	group "Data Type Conversion" -- block-group
+	{
+	 block: "DataTypeConversion"
+	}
+		p_0_BallAndPlateMeasurement_boolean_T_4[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+	endgroup -- block-group "Data Type Conversion"
+
+	group "Display" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint32_T_1[1]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DCC
+		}
+
+
+
+	endgroup -- block-group "Display"
+
+	group "Display1" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DCC
+		}
+
+
+
+	endgroup -- block-group "Display1"
+
+	group "Display2" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DC8
+}
+
+
+
+	endgroup -- block-group "Display2"
+
+	group "Display3" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint8_T_3[36]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_4*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DD4
+		}
+
+
+
+	endgroup -- block-group "Display3"
+
+	group "Display4" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[0]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DD0
+}
+
+
+
+	endgroup -- block-group "Display4"
+
+	group "Display5" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint8_T_3[32]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_4*
+		 alias:   "In1"
+		 flags:   READONLY
+		 addr:    0x48057DD4
+		}
+
+
+
+	endgroup -- block-group "Display5"
+
+	group "Display6" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint32_T_1[2]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT7_3*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DCC
+}
+
+
+
+	endgroup -- block-group "Display6"
+
+	group "Display7" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_BallAndPlateMeasurement_uint8_T_3[0]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_32*
+		 alias:   "In1"
+		 flags:   READONLY
+ addr:    0x48057DD4
+}
+
+
+
+	endgroup -- block-group "Display7"
+
+	group "Gain1" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[3]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD0
+}
+		p_1_BallAndPlateMeasurement_uint8_T_1[1]
+		{
+		 type:    uint(8)*
+		 alias:   "Gain"
+		 desc:    "Uniform Fixed-Point"
+		 scale:   [2^1, 0.0]
+		 bitmask: 0:7
+		 flags:   PARAM
+ addr:    0x48057DF8
+}
+
+
+	endgroup -- block-group "Gain1"
+
+	group "Gain2" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[1]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD0
+}
+		p_1_BallAndPlateMeasurement_uint8_T_1[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Gain"
+		 desc:    "Uniform Fixed-Point"
+		 scale:   [2^1, 0.0]
+		 bitmask: 0:7
+		 flags:   PARAM
+		 addr:    0x48057DF8
+		}
+
+
+	endgroup -- block-group "Gain2"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[2]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD0
+}
+
+
+	endgroup -- block-group "Add"
+
+	group "Add1" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_BallAndPlateMeasurement_uint16_T_2[4]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD0
+}
+
+
+	endgroup -- block-group "Add1"
+
+	group "Sum" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+	endgroup -- block-group "Sum"
+
+	group "Sum1" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+	endgroup -- block-group "Sum1"
+
+	group "Switch" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_1_BallAndPlateMeasurement_real_T_0[42]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Switch"
+
+	group "Switch1" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_1_BallAndPlateMeasurement_real_T_0[44]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Switch1"
+
+	group "Delay" -- block-group
+	{
+	 block: "Delay"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_1_BallAndPlateMeasurement_real_T_0[41]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialCondition"
+		 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+	endgroup -- block-group "Delay"
+
+	group "Delay1" -- block-group
+	{
+	 block: "Delay"
+	}
+		p_0_BallAndPlateMeasurement_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_1_BallAndPlateMeasurement_real_T_0[43]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialCondition"
+		 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+	endgroup -- block-group "Delay1"
+
+  
+  
+	group "ETHERNET_SETUP_BL1" -- subsystem-group
+
+		p_0_BallAndPlateMeasurement_uint32_T_1[2]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT7_3*
+		 alias:   "Link Status"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DCC
+}
+		p_0_BallAndPlateMeasurement_uint8_T_3[36]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_4*
+		 alias:   "Local IP"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DD4
+}
+
+	endgroup -- subsystem-group "ETHERNET_SETUP_BL1"
+  
+  
+	group "ETHERNET_UDP_RX_BL1" -- subsystem-group
+
+		p_0_BallAndPlateMeasurement_uint8_T_3[0]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_32*
+		 alias:   "Data"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD4
+		}
+		p_0_BallAndPlateMeasurement_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "Status"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DCC
+		}
+		p_0_BallAndPlateMeasurement_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Received Frames"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+		p_0_BallAndPlateMeasurement_uint32_T_1[1]
+		{
+		 type:    uint(32)*
+		 alias:   "Received Bytes"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DCC
+		}
+		p_0_BallAndPlateMeasurement_uint8_T_3[32]
+		{
+		 type:    BallAndPlateMeasurement_ArrayDT3_4*
+		 alias:   "Remote IP"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD4
+		}
+		p_0_BallAndPlateMeasurement_uint16_T_2[0]
+		{
+		 type:    uint(16)*
+		 alias:   "Remote Port"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD0
+		}
+
+	endgroup -- subsystem-group "ETHERNET_UDP_RX_BL1"
+  
+  
+	group "ETHERNET_UDP_SETUP_BL1" -- subsystem-group
+
+
+	endgroup -- subsystem-group "ETHERNET_UDP_SETUP_BL1"
+  
+  
+	group "Outputs to Amplifier" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_1_BallAndPlateMeasurement_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_1_BallAndPlateMeasurement_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[34]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier"
+  
+  
+	group "Outputs to Amplifier1" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[32]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[33]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[31]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[4]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+			p_1_BallAndPlateMeasurement_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier1"
+  
+  
+	group "Outputs to Amplifier2" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_1_BallAndPlateMeasurement_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[28]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+			p_1_BallAndPlateMeasurement_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier2"
+  
+  
+	group "Position Measurement" -- subsystem-group
+
+		p_0_BallAndPlateMeasurement_real_T_0[27]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_3_BallAndPlateMeasurement_real_T_1[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057E3C
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[15]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[24]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[14]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_3_BallAndPlateMeasurement_real_T_1[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057E3C
+}
+			p_1_BallAndPlateMeasurement_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[25]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_9[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DEC
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[27]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[16]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[17]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[9]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[8]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD8
+		}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[7]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[27]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+				p_1_BallAndPlateMeasurement_real_T_0[18]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+				p_1_BallAndPlateMeasurement_real_T_0[19]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_10[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DF0
+		}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_BallAndPlateMeasurement_real_T_7[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+		 addr:    0x48057E10
+		}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_9[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DEC
+		}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_BallAndPlateMeasurement_real_T_9[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+ addr:    0x48057DEC
+}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement"
+  
+  
+	group "Position Measurement1" -- subsystem-group
+
+		p_0_BallAndPlateMeasurement_real_T_0[21]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+		p_3_BallAndPlateMeasurement_real_T_1[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057E3C
+}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[24]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[18]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_1_BallAndPlateMeasurement_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_3_BallAndPlateMeasurement_real_T_1[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057E3C
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_0[16]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_0_BallAndPlateMeasurement_real_T_0[17]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_7[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DE4
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[20]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[25]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[6]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[5]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD8
+		}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[4]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DD8
+		}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[21]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+				p_1_BallAndPlateMeasurement_real_T_0[27]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+				p_1_BallAndPlateMeasurement_real_T_0[28]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_8[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DE8
+		}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_BallAndPlateMeasurement_real_T_5[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+		 addr:    0x48057E08
+		}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_7[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DE4
+}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_BallAndPlateMeasurement_real_T_7[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+		 addr:    0x48057DE4
+		}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement1"
+  
+  
+	group "Position Measurement2" -- subsystem-group
+
+		p_0_BallAndPlateMeasurement_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_3_BallAndPlateMeasurement_real_T_1[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057E3C
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x48057DF4
+		}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[33]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[31]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[32]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_3_BallAndPlateMeasurement_real_T_1[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057E3C
+		}
+			p_1_BallAndPlateMeasurement_real_T_0[38]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x48057DC8
+		}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+			p_0_BallAndPlateMeasurement_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_BallAndPlateMeasurement_real_T_5[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DDC
+}
+			p_0_BallAndPlateMeasurement_real_T_0[15]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[14]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[34]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_1_BallAndPlateMeasurement_real_T_0[35]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[3]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[2]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_BallAndPlateMeasurement_boolean_T_4[1]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DD8
+}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_BallAndPlateMeasurement_real_T_0[15]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+				p_1_BallAndPlateMeasurement_real_T_0[36]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+				p_1_BallAndPlateMeasurement_real_T_0[37]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+ addr:    0x48057DF4
+}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_6[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x48057DE0
+		}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_1_BallAndPlateMeasurement_real_T_3[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+ addr:    0x48057E00
+}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_BallAndPlateMeasurement_real_T_5[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+ addr:    0x48057DDC
+}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_BallAndPlateMeasurement_real_T_5[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+ addr:    0x48057DDC
+}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement2"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+	group "Controller" -- referenced block group
+		p_0_BallAndPlateMeasurement_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_0_BallAndPlateMeasurement_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out2"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_0_BallAndPlateMeasurement_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out3"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057DC8
+}
+		p_3_BallAndPlateMeasurement_real_T_3[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out4"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057E44
+		}
+		p_3_BallAndPlateMeasurement_real_T_3[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out5"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057E44
+}
+		p_3_BallAndPlateMeasurement_real_T_3[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out6"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057E44
+}
+		p_3_BallAndPlateMeasurement_real_T_3[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out7"
+		 flags:   OUTPUT|READONLY
+ addr:    0x48057E44
+}
+		p_3_BallAndPlateMeasurement_real_T_3[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out8"
+		 flags:   OUTPUT|READONLY
+		 addr:    0x48057E44
+		}
+		trcref0_UseUserDefinedBallReference
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedBallReference"
+		 alias:    "UseUserDefinedBallReference"
+}
+		trcref1_UseUserDefinedPlateReference
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedPlateReference"
+		 alias:    "UseUserDefinedPlateReference"
+}
+		trcref2_denc_mi
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "denc_mi"
+		 alias:    "denc_mi"
+		}
+		trcref3_numc_mi
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "numc_mi"
+		 alias:    "numc_mi"
+}
+		-- Skipping parameter "UseUserDefinedBallReference"
+		-- Skipping parameter "UseUserDefinedPlateReference"
+		-- Skipping parameter "denc_mi"
+		-- Skipping parameter "numc_mi"
+
+		group "MPC_Controller"  -- referenced model group
+    
+-- ****************************************************************************
+--
+--  Trace file: MPC_Controller.trc
+--
+--  RTI1202 7.15 (02-Nov-2020)
+--  Tue Jun  1 16:44:25 2021
+--
+--  Copyright 2021, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+
+
+
+-- Type definitions for arrays
+typedef MPC_Controller_ArrayDT0_2 flt(64,IEEE)[2]
+typedef MPC_Controller_ArrayDT0_4 flt(64,IEEE)[4]
+typedef MPC_Controller_ArrayDT8_120 uint(8)[120]
+typedef MPC_Controller_ArrayDT0_21_2_Col col flt(64,IEEE)[21][2]
+typedef MPC_Controller_ArrayDT5_29 uint(16)[29]
+typedef MPC_Controller_ArrayDT5_18 uint(16)[18]
+typedef MPC_Controller_ArrayDT5_3 uint(16)[3]
+typedef MPC_Controller_ArrayDT5_2 uint(16)[2]
+typedef MPC_Controller_ArrayDT5_4 uint(16)[4]
+typedef MPC_Controller_ArrayDT5_5 uint(16)[5]
+typedef MPC_Controller_ArrayDT5_6 uint(16)[6]
+typedef MPC_Controller_ArrayDT5_9 uint(16)[9]
+typedef MPC_Controller_ArrayDT0_3 flt(64,IEEE)[3]
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+      
+	group "Pp_A" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_A"
+
+	group "Pp_B" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_B"
+
+	group "Pp_C" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_C"
+
+	group "Pb_X" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pb_X"
+
+	group "Pb_Y" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pb_Y"
+
+	group "Pp_Aref_in" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_Aref_in"
+
+	group "Pp_Bref_in" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_Bref_in"
+
+	group "Pp_Cref_in" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pp_Cref_in"
+
+	group "Pb_Xref_in" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pb_Xref_in"
+
+	group "Pb_Yref_in" -- block-group
+	{
+	 block: "Inport"
+	}
+		-- Skipping output Out1
+
+
+	endgroup -- block-group "Pb_Yref_in"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		trcref0_UseUserDefinedBallReference
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedBallReference"
+		 alias:    "UseUserDefinedBallReference"
+		}
+		trcref0_Value
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedBallReference"
+		 alias:    "Value"
+		 flags:    DEPRECATED|HIDDEN
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		trcref0_UseUserDefinedPlateReference
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedPlateReference"
+		 alias:    "UseUserDefinedPlateReference"
+		}
+		trcref0_Value
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "UseUserDefinedPlateReference"
+		 alias:    "Value"
+		 flags:    DEPRECATED|HIDDEN
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Zc" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[71]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+	endgroup -- block-group "Zc"
+
+	group "theta3" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[70]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+	endgroup -- block-group "theta3"
+
+	group "Switch" -- block-group
+	{
+	 block: "Switch"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+	endgroup -- block-group "Switch"
+
+	group "Switch1" -- block-group
+	{
+	 block: "Switch"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[23]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+	endgroup -- block-group "Switch1"
+
+	group "Switch2" -- block-group
+	{
+	 block: "Switch"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[173]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+	endgroup -- block-group "Switch2"
+
+	group "Switch3" -- block-group
+	{
+	 block: "Switch"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[174]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+	endgroup -- block-group "Switch3"
+
+	group "Switch4" -- block-group
+	{
+	 block: "Switch"
+	}
+		-- Skipping output Out1
+		p_2_MPC_Controller_real_T_0[175]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+	endgroup -- block-group "Switch4"
+
+  
+  
+	group "MPC Controller" -- subsystem-group
+
+		-- Skipping output mv
+
+
+		group "E_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[41]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "E_zero"
+
+		group "F_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[45]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "F_zero"
+
+		group "G_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "G_zero"
+
+		group "S_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[50]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "S_zero"
+
+		group "du.wt_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[65]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "du.wt_zero"
+
+		group "ecr.wt_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[67]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "ecr.wt_zero"
+
+		group "ext.mv_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[53]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "ext.mv_zero"
+
+		group "m_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[73]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "m_zero"
+
+		group "md_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[24]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "md_zero"
+
+		group "mv.target_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[57]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "mv.target_zero"
+
+		group "p_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[72]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "p_zero"
+
+		group "switch_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[52]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "switch_zero"
+
+		group "u.wt_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[63]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "u.wt_zero"
+
+		group "umax_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[29]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "umax_zero"
+
+		group "umin_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[25]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "umin_zero"
+
+		group "y.wt_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[61]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "y.wt_zero"
+
+		group "ymax_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[37]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "ymax_zero"
+
+		group "ymin_zero" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[33]
+			{
+			 type:    MPC_Controller_ArrayDT0_2*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "ymin_zero"
+
+  
+  
+		group "MPC" -- subsystem-group
+
+			-- Skipping output mv
+			-- Skipping output cost
+			-- Skipping output mv.seq
+			-- Skipping output x.seq
+			-- Skipping output y.seq
+			-- Skipping output qp.status
+			-- Skipping output est.state
+			-- Skipping output u0
+
+
+			group "constant" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[158]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Value"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "constant"
+
+			group "ym_zero" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[162]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Value"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "ym_zero"
+
+			group "Data Type Conversion1" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				p_0_MPC_Controller_real_T_0[0]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+
+
+			endgroup -- block-group "Data Type Conversion1"
+
+			group "Data Type Conversion10" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion10"
+
+			group "Data Type Conversion11" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion11"
+
+			group "Data Type Conversion12" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion12"
+
+			group "Data Type Conversion13" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion13"
+
+			group "Data Type Conversion14" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion14"
+
+			group "Data Type Conversion15" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion15"
+
+			group "Data Type Conversion2" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion2"
+
+			group "Data Type Conversion3" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion3"
+
+			group "Data Type Conversion4" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion4"
+
+			group "Data Type Conversion5" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion5"
+
+			group "Data Type Conversion6" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion6"
+
+			group "Data Type Conversion7" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion7"
+
+			group "Data Type Conversion8" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion8"
+
+			group "Data Type Conversion9" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Data Type Conversion9"
+
+			group "E Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "E Conversion"
+
+			group "F Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "F Conversion"
+
+			group "G Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "G Conversion"
+
+			group "S Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "S Conversion"
+
+			group "mo or x Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "mo or x Conversion"
+
+			group "ext.mv_scale" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[55]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "ext.mv_scale"
+
+			group "ext.mv_scale1" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[59]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "ext.mv_scale1"
+
+			group "umax_scale" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[31]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "umax_scale"
+
+			group "umin_scale" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[27]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "umin_scale"
+
+			group "umin_scale1" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[68]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "umin_scale1"
+
+			group "umin_scale2" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[160]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "umin_scale2"
+
+			group "umin_scale3" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[74]
+				{
+				 type:    MPC_Controller_ArrayDT0_21_2_Col*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "umin_scale3"
+
+			group "umin_scale4" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[43]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "umin_scale4"
+
+			group "umin_scale5" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[116]
+				{
+				 type:    MPC_Controller_ArrayDT0_21_2_Col*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "umin_scale5"
+
+			group "ymax_scale" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[39]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "ymax_scale"
+
+			group "ymin_scale" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[35]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "ymin_scale"
+
+			group "ymin_scale1" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[47]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "ymin_scale1"
+
+			group "ymin_scale2" -- block-group
+			{
+			 block: "Gain"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[51]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Gain"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "ymin_scale2"
+
+			group "Math\nFunction" -- block-group
+			{
+			 block: "Math"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Math\nFunction"
+
+			group "Math\nFunction1" -- block-group
+			{
+			 block: "Math"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Math\nFunction1"
+
+			group "Math\nFunction2" -- block-group
+			{
+			 block: "Math"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Math\nFunction2"
+
+			group "Memory" -- block-group
+			{
+			 block: "Memory"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_boolean_T_2[0]
+				{
+				 type:    MPC_Controller_ArrayDT8_120*
+				 alias:   "InitialCondition"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   PARAM
+ addr:    0x4805CF68
+}
+
+
+			endgroup -- block-group "Memory"
+
+			group "last_x" -- block-group
+			{
+			 block: "Memory"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[2]
+				{
+				 type:    MPC_Controller_ArrayDT0_4*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+			endgroup -- block-group "last_x"
+
+			group "Reshape" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape"
+
+			group "Reshape1" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape1"
+
+			group "Reshape2" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape2"
+
+			group "Reshape3" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape3"
+
+			group "Reshape4" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape4"
+
+			group "Reshape5" -- block-group
+			{
+			 block: "Reshape"
+			}
+				-- Skipping output Out1
+
+
+			endgroup -- block-group "Reshape5"
+
+			group "last_mv" -- block-group
+			{
+			 block: "UnitDelay"
+			}
+				-- Skipping output Out1
+				p_2_MPC_Controller_real_T_0[6]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+			endgroup -- block-group "last_mv"
+
+  
+  
+			group "MPC Matrix Signal Check" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[0]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[29]
+					{
+					 type:    MPC_Controller_ArrayDT5_18*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[47]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[48]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[49]
+					{
+					 type:    uint(16)*
+					 alias:   "P5"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[50]
+					{
+					 type:    uint(16)*
+					 alias:   "P6"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Matrix Signal Check"
+  
+  
+			group "MPC Matrix Signal Check1" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[51]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[80]
+					{
+					 type:    MPC_Controller_ArrayDT5_18*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[98]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[99]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[100]
+					{
+					 type:    uint(16)*
+					 alias:   "P5"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[101]
+					{
+					 type:    uint(16)*
+					 alias:   "P6"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Matrix Signal Check1"
+  
+  
+			group "MPC Matrix Signal Check2" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[102]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[131]
+					{
+					 type:    MPC_Controller_ArrayDT5_18*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[149]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[150]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[151]
+					{
+					 type:    uint(16)*
+					 alias:   "P5"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[152]
+					{
+					 type:    uint(16)*
+					 alias:   "P6"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Matrix Signal Check2"
+  
+  
+			group "MPC Preview Signal Check" -- subsystem-group
+
+				-- Skipping output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+					-- Skipping input
+
+
+					p_2_MPC_Controller_uint16_T_1[153]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[182]
+					{
+					 type:    MPC_Controller_ArrayDT5_3*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[185]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[186]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Preview Signal Check"
+  
+  
+			group "MPC Preview Signal Check1" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[187]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[216]
+					{
+					 type:    MPC_Controller_ArrayDT5_2*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[218]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[219]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Preview Signal Check1"
+  
+  
+			group "MPC Preview Signal Check2" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[220]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[249]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[253]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[254]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Preview Signal Check2"
+  
+  
+			group "MPC Preview Signal Check3" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[255]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[284]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[288]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[289]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Preview Signal Check3"
+  
+  
+			group "MPC Preview Signal Check4" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Matrix Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[290]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[319]
+					{
+					 type:    MPC_Controller_ArrayDT5_5*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[324]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[325]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Matrix Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Preview Signal Check4"
+  
+  
+			group "MPC Scalar Signal Check" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[326]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[355]
+					{
+					 type:    MPC_Controller_ArrayDT5_6*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Scalar Signal Check"
+  
+  
+			group "MPC Scalar Signal Check1" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[361]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[390]
+					{
+					 type:    MPC_Controller_ArrayDT5_6*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Scalar Signal Check1"
+  
+  
+			group "MPC Scalar Signal Check2" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[396]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[425]
+					{
+					 type:    uint(16)*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Scalar Signal Check2"
+  
+  
+			group "MPC Vector Signal Check" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[426]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[455]
+					{
+					 type:    MPC_Controller_ArrayDT5_6*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[461]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[462]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check"
+  
+  
+			group "MPC Vector Signal Check1" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[463]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[492]
+					{
+					 type:    MPC_Controller_ArrayDT5_18*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[510]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[511]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check1"
+  
+  
+			group "MPC Vector Signal Check11" -- subsystem-group
+
+				-- Skipping output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+					-- Skipping input
+
+
+					p_2_MPC_Controller_uint16_T_1[512]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[541]
+					{
+					 type:    MPC_Controller_ArrayDT5_2*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[543]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[544]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check11"
+  
+  
+			group "MPC Vector Signal Check2" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[545]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[574]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[578]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[579]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check2"
+  
+  
+			group "MPC Vector Signal Check3" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[580]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[609]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[613]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[614]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check3"
+  
+  
+			group "MPC Vector Signal Check4" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[615]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[644]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[648]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[649]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check4"
+  
+  
+			group "MPC Vector Signal Check5" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[650]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[679]
+					{
+					 type:    MPC_Controller_ArrayDT5_4*
+					 alias:   "P2"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[683]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[684]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check5"
+  
+  
+			group "MPC Vector Signal Check6" -- subsystem-group
+
+				-- Skipping output Output
+
+
+				group "Vector Dimension Check" -- block-group
+				{
+				 block: "S-Function"
+				}
+
+					-- Skipping inport In1
+
+
+
+					p_2_MPC_Controller_uint16_T_1[685]
+					{
+					 type:    MPC_Controller_ArrayDT5_29*
+					 alias:   "P1"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[714]
+					{
+					 type:    MPC_Controller_ArrayDT5_9*
+					 alias:   "P2"
+					 flags:   PARAM
+		 addr:    0x4805CF64
+		}
+					p_2_MPC_Controller_uint16_T_1[723]
+					{
+					 type:    uint(16)*
+					 alias:   "P3"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+					p_2_MPC_Controller_uint16_T_1[724]
+					{
+					 type:    uint(16)*
+					 alias:   "P4"
+					 flags:   PARAM
+ addr:    0x4805CF64
+}
+
+
+				endgroup -- block-group "Vector Dimension Check"
+
+
+
+			endgroup -- subsystem-group "MPC Vector Signal Check6"
+  
+  
+			group "optimizer" -- subsystem-group
+
+				p_0_MPC_Controller_real_T_0[8]
+				{
+				 type:    MPC_Controller_ArrayDT0_4*
+				 alias:   " xk1"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+				p_0_MPC_Controller_real_T_0[12]
+				{
+				 type:    MPC_Controller_ArrayDT0_2*
+				 alias:   " u"
+				 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+				-- Skipping output  cost
+				-- Skipping output  useq
+				-- Skipping output  xseq
+				-- Skipping output  yseq
+				-- Skipping output  status
+				-- Skipping output  xest
+				p_0_MPC_Controller_boolean_T_1[0]
+				{
+				 type:    MPC_Controller_ArrayDT8_120*
+				 alias:   " iAout"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+ addr:    0x4805CF5C
+}
+
+
+  
+  
+				group "optimizer" -- subsystem-group
+
+					p_0_MPC_Controller_real_T_0[8]
+					{
+					 type:    MPC_Controller_ArrayDT0_4*
+					 alias:   "xk1"
+					 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+					p_0_MPC_Controller_real_T_0[12]
+					{
+					 type:    MPC_Controller_ArrayDT0_2*
+					 alias:   "u"
+					 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+					-- Skipping output cost
+					-- Skipping output useq
+					-- Skipping output xseq
+					-- Skipping output yseq
+					-- Skipping output status
+					-- Skipping output xest
+					p_0_MPC_Controller_boolean_T_1[0]
+					{
+					 type:    MPC_Controller_ArrayDT8_120*
+					 alias:   "iAout"
+					 range:   < 0 ; 1 >
+					 bitmask: 0x01
+					 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF5C
+		}
+
+
+
+
+				endgroup -- subsystem-group "optimizer"
+
+
+			endgroup -- subsystem-group "optimizer"
+
+
+		endgroup -- subsystem-group "MPC"
+
+
+	endgroup -- subsystem-group "MPC Controller"
+  
+  
+	group "Motor Controller A" -- subsystem-group
+
+		-- Skipping output Output
+
+
+		group "Integrator2" -- block-group
+		{
+		 block: "Integrator"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[164]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialCondition"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[165]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperSaturationLimit"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[166]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerSaturationLimit"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "Integrator2"
+
+		group "Sum" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_MPC_Controller_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+
+
+		endgroup -- block-group "Sum"
+
+		group "Transfer Fcn2" -- block-group
+		{
+		 block: "TransferFcn"
+		}
+			p_0_MPC_Controller_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+			trcref0_numc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "numc_mi"
+}
+			trcref1_denc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "denc_mi"
+}
+			trcref0_Numerator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "Numerator"
+			 flags:    DEPRECATED|HIDDEN
+		}
+			trcref1_Denominator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "Denominator"
+			 flags:    DEPRECATED|HIDDEN
+}
+
+
+		endgroup -- block-group "Transfer Fcn2"
+
+
+
+	endgroup -- subsystem-group "Motor Controller A"
+  
+  
+	group "Motor Controller B" -- subsystem-group
+
+		-- Skipping output Output
+
+
+		group "Integrator2" -- block-group
+		{
+		 block: "Integrator"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[167]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialCondition"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[168]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperSaturationLimit"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[169]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerSaturationLimit"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "Integrator2"
+
+		group "Sum" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_MPC_Controller_real_T_0[4]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+
+
+		endgroup -- block-group "Sum"
+
+		group "Transfer Fcn2" -- block-group
+		{
+		 block: "TransferFcn"
+		}
+			p_0_MPC_Controller_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+			trcref0_numc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "numc_mi"
+		}
+			trcref1_denc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "denc_mi"
+}
+			trcref0_Numerator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "Numerator"
+			 flags:    DEPRECATED|HIDDEN
+		}
+			trcref1_Denominator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "Denominator"
+			 flags:    DEPRECATED|HIDDEN
+		}
+
+
+		endgroup -- block-group "Transfer Fcn2"
+
+
+
+	endgroup -- subsystem-group "Motor Controller B"
+  
+  
+	group "Motor Controller C" -- subsystem-group
+
+		-- Skipping output Output
+
+
+		group "Integrator2" -- block-group
+		{
+		 block: "Integrator"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[170]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialCondition"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[171]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperSaturationLimit"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[172]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerSaturationLimit"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "Integrator2"
+
+		group "Sum" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_MPC_Controller_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+
+
+		endgroup -- block-group "Sum"
+
+		group "Transfer Fcn2" -- block-group
+		{
+		 block: "TransferFcn"
+		}
+			p_0_MPC_Controller_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4805CF58
+		}
+			trcref0_numc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "numc_mi"
+}
+			trcref1_denc_mi
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "denc_mi"
+}
+			trcref0_Numerator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "numc_mi"
+			 alias:    "Numerator"
+			 flags:    DEPRECATED|HIDDEN
+		}
+			trcref1_Denominator
+			{
+			 refgroup: "/Tunable Parameters"
+			 refvar:   "denc_mi"
+			 alias:    "Denominator"
+			 flags:    DEPRECATED|HIDDEN
+		}
+
+
+		endgroup -- block-group "Transfer Fcn2"
+
+
+
+	endgroup -- subsystem-group "Motor Controller C"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+  
+  
+	group "reference angle" -- subsystem-group
+
+		-- Skipping output r_X
+		-- Skipping output r_Y
+
+
+		group "Gain" -- block-group
+		{
+		 block: "Gain"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "Gain"
+
+		group "Gain1" -- block-group
+		{
+		 block: "Gain"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "Gain1"
+
+		group "Sine Wave" -- block-group
+		{
+		 block: "Sin"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "SinH"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CosH"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "SinPhi"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[14]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CosPhi"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+
+
+		endgroup -- block-group "Sine Wave"
+
+		group "Sine Wave1" -- block-group
+		{
+		 block: "Sin"
+		}
+			-- Skipping output Out1
+			p_2_MPC_Controller_real_T_0[16]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[17]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[18]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "SinH"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CosH"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+			p_2_MPC_Controller_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "SinPhi"
+			 flags:   PARAM
+ addr:    0x4805CF60
+}
+			p_2_MPC_Controller_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "CosPhi"
+			 flags:   PARAM
+		 addr:    0x4805CF60
+		}
+
+
+		endgroup -- block-group "Sine Wave1"
+
+
+
+	endgroup -- subsystem-group "reference angle"
+  
+  
+	group "MATLAB Function" -- subsystem-group
+
+		p_0_MPC_Controller_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor1"
+		 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+		p_0_MPC_Controller_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor2"
+		 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+		p_0_MPC_Controller_real_T_0[16]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor3"
+		 flags:   OUTPUT|READONLY
+ addr:    0x4805CF58
+}
+
+
+
+
+	endgroup -- subsystem-group "MATLAB Function"
+
+
+
+endgroup -- "Model Root"
+
+-- ******** State Machine Data ************************************************
+
+group "State Machine Data"
+
+
+endgroup
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+
+-- ******** User variables from model_usr.trc *********************************
+
+
+-- No user file MPC_Controller_usr.trc found.
+
+		endgroup -- referenced model group "MPC_Controller"
+	endgroup -- referenced-block-group "Controller"
+
+
+
+endgroup -- "Model Root"
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+	rtP_UseUserDefinedBallReference
+	{
+	 type:    flt(64,IEEE)
+	 alias:   "UseUserDefinedBallReference"
+	 flags:   PARAM
+	 addr:    0x480567B0
+	}
+	rtP_UseUserDefinedPlateReference
+	{
+	 type:    flt(64,IEEE)
+	 alias:   "UseUserDefinedPlateReference"
+	 flags:   PARAM
+	 addr:    0x480567A8
+	}
+	rtP_denc_mi
+	{
+	 type:    BallAndPlateMeasurement_ArrayDT0_3
+	 alias:   "denc_mi"
+	 flags:   PARAM
+ addr:    0x48056790
+}
+	rtP_numc_mi
+	{
+	 type:    BallAndPlateMeasurement_ArrayDT0_3
+	 alias:   "numc_mi"
+	 flags:   PARAM
+ addr:    0x48056778
+}
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+group "RTT Dynamic Variables"
+
+endgroup
+
+-- ******** User variables from model_usr.trc *********************************
+
+-- RTI_USR_TRC_BEGIN
+
+-- No user file BallAndPlateMeasurement_usr.trc found.
+
+-- RTI_USR_TRC_END
+
+-- ******** EESPort States Variables ******************************************
+group "XIL API"
+{ 
+  
+}
+
+  group "EESPort"
+  {  
+    
+  }
+
+    p_xilapi_eesport_activeerrorset_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Active ErrorSet"
+      desc:    "Index of active ErrorSet or 0 if no ErrorSet is active."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+		 addr:    0x48057380
+		}
+
+    p_xilapi_eesport_erroractivated_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Activated"
+      desc:    "0 - no error is activated on hardware, 1 - at least one error is activated on hardware."  
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+ addr:    0x4805737C
+}
+
+    p_xilapi_eesport_errorswitching_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Switching"
+      desc:    "0 - no switching operation running on hardware, 1 -  switching operation running on hardware."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+	 addr:    0x48057378
+	}
+
+    xilapi_eesport_flags_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Flags"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+ addr:    0x4805CF7C
+}
+
+    xilapi_eesport_trigger_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Trigger"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+		 addr:    0x4805CF78
+		}
+
+    endgroup -- "EESPort"
+
+endgroup -- "XILAPI"
+
+
+
+-- ******** [EOF] *************************************************************
+

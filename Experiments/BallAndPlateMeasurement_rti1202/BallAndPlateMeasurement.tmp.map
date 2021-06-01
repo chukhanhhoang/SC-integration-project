@@ -1,0 +1,1076 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+                              BallAndPlateMeasurement.o07 (rt_ZCFcn)
+../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                              BallAndPlateMeasurement.o07 (MPC_Controller_Init)
+../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller_trc_ptr.o07)
+                              ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07) (MPC_Controller_rti_init_trc_pointers)
+C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a(RtVersion.o)
+                              (--whole-archive)
+C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+                              (--whole-archive)
+C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+                              C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librt1202.so (pow)
+C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+                              C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o) (__ieee754_pow)
+C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+                              C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o) (scalbn)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+                              ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07) (mpcblock_optimizer_MZGS51U5)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+                              ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07) (norm_LhMafmO5)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07) (qpkwik_0SXhTG2l)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+                              ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07) (rt_InitInfAndNaN)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (Unconstrained_pfLiBGge)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_oJBxPfCB.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (abs_oJBxPfCB)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_Q4WBpOCK.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (abs_Q4WBpOCK)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (DropConstraint_GGdZuLpU)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (KWIKfactor_Os2prYix)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07) (norm_T31T6Ex4)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07) (qr_Mdli9kTI)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07) (rtGetInf)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07) (rtGetNaN)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07) (xgeqrf_aDtAf4yk)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07) (xzlarf_VoIoZC7x)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07) (qrf_NM7TTEki)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07) (xgemv_fDLSZhfe)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07) (xgerc_dwhocZxI)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07) (xzlarfg_dR27mKH9)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07) (rt_hypotd_snf)
+C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+                              C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07) (xnrm2_bUROcnUY)
+
+As-needed library included to satisfy reference by file (symbol)
+
+libDsRealTimeTestingRP.so.1   rti_sim_engine.o07 (dsrtt_script_service_pre_computation)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+LOAD c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+                0x0000000000000000                _DSPACE_START = 0x0
+                0x0000000000000000                _DSPACE_START_ = 0x0
+                0x00000000000004b2                DS_TARGET_PLATFORM = 0x4b2
+START GROUP
+LOAD BallAndPlateMeasurement.o07
+LOAD BallAndPlateMeasurement_data.o07
+LOAD BallAndPlateMeasurement_trc_ptr.o07
+LOAD rti_sim_engine.o07
+LOAD rti_init_c.o07
+LOAD rt_sim.o07
+LOAD rti_assert.o07
+LOAD C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib
+LOAD ../slprj/rti1202/_sharedutils/rtwshared.lib
+LOAD ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtcan.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtj1939.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtser.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librt13xxio.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librt1202.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtwrap.so
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a
+END GROUP
+LOAD C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libstdc++.so
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/libm.so
+LOAD c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0\libgcc.a
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/libc.so
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib\libc.a
+LOAD c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0\libgcc.a
+LOAD c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+LOAD C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+                [!provide]                        PROVIDE (__stack, 0x0)
+                [!provide]                        PROVIDE (___stack, 0x0)
+                [!provide]                        PROVIDE (__executable_start, 0x48040000)
+                0x0000000048040134                . = (0x48040000 + SIZEOF_HEADERS)
+
+.interp         0x0000000048040134       0x14
+ *(.interp)
+ .interp        0x0000000048040134       0x14 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.note           0x0000000048040150       0x18
+ .note          0x0000000048040150       0x18 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+
+.note.gnu.build-id
+                0x0000000048040168       0x20
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000048040168       0x20 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.hash           0x0000000048040188      0x360
+ *(.hash)
+ .hash          0x0000000048040188      0x360 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x00000000480404e8      0x750
+ *(.dynsym)
+ .dynsym        0x00000000480404e8      0x750 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.dynstr         0x0000000048040c38      0x989
+ *(.dynstr)
+ .dynstr        0x0000000048040c38      0x989 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.gnu.version    0x00000000480415c2        0x0
+ *(.gnu.version)
+ .gnu.version   0x00000000480415c2        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.gnu.version_d  0x00000000480415c4        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000480415c4        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.gnu.version_r  0x00000000480415c4        0x0
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000480415c4        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.rel.dyn
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.dyn       0x00000000480415c4       0x6c
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ .rela.text     0x00000000480415c4        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ .rela.rodata   0x00000000480415c4        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ .rela.got      0x00000000480415c4       0x48 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ *(.rela.got1)
+ *(.rela.got2)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ .rela.sbss     0x000000004804160c        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ .rela.bss      0x000000004804160c       0x24 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ .rela.iplt     0x0000000048041630        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt       0x0000000048041630      0x498
+ *(.rela.plt)
+ .rela.plt      0x0000000048041630      0x498 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.init           0x0000000048041ac8       0x24
+ *(.init)
+ .init          0x0000000048041ac8        0xc C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+                0x0000000048041ac8                _init
+ .init          0x0000000048041ad4        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .init          0x0000000048041ad8        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+ .init          0x0000000048041adc       0x10 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+
+.text           0x0000000048041af0     0x7718
+                0x0000000048041af0                _btext = .
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000048041af0      0x118 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x0000000048041af0                _start
+ .text          0x0000000048041c08        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+ .text          0x0000000048041c08      0x2b0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ *fill*         0x0000000048041eb8        0x8 00000000
+ .text          0x0000000048041ec0     0x1290 BallAndPlateMeasurement.o07
+                0x0000000048041ec0                BallAndPl_EnabledSubsystem_Init
+                0x0000000048041ed0                BallAn_EnabledSubsystem_Disable
+                0x0000000048041ef0                BallAndP_EnabledSubsystem_Start
+                0x0000000048041f00                BallAndPlateMe_EnabledSubsystem
+                0x0000000048041f70                BallAndP_EnabledSubsystem1_Init
+                0x0000000048041f80                BallA_EnabledSubsystem1_Disable
+                0x0000000048041f90                BallAnd_EnabledSubsystem1_Start
+                0x0000000048041fa0                BallAndPlateM_EnabledSubsystem1
+                0x0000000048042000                BallAndPlateMeasurement_output
+                0x0000000048042b60                BallAndPlateMeasurement_derivatives
+                0x0000000048042bf0                BallAndPlateMeasurement_update
+                0x0000000048042de0                BallAndPlateMeasurement_initialize
+                0x0000000048043060                BallAndPlateMeasurement_terminate
+ .text          0x0000000048043150        0x0 BallAndPlateMeasurement_data.o07
+ .text          0x0000000048043150      0x254 BallAndPlateMeasurement_trc_ptr.o07
+                0x0000000048043370                BallAndPlateMeasurement_rti_init_trc_pointers
+ *fill*         0x00000000480433a4        0xc 00000000
+ .text          0x00000000480433b0      0x774 rti_sim_engine.o07
+                0x0000000048043ab0                rtk_idle_function
+                0x0000000048043ac0                rti_th_timertask1_trigger_source
+                0x0000000048043b10                initConditions
+                0x0000000048043b20                initVariables
+ *fill*         0x0000000048043b24        0xc 00000000
+ .text.startup  0x0000000048043b30      0x9b0 rti_sim_engine.o07
+                0x0000000048043b30                main
+ .text          0x00000000480444e0       0x40 rti_init_c.o07
+                0x00000000480444e0                rti_init
+ .text          0x0000000048044520       0x44 rt_sim.o07
+                0x0000000048044520                rt_SimInitTimingEngine
+                0x0000000048044550                rt_SimGetNextSampleHit
+                0x0000000048044560                rt_SimUpdateDiscreteTaskSampleHits
+ *fill*         0x0000000048044564        0xc 00000000
+ .text          0x0000000048044570       0xd4 rti_assert.o07
+                0x0000000048044570                rti_assertion_handler
+                0x0000000048044600                rti_assertion_mode_msg
+ *fill*         0x0000000048044644        0xc 00000000
+ .text          0x0000000048044650       0xf8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+                0x0000000048044650                rt_ZCFcn
+ *fill*         0x0000000048044748        0x8 00000000
+ .text          0x0000000048044750     0x13e8 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                0x0000000048044750                MPC_Controller_Reset
+                0x00000000480448e0                MPC_Controller_Init
+                0x00000000480448f0                MPC_Controller_Enable
+                0x0000000048044910                MPC_Controller
+                0x0000000048045610                MPC_Controller_Update
+                0x00000000480457f0                MPC_Controller_Deriv
+                0x0000000048045a50                MPC_Controller_initialize
+ .text          0x0000000048045b38       0xd4 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller_trc_ptr.o07)
+                0x0000000048045bd8                MPC_Controller_rti_init_trc_pointers
+ .text          0x0000000048045c0c        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a(RtVersion.o)
+ *fill*         0x0000000048045c0c        0x4 00000000
+ .text          0x0000000048045c10        0x4 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+                0x0000000048045c10                DsEesPort_init()
+ .text          0x0000000048045c14       0x20 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+                0x0000000048045c14                pow
+ .text          0x0000000048045c34      0x85c C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+                0x0000000048045c34                __ieee754_pow
+ .text          0x0000000048046490      0x188 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+                0x0000000048046490                scalbn
+ *fill*         0x0000000048046618        0x8 00000000
+ .text          0x0000000048046620      0x3ac C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+                0x0000000048046620                mpcblock_optimizer_MZGS51U5
+ *fill*         0x00000000480469cc        0x4 00000000
+ .text          0x00000000480469d0      0x104 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+                0x00000000480469d0                norm_LhMafmO5
+ *fill*         0x0000000048046ad4        0xc 00000000
+ .text          0x0000000048046ae0      0xff8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+                0x0000000048046ae0                qpkwik_0SXhTG2l
+ *fill*         0x0000000048047ad8        0x8 00000000
+ .text          0x0000000048047ae0      0x158 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+                0x0000000048047ae0                rt_InitInfAndNaN
+                0x0000000048047b40                rtIsInf
+                0x0000000048047b70                rtIsInfF
+                0x0000000048047ba0                rtIsNaN
+                0x0000000048047bf0                rtIsNaNF
+ *fill*         0x0000000048047c38        0x8 00000000
+ .text          0x0000000048047c40       0x68 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+                0x0000000048047c40                Unconstrained_pfLiBGge
+ *fill*         0x0000000048047ca8        0x8 00000000
+ .text          0x0000000048047cb0       0x24 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_oJBxPfCB.lo07)
+                0x0000000048047cb0                abs_oJBxPfCB
+ *fill*         0x0000000048047cd4        0xc 00000000
+ .text          0x0000000048047ce0       0x24 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_Q4WBpOCK.lo07)
+                0x0000000048047ce0                abs_Q4WBpOCK
+ *fill*         0x0000000048047d04        0xc 00000000
+ .text          0x0000000048047d10       0xa8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+                0x0000000048047d10                DropConstraint_GGdZuLpU
+ *fill*         0x0000000048047db8        0x8 00000000
+ .text          0x0000000048047dc0      0x65c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+                0x0000000048047dc0                KWIKfactor_Os2prYix
+ *fill*         0x000000004804841c        0x4 00000000
+ .text          0x0000000048048420       0x90 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+                0x0000000048048420                norm_T31T6Ex4
+ .text          0x00000000480484b0      0x23c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+                0x00000000480484b0                qr_Mdli9kTI
+ *fill*         0x00000000480486ec        0x4 00000000
+ .text          0x00000000480486f0       0x5c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+                0x00000000480486f0                rtGetInf
+                0x0000000048048710                rtGetInfF
+                0x0000000048048720                rtGetMinusInf
+                0x0000000048048740                rtGetMinusInfF
+ *fill*         0x000000004804874c        0x4 00000000
+ .text          0x0000000048048750       0x3c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+                0x0000000048048750                rtGetNaN
+                0x0000000048048780                rtGetNaNF
+ *fill*         0x000000004804878c        0x4 00000000
+ .text          0x0000000048048790       0x5c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07)
+                0x0000000048048790                xgeqrf_aDtAf4yk
+ *fill*         0x00000000480487ec        0x4 00000000
+ .text          0x00000000480487f0      0x1d4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+                0x00000000480487f0                xzlarf_VoIoZC7x
+ *fill*         0x00000000480489c4        0xc 00000000
+ .text          0x00000000480489d0      0x16c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+                0x00000000480489d0                qrf_NM7TTEki
+ *fill*         0x0000000048048b3c        0x4 00000000
+ .text          0x0000000048048b40       0xfc C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+                0x0000000048048b40                xgemv_fDLSZhfe
+ *fill*         0x0000000048048c3c        0x4 00000000
+ .text          0x0000000048048c40       0xb4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+                0x0000000048048c40                xgerc_dwhocZxI
+ *fill*         0x0000000048048cf4        0xc 00000000
+ .text          0x0000000048048d00      0x29c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+                0x0000000048048d00                xzlarfg_dR27mKH9
+ *fill*         0x0000000048048f9c        0x4 00000000
+ .text          0x0000000048048fa0       0xd4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+                0x0000000048048fa0                rt_hypotd_snf
+ *fill*         0x0000000048049074        0xc 00000000
+ .text          0x0000000048049080       0xf4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+                0x0000000048049080                xnrm2_bUROcnUY
+ .text          0x0000000048049174       0x94 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+ .text          0x0000000048049208        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+ *(.gnu.warning)
+ *(.glink)
+ .glink         0x0000000048049208        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.fini           0x0000000048049208       0x20
+ *(.fini)
+ .fini          0x0000000048049208        0xc C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+                0x0000000048049208                _fini
+ .fini          0x0000000048049214        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .fini          0x0000000048049218       0x10 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+                [!provide]                        PROVIDE (__etext, .)
+                0x0000000048049228                PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata         0x0000000048049228     0xc210
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000048049228        0x4 BallAndPlateMeasurement.o07
+                0x0000000048049228                BallAndPlateMeasurement_M
+ .rodata.cst4   0x000000004804922c       0x10 BallAndPlateMeasurement.o07
+ *fill*         0x000000004804923c        0x4 
+ .rodata.cst8   0x0000000048049240        0x8 BallAndPlateMeasurement.o07
+ .rodata.str1.4
+                0x0000000048049248        0x5 BallAndPlateMeasurement.o07
+ *fill*         0x000000004804924d        0x3 
+ .rodata        0x0000000048049250        0xc rti_sim_engine.o07
+                0x0000000048049250                rtiDataSetStorageEnabled
+                0x0000000048049254                p_dsts_sum_of_reset_time
+                0x0000000048049258                p_msg_last_error_no
+ .rodata.cst4   0x000000004804925c        0x4 rti_sim_engine.o07
+                                          0x8 (size before relaxing)
+ .rodata.cst8   0x0000000048049260        0x8 rti_sim_engine.o07
+ .rodata.str1.4
+                0x0000000048049260      0x314 rti_sim_engine.o07
+ .rodata.cst4   0x0000000048049574        0x4 rt_sim.o07
+                                          0x8 (size before relaxing)
+ .rodata.str1.4
+                0x0000000048049578       0x71 rt_sim.o07
+ *fill*         0x00000000480495e9        0x3 
+ .rodata.str1.4
+                0x00000000480495ec       0x70 rti_assert.o07
+                                         0x6d (size before relaxing)
+ .rodata        0x000000004804965c       0x13 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ .rodata.cst4   0x000000004804966f        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ *fill*         0x000000004804966f        0x1 
+ .rodata        0x0000000048049670     0xbbe0 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+ .rodata.cst4   0x0000000048055250        0x4 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                                         0x14 (size before relaxing)
+ *fill*         0x0000000048055254        0x4 
+ .rodata.cst8   0x0000000048055258       0x38 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                                         0x40 (size before relaxing)
+ .rodata        0x0000000048055290       0x30 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .rodata.cst4   0x00000000480552c0        0x8 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .rodata.cst8   0x00000000480552c8       0xe8 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .rodata.cst8   0x00000000480553b0       0x30 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+ .rodata.cst4   0x00000000480553e0        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .rodata.cst8   0x00000000480553e0        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .rodata.cst4   0x00000000480553e8        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .rodata.cst8   0x00000000480553e8       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .rodata.cst4   0x00000000480553f8        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+                                         0x10 (size before relaxing)
+ *fill*         0x00000000480553fc        0x4 
+ .rodata.cst8   0x0000000048055400       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+                                         0x18 (size before relaxing)
+ .rodata.cst4   0x0000000048055410        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+ .rodata.cst4   0x0000000048055410        0xc C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .rodata.cst8   0x0000000048055410        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .rodata.cst4   0x0000000048055410        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .rodata.cst8   0x0000000048055410        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .rodata.cst4   0x0000000048055410        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+ .rodata.cst4   0x0000000048055410        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+ .rodata.cst4   0x0000000048055418        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+ .rodata.cst4   0x000000004805541c        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+ .rodata.cst4   0x000000004805541c        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+ .rodata.cst4   0x000000004805541c        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+ .rodata.cst4   0x000000004805541c        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+ .rodata.cst4   0x000000004805541c        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ *fill*         0x000000004805541c        0x4 
+ .rodata.cst8   0x0000000048055420       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ .rodata.cst4   0x0000000048055430        0x4 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .rodata.cst8   0x0000000048055430        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .rodata.cst4   0x0000000048055438        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+ .rodata.cst8   0x0000000048055438        0x8 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2         0x0000000048055438        0x0
+                0x0000000000008000                PROVIDE (_SDA2_BASE_, 0x8000)
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+ .sdata2        0x0000000048055438        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr   0x0000000048055438       0x14
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x0000000048055438       0x14 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+
+.eh_frame       0x000000004805544c       0x2c
+ *(.eh_frame)
+ .eh_frame      0x000000004805544c        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ .eh_frame      0x000000004805544c        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .eh_frame      0x000000004805544c       0x28 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+ .eh_frame      0x0000000048055474        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x0000000048055478                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x0000000048056478                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000048056478        0x0
+                0x0000000048056478                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000048056478                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000048056478        0x0
+                0x0000000048056478                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x0000000048056478                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000048056478        0x0
+                0x0000000048056478                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x0000000048056478                PROVIDE (__fini_array_end, .)
+
+.ctors          0x0000000048056478        0x8
+ *crtbegin.o(.ctors)
+ .ctors         0x0000000048056478        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x000000004805647c        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+
+.dtors          0x0000000048056480        0x8
+ *crtbegin.o(.dtors)
+ .dtors         0x0000000048056480        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x0000000048056484        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+                0x0000000048056484                __DTOR_END__
+
+.jcr            0x0000000048056488        0x4
+ *(.jcr)
+ .jcr           0x0000000048056488        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .jcr           0x0000000048056488        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.fixup
+ *(.fixup)
+
+.got1
+ *(.got1)
+
+.got2
+ *(.got2)
+
+.dynamic        0x000000004805648c      0x100
+ *(.dynamic)
+ .dynamic       0x000000004805648c      0x100 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x000000004805648c                _DYNAMIC
+
+.got
+ *(.got)
+                0x000000004805658c                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.plt
+ *(.plt)
+
+.data           0x0000000048056590      0xdf4
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000048056590        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ .data          0x0000000048056590        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+ .data          0x0000000048056590        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .data.rel.local
+                0x0000000048056590        0x4 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+                0x0000000048056590                __dso_handle
+ .data          0x0000000048056594        0x0 BallAndPlateMeasurement.o07
+ *fill*         0x0000000048056594        0x4 
+ .data          0x0000000048056598      0x220 BallAndPlateMeasurement_data.o07
+                0x0000000048056598                BallAndPlateMeasurement_P
+                0x0000000048056778                rtP_numc_mi
+                0x0000000048056790                rtP_denc_mi
+                0x00000000480567a8                rtP_UseUserDefinedPlateReference
+                0x00000000480567b0                rtP_UseUserDefinedBallReference
+ .data          0x00000000480567b8        0x0 BallAndPlateMeasurement_trc_ptr.o07
+ .data          0x00000000480567b8       0x14 rti_sim_engine.o07
+                0x00000000480567b8                simState
+                0x00000000480567c8                lastSimState
+ .data          0x00000000480567cc        0x0 rti_init_c.o07
+ .data          0x00000000480567cc        0x0 rt_sim.o07
+ .data          0x00000000480567cc        0x0 rti_assert.o07
+ .data          0x00000000480567cc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ *fill*         0x00000000480567cc        0x4 
+ .data          0x00000000480567d0      0xba8 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                0x00000000480567d0                MPC_Controller_P_g
+ .data          0x0000000048057378        0x0 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller_trc_ptr.o07)
+ .data          0x0000000048057378        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a(RtVersion.o)
+ .data          0x0000000048057378        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+ .data.rel      0x0000000048057378        0xc C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+                0x0000000048057378                p_xilapi_eesport_errorswitching_uint32_T
+                0x000000004805737c                p_xilapi_eesport_erroractivated_uint32_T
+                0x0000000048057380                p_xilapi_eesport_activeerrorset_uint32_T
+ .data          0x0000000048057384        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+ .data          0x0000000048057384        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .data          0x0000000048057384        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_oJBxPfCB.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_Q4WBpOCK.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .data          0x0000000048057384        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+ .data          0x0000000048057384        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+ .data          0x0000000048057384        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+
+.tm_clone_table
+                0x0000000048057384        0x0
+ .tm_clone_table
+                0x0000000048057384        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ .tm_clone_table
+                0x0000000048057384        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+
+.data1
+ *(.data1)
+
+.got            0x0000000048057384       0x54
+ *(.got)
+ .got           0x0000000048057384       0x54 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x00000000480573cc                _GLOBAL_OFFSET_TABLE_
+
+.sdata          0x00000000480573d8        0x0
+                0x0000000000008000                PROVIDE (_SDA_BASE_, 0x8000)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000000480573d8        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x00000000480573d8                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x00000000480573d8                __bss_start = .
+
+.sbss           0x00000000480573d8        0x0
+                [!provide]                        PROVIDE (__sbss_start, .)
+                [!provide]                        PROVIDE (___sbss_start, .)
+ *(.dynsbss)
+ .dynsbss       0x00000000480573d8        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end, .)
+                [!provide]                        PROVIDE (___sbss_end, .)
+
+.plt            0x00000000480573d8      0x4e0
+ *(.plt)
+ .plt           0x00000000480573d8      0x4e0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x0000000048057420                DsIoEth_getLinkState
+                0x0000000048057428                ts_reset
+                0x0000000048057430                __register_frame_info
+                0x0000000048057438                DioCl2EncoderIn_create
+                0x0000000048057440                msg_error_clear
+                0x0000000048057448                dsrtt_set_current_time
+                0x0000000048057450                sqrt
+                0x0000000048057458                DsIoEth_recvfrom
+                0x0000000048057460                DioCl2EncoderIn_read
+                0x0000000048057468                rtk_current_task_absolute_time_ptr_get
+                0x0000000048057470                DsTimeSync_simstateRun
+                0x0000000048057478                DacCl1AnalogOut_create
+                0x0000000048057480                DioCl2EncoderIn_setEncPosition
+                0x0000000048057488                DioCl2EncoderIn_stop
+                0x0000000048057490                memcpy
+                0x0000000048057498                rtk_setup_temp_overrun_handling
+                0x00000000480574a0                DsIoEth_close
+                0x00000000480574a8                DsIoEth_open
+                0x00000000480574b0                DsIoEth_setAddrFilter
+                0x00000000480574b8                DioCl2EncoderIn_setIndexMode
+                0x00000000480574c0                DsIoEth_setNetMask
+                0x00000000480574c8                SrtkIntBase_requestTaskMode
+                0x00000000480574d0                rtk_reset_tasks
+                0x00000000480574d8                __cxa_finalize
+                0x00000000480574e0                _init_array
+                0x00000000480574e8                rtk_set_task_type
+                0x00000000480574f0                DsTimeSync_baserate
+                0x00000000480574f8                rtk_task_name_set
+                0x0000000048057500                DioCl2EncoderIn_write
+                0x0000000048057508                DacCl1AnalogOut_apply
+                0x0000000048057510                dsrtt_script_service_post_computation
+                0x0000000048057518                rtk_create_task
+                0x0000000048057520                msg_warning_printf
+                0x0000000048057528                msg_last_error_number
+                0x0000000048057530                DioCl2EncoderIn_start
+                0x0000000048057538                dsparam_copy_data_set
+                0x0000000048057540                SrtkPreload_preloadRegion
+                0x0000000048057548                msg_error_set
+                0x0000000048057550                rtk_enable_services
+                0x0000000048057558                SrtkDaq_Init
+                0x0000000048057560                rtk_task_task_calls_get
+                0x0000000048057568                DsTimeSync_setCurrentTimePtr
+                0x0000000048057570                SrtkIntBase_enableIntGlobal
+                0x0000000048057578                DsIoEth_getIpAddress
+                0x0000000048057580                DacCl1AnalogOut_write
+                0x0000000048057588                rtk_overrun_flag_clear
+                0x0000000048057590                rtk_bind_interrupt
+                0x0000000048057598                DacCl1AnalogOut_stop
+                0x00000000480575a0                _init_libc
+                0x00000000480575a8                DioCl2EncoderIn_setGatedMode
+                0x00000000480575b0                dsrtt_init
+                0x00000000480575b8                SrtkApp_terminate
+                0x00000000480575c0                DioCl2EncoderIn_setMaxPosition
+                0x00000000480575c8                DioCl2EncoderIn_setMinPosition
+                0x00000000480575d0                msg_info_set
+                0x00000000480575d8                DsIoEth_setIpAddress
+                0x00000000480575e0                dsrtt_script_service_pre_computation
+                0x00000000480575e8                DacCl1AnalogOut_start
+                0x00000000480575f0                msg_error_printf
+                0x00000000480575f8                DsIoEth_setGatewayAddress
+                0x0000000048057600                DioCl2EncoderIn_setEncPosValidity
+                0x0000000048057608                memset
+                0x0000000048057610                _Sin
+                0x0000000048057618                DioCl2EncoderIn_getEncPosition
+                0x0000000048057620                rtk_leave_idle_mode
+                0x0000000048057628                __wrap_exit
+                0x0000000048057630                __wrap_atexit
+                0x0000000048057638                DioCl2EncoderIn_setMeasurementInterval
+                0x0000000048057640                DacCl1AnalogOut_setOutputValue
+                0x0000000048057648                _fini_array
+                0x0000000048057650                SrtkDaq_Background
+                0x0000000048057658                _preinit_array
+                0x0000000048057660                SrtkApp_init
+                0x0000000048057668                SrtkDaq_Service
+                0x0000000048057670                rtk_task_task_name_get
+                0x0000000048057678                SrtkSim_notifyStateTransition
+                0x0000000048057680                DioCl2EncoderIn_apply
+                0x0000000048057688                DioCl2EncoderIn_getEncVelocity
+                0x0000000048057690                msg_set
+                0x0000000048057698                DsIoEth_ntohs
+                0x00000000480576a0                DsIoEth_getPortState
+                0x00000000480576a8                rtk_get_subentry
+                0x00000000480576b0                DsIoEth_htons
+                0x00000000480576b8                dsrtt_set_step_size
+                0x00000000480576c0                rtk_enter_idle_mode
+                0x00000000480576c8                rtk_initialize
+                0x00000000480576d0                DacCl1AnalogOut_setOutputHighZ
+                0x00000000480576d8                DsIoEth_create
+                0x00000000480576e0                DsIoEth_getMgmtEvent
+                0x00000000480576e8                DioCl2EncoderIn_setEncoderLines
+                0x00000000480576f0                SrtkApp_background
+                0x00000000480576f8                rtk_default_overrun_fcn
+                0x0000000048057700                vcm_module_register
+                0x0000000048057708                DsTimeSync_simstateStop
+                0x0000000048057710                DsIoEth_setRecvFrameSize
+                0x0000000048057718                SrtkIntBase_disableIntGlobal
+                0x0000000048057720                SrtkSim_registerState
+                0x0000000048057728                __deregister_frame_info
+
+.bss            0x00000000480578b8     0x5704
+ *(.dynbss)
+ .dynbss        0x00000000480578b8       0x14 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x00000000480578b8                errno
+                0x00000000480578c0                dsts_sum_of_reseted_time
+                0x00000000480578c8                msg_last_error_no
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000480578cc        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+ .bss           0x00000000480578cc        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crti.o
+ .bss           0x00000000480578cc       0x20 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+ *fill*         0x00000000480578ec        0x4 
+ .bss           0x00000000480578f0      0x4d8 BallAndPlateMeasurement.o07
+                0x00000000480578f0                BallAndPlateMeasurement_M_
+                0x0000000048057ac8                BallAndPlateMeasurement_B
+                0x0000000048057c70                BallAndPlateMeasurement_Y
+                0x0000000048057ce0                BallAndPlateMeasurement_PrevZCX
+                0x0000000048057ce8                BallAndPlateMeasurement_DW
+                0x0000000048057d28                BallAndPlateMeasurement_X
+                0x0000000048057d88                BallAndPlateMeasurem_TimingBrdg
+ .bss           0x0000000048057dc8        0x0 BallAndPlateMeasurement_data.o07
+ .bss           0x0000000048057dc8       0x80 BallAndPlateMeasurement_trc_ptr.o07
+                0x0000000048057dc8                p_0_BallAndPlateMeasurement_real_T_0
+                0x0000000048057dcc                p_0_BallAndPlateMeasurement_uint32_T_1
+                0x0000000048057dd0                p_0_BallAndPlateMeasurement_uint16_T_2
+                0x0000000048057dd4                p_0_BallAndPlateMeasurement_uint8_T_3
+                0x0000000048057dd8                p_0_BallAndPlateMeasurement_boolean_T_4
+                0x0000000048057ddc                p_0_BallAndPlateMeasurement_real_T_5
+                0x0000000048057de0                p_0_BallAndPlateMeasurement_real_T_6
+                0x0000000048057de4                p_0_BallAndPlateMeasurement_real_T_7
+                0x0000000048057de8                p_0_BallAndPlateMeasurement_real_T_8
+                0x0000000048057dec                p_0_BallAndPlateMeasurement_real_T_9
+                0x0000000048057df0                p_0_BallAndPlateMeasurement_real_T_10
+                0x0000000048057df4                p_1_BallAndPlateMeasurement_real_T_0
+                0x0000000048057df8                p_1_BallAndPlateMeasurement_uint8_T_1
+                0x0000000048057dfc                p_1_BallAndPlateMeasurement_real_T_2
+                0x0000000048057e00                p_1_BallAndPlateMeasurement_real_T_3
+                0x0000000048057e04                p_1_BallAndPlateMeasurement_real_T_4
+                0x0000000048057e08                p_1_BallAndPlateMeasurement_real_T_5
+                0x0000000048057e0c                p_1_BallAndPlateMeasurement_real_T_6
+                0x0000000048057e10                p_1_BallAndPlateMeasurement_real_T_7
+                0x0000000048057e14                p_2_BallAndPlateMeasurement_real_T_0
+                0x0000000048057e18                p_2_BallAndPlateMeasurement_uint32_T_1
+                0x0000000048057e1c                p_2_BallAndPlateMeasurement_uint16_T_2
+                0x0000000048057e20                p_2_BallAndPlateMeasurement_boolean_T_3
+                0x0000000048057e24                p_2_BallAndPlateMeasurement_boolean_T_4
+                0x0000000048057e28                p_2_BallAndPlateMeasurement_boolean_T_5
+                0x0000000048057e2c                p_2_BallAndPlateMeasurement_boolean_T_6
+                0x0000000048057e30                p_2_BallAndPlateMeasurement_boolean_T_7
+                0x0000000048057e34                p_2_BallAndPlateMeasurement_boolean_T_8
+                0x0000000048057e38                p_3_BallAndPlateMeasurement_uint32_T_0
+                0x0000000048057e3c                p_3_BallAndPlateMeasurement_real_T_1
+                0x0000000048057e40                p_3_BallAndPlateMeasurement_uint16_T_2
+                0x0000000048057e44                p_3_BallAndPlateMeasurement_real_T_3
+ .bss           0x0000000048057e48       0x54 rti_sim_engine.o07
+                0x0000000048057e48                currentTime
+                0x0000000048057e4c                finalTime
+                0x0000000048057e50                modelStepSize
+                0x0000000048057e58                pRTIDacC1AnalogOut_Ch_1
+                0x0000000048057e5c                pRTIDacC1AnalogOut_Ch_2
+                0x0000000048057e60                pRTIDacC1AnalogOut_Ch_3
+                0x0000000048057e64                pRTIEmcEncoder_Unit_1_DioCl_2_Port_1_Ch1
+                0x0000000048057e68                pRTIEmcEncoder_Unit_2_DioCl_2_Port_1_Ch3
+                0x0000000048057e6c                pRTIEmcEncoder_Unit_3_DioCl_2_Port_1_Ch5
+                0x0000000048057e70                taskMode
+                0x0000000048057e74                pRti_TIMERA_STime
+                0x0000000048057e78                pRti_TIMERA_TTime
+                0x0000000048057e7c                pRti_TIMERA_TState
+                0x0000000048057e80                pRti_TIMERA_OType
+                0x0000000048057e84                pRti_TIMERA_OMax
+                0x0000000048057e88                pRti_TIMERA_ORpt
+                0x0000000048057e8c                pRti_TIMERA_OCnt
+                0x0000000048057e90                pRti_TIMERA_TCnt
+                0x0000000048057e94                pRti_TIMERA_Prio
+                0x0000000048057e98                rtiAssertionMode
+ .bss           0x0000000048057e9c        0x4 rti_init_c.o07
+ .bss           0x0000000048057ea0        0x0 rt_sim.o07
+ .bss           0x0000000048057ea0        0x0 rti_assert.o07
+ .bss           0x0000000048057ea0        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ .bss           0x0000000048057ea0     0x50b8 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+                0x0000000048057ea0                MPC_Controller_DW
+                0x0000000048057f70                MPC_Controller_MdlrefDW
+                0x0000000048057f88                MPC_Controller_TimingBrdg
+                0x0000000048057f8c                MPC_Controller_GlobalTID
+                0x0000000048057f98                MPC_Controller_B
+ .bss           0x000000004805cf58       0x20 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller_trc_ptr.o07)
+                0x000000004805cf58                p_0_MPC_Controller_real_T_0
+                0x000000004805cf5c                p_0_MPC_Controller_boolean_T_1
+                0x000000004805cf60                p_2_MPC_Controller_real_T_0
+                0x000000004805cf64                p_2_MPC_Controller_uint16_T_1
+                0x000000004805cf68                p_2_MPC_Controller_boolean_T_2
+                0x000000004805cf6c                p_3_MPC_Controller_real_T_0
+                0x000000004805cf70                p_3_MPC_Controller_int32_T_1
+                0x000000004805cf74                p_3_MPC_Controller_boolean_T_2
+ .bss           0x000000004805cf78        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a(RtVersion.o)
+ .bss           0x000000004805cf78       0x14 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+                0x000000004805cf78                xilapi_eesport_trigger_uint32_T
+                0x000000004805cf7c                xilapi_eesport_flags_uint32_T
+                0x000000004805cf80                xilapi_eesport_errorswitching_uint32_T
+                0x000000004805cf84                xilapi_eesport_erroractivated_uint32_T
+                0x000000004805cf88                xilapi_eesport_activeerrorset_uint32_T
+ .bss           0x000000004805cf8c        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+ .bss           0x000000004805cf8c        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .bss           0x000000004805cf8c        0x0 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+ .bss           0x000000004805cf8c        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .bss           0x000000004805cf8c        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .bss           0x000000004805cf8c        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+ *fill*         0x000000004805cf8c        0x4 
+ .bss           0x000000004805cf90       0x2c C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+                0x000000004805cf90                rtNaN
+                0x000000004805cf98                rtNaNF
+                0x000000004805cfa0                rtInf
+                0x000000004805cfa8                rtInfF
+                0x000000004805cfb0                rtMinusInf
+                0x000000004805cfb8                rtMinusInfF
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_oJBxPfCB.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_Q4WBpOCK.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .bss           0x000000004805cfbc        0x0 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+ .bss           0x000000004805cfbc        0x0 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+ .bss           0x000000004805cfbc        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crtn.o
+ *(COMMON)
+                0x000000004805cfbc                . = ALIGN ((. != 0x0)?0x4:0x1)
+
+.iplt           0x000000004805cfc0        0x0
+ .iplt          0x000000004805cfc0        0x0 C:\ProgramData\dSPACE\A8EFD7E5-F405-47E4-9A8A-DE544031D1F0\Compiler\QNX650_520\target\qnx6/ppcbe/lib/crt1.o
+                0x000000004805cfc0                . = ALIGN (0x4)
+                0x000000004805cfc0                . = ALIGN (0x4)
+                0x000000004805cfc0                __end = .
+                0x000000004805cfc0                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x000000004805cfc0                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x47
+ *(.comment)
+ .comment       0x0000000000000000       0x11 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtbegin.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 BallAndPlateMeasurement.o07
+ .comment       0x0000000000000011       0x12 BallAndPlateMeasurement_data.o07
+ .comment       0x0000000000000011       0x12 BallAndPlateMeasurement_trc_ptr.o07
+ .comment       0x0000000000000011       0x12 rti_sim_engine.o07
+ .comment       0x0000000000000011       0x12 rti_init_c.o07
+ .comment       0x0000000000000011       0x12 rt_sim.o07
+ .comment       0x0000000000000011       0x12 rti_assert.o07
+ .comment       0x0000000000000011       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ .comment       0x0000000000000011       0x12 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+ .comment       0x0000000000000011       0x12 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller_trc_ptr.o07)
+ .comment       0x0000000000000011       0x12 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtversion.a(RtVersion.o)
+ .comment       0x0000000000000011       0x12 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/librtglobals.a(DsEESPort.o)
+ .comment       0x0000000000000011       0x12 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+ .comment       0x0000000000000023       0x12 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .comment       0x0000000000000035       0x12 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(Unconstrained_pfLiBGge.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_oJBxPfCB.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(abs_Q4WBpOCK.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgeqrf_aDtAf4yk.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgemv_fDLSZhfe.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .comment       0x0000000000000047       0x12 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+ .comment       0x0000000000000047       0x12 c:/programdata/dspace/a8efd7e5-f405-47e4-9a8a-de544031d1f0/compiler/qnx650_520/host/win32/x86/usr/bin/../lib/gcc/powerpc-unknown-nto-qnx6.5.0/5.2.0/crtend.o
+
+.PPC.EMB.apuinfo
+                0x0000000000000000       0x18
+ .PPC.EMB.apuinfo
+                0x0000000000000000       0x18 BallAndPlateMeasurement.o07
+ .PPC.EMB.apuinfo
+                0x0000000000000018       0x18 rti_sim_engine.o07
+ .PPC.EMB.apuinfo
+                0x0000000000000030       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ .PPC.EMB.apuinfo
+                0x0000000000000048       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .PPC.EMB.apuinfo
+                0x0000000000000060       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+ .PPC.EMB.apuinfo
+                0x0000000000000078       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+ .PPC.EMB.apuinfo
+                0x0000000000000090       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(DropConstraint_GGdZuLpU.lo07)
+ .PPC.EMB.apuinfo
+                0x00000000000000a8       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .PPC.EMB.apuinfo
+                0x00000000000000c0       0x18 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.gnu.attributes
+                0x0000000000000000       0x14
+ *(.gnu.attributes)
+ .gnu.attributes
+                0x0000000000000000       0x10 BallAndPlateMeasurement.o07
+ .gnu.attributes
+                0x0000000000000010       0x10 rti_sim_engine.o07
+ .gnu.attributes
+                0x0000000000000020       0x10 rt_sim.o07
+ .gnu.attributes
+                0x0000000000000030       0x10 rti_assert.o07
+ .gnu.attributes
+                0x0000000000000040       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_zcfcn.lo07)
+ .gnu.attributes
+                0x0000000000000050       0x10 ../slprj/rti1202/MPC_Controller/MPC_Controller_rtwlib.lib(MPC_Controller.o07)
+ .gnu.attributes
+                0x0000000000000060       0x14 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(w_pow.o)
+ .gnu.attributes
+                0x0000000000000074       0x14 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(e_pow.o)
+ .gnu.attributes
+                0x0000000000000088       0x14 C:\Program Files\dSPACE RCPHIL 2020-B\DS1202\Lib/libm_fastpow.a(s_scalbn.o)
+ .gnu.attributes
+                0x000000000000009c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(mpcblock_optimizer_MZGS51U5.lo07)
+ .gnu.attributes
+                0x00000000000000ac       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_LhMafmO5.lo07)
+ .gnu.attributes
+                0x00000000000000bc       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qpkwik_0SXhTG2l.lo07)
+ .gnu.attributes
+                0x00000000000000cc       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_nonfinite.lo07)
+ .gnu.attributes
+                0x00000000000000dc       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(KWIKfactor_Os2prYix.lo07)
+ .gnu.attributes
+                0x00000000000000ec       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(norm_T31T6Ex4.lo07)
+ .gnu.attributes
+                0x00000000000000fc       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qr_Mdli9kTI.lo07)
+ .gnu.attributes
+                0x000000000000010c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetInf.lo07)
+ .gnu.attributes
+                0x000000000000011c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rtGetNaN.lo07)
+ .gnu.attributes
+                0x000000000000012c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarf_VoIoZC7x.lo07)
+ .gnu.attributes
+                0x000000000000013c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(qrf_NM7TTEki.lo07)
+ .gnu.attributes
+                0x000000000000014c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xgerc_dwhocZxI.lo07)
+ .gnu.attributes
+                0x000000000000015c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xzlarfg_dR27mKH9.lo07)
+ .gnu.attributes
+                0x000000000000016c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(rt_hypotd_snf.lo07)
+ .gnu.attributes
+                0x000000000000017c       0x10 C:/Users/20201073/Documents/MATLAB/Experiments/SC-integration-project/Experiments/slprj/rti1202/_sharedutils/rtwshared.lib(xnrm2_bUROcnUY.lo07)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+OUTPUT(BallAndPlateMeasurement.ppc elf32-powerpc)

@@ -1,0 +1,34 @@
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[0]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+	 alias:   "denc_mi"
+	 flags:   PARAM
+	}
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[3]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+	 alias:   "numc_mi"
+	 flags:   PARAM
+	}
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+group "RTT Dynamic Variables"
+
+endgroup
+
