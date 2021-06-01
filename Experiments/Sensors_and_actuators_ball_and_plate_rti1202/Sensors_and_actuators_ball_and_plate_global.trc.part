@@ -1,0 +1,43 @@
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[0]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "I_0"
+	 flags:   PARAM
+	}
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[1]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col*
+	 alias:   "ballLQRgain"
+	 flags:   PARAM
+	}
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[9]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col*
+	 alias:   "plateLQRgain"
+	 flags:   PARAM
+	}
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+group "State Machine Data"
+
+
+endgroup
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+group "RTT Dynamic Variables"
+
+endgroup
+

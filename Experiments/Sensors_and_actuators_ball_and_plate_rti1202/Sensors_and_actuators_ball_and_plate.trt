@@ -1,0 +1,5341 @@
+-- ****************************************************************************
+--
+--  Trace file: Sensors_and_actuators_ball_and_plate.trc
+--
+--  RTI1202 7.15 (02-Nov-2020)
+--  Tue Jun  1 18:16:27 2021
+--
+--  Copyright 2021, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+--
+--  Trace file format: 3
+
+-- ******** Keywords **********************************************************
+-- _application "Sensors_and_actuators_ball_and_plate.map"
+
+_genname     "RTI"
+_genversion  "7.15"
+_gendate     "06/01/2021 18:16:30"
+_description ""
+_author      "RTI1202 7.15 (02-Nov-2020)"
+_model       "Sensors_and_actuators_ball_and_plate"
+
+-- Default data type formats
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+-- No Data Capture blocks within model: use base sample time as sampling period
+sampling_period[0]
+{
+  value:       0.001
+  alias:       "HostService"
+  increment:   0.001
+  unit:        "s"
+}
+
+
+
+
+-- Type definitions for arrays
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4 flt(64,IEEE)[4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2 flt(64,IEEE)[2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6 flt(64,IEEE)[6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3 flt(64,IEEE)[3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col col flt(64,IEEE)[4][2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col col flt(64,IEEE)[4][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col col flt(64,IEEE)[6][3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col col flt(64,IEEE)[6][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT7_3 uint(32)[3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT1_4_4_Col col flt(32,IEEE)[4][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT1_6_6_Col col flt(32,IEEE)[6][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT3_32 uint(8)[32]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT3_4 uint(8)[4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col col flt(64,IEEE)[2][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col col flt(64,IEEE)[3][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2_2_Col col flt(64,IEEE)[2][2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3_3_Col col flt(64,IEEE)[3][3]
+
+
+-- ******** Simulation control variables **************************************
+
+finalTime
+{
+ type:  flt(64,IEEE)*
+ alias: "finalTime"
+ desc:  "Simulation stop time. When reached, simState switches to STOP."
+ flags:  READONLY
+ unit:  "s"
+}
+
+currentTime
+{
+ type:  flt(64,IEEE)*
+ alias: "currentTime"
+ desc:  "Current simulation time. Increments with execution of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+modelStepSize
+{
+ type:  flt(64,IEEE)
+ alias: "modelStepSize"
+ desc:  "Fixed step size of the model, sample time of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+simState
+{
+ type:  int(32)
+ alias: "simState"
+ desc:  "Simulation state: STOP=0 RUN=2"
+ unit:  "-"
+}
+
+p_msg_last_error_no
+{
+ type:  uint(32)*
+ alias: "errorNumber"
+ desc:  "Error number of last error message (zero if no error)."
+ unit:  "-"
+ flags: READONLY
+}
+
+p_dsts_sum_of_reset_time
+{
+ type:  flt(64,IEEE)*
+ alias: "sumOfResetTime"
+ desc:  "Internal variable for summing up reset time."
+ unit:  "s"
+ flags: READONLY|HIDDEN
+}
+
+
+-- ******** Task Information variables ****************************************
+group "Task Info"
+{
+ 
+}
+  group "Timer Task 1"
+  {
+   
+  }
+
+  pRti_TIMERA_STime
+  {
+   type:  flt(64,IEEE)*
+   alias: "sampleTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TTime
+  {
+   type:  flt(64,IEEE)*
+   alias: "turnaroundTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TState
+  {
+   type:  int(32)*
+   alias: "state"
+   flags: READONLY
+  }
+  pRti_TIMERA_OType
+  {
+   type:  int(32)*
+   alias: "overrunCheckType"
+   flags: READONLY
+  }
+  pRti_TIMERA_OMax
+  {
+   type:  int(32)*
+   alias: "overrunQueueMax"
+   flags: READONLY
+  }
+  pRti_TIMERA_ORpt
+  {
+   type:  int(32)*
+   alias: "overrunQueueCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_OCnt
+  {
+   type:  int(32)*
+   alias: "overrunCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_TCnt
+  {
+   type:  flt(64,IEEE)*
+   alias: "taskCallCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_Prio
+  {
+   type:  int(32)*
+   alias: "priority"
+   flags: READONLY
+  }
+  endgroup
+
+
+endgroup
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Init" -- block-group
+	{
+	 block: "Inport"
+	}
+		p_1_Sensors_and_actuators_ball_and_plate_boolean_T_0[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Init"
+
+	group "Init1" -- block-group
+	{
+	 block: "Inport"
+	}
+		p_1_Sensors_and_actuators_ball_and_plate_boolean_T_0[1]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Init1"
+
+	group "Init2" -- block-group
+	{
+	 block: "Inport"
+	}
+		p_1_Sensors_and_actuators_ball_and_plate_boolean_T_0[2]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Init2"
+
+	group "Xpos\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint16_T_0[0]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Xpos\n"
+
+	group "Ypos\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint16_T_0[1]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Ypos\n"
+
+	group "Status\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Status\n"
+
+	group "Frames\n" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Frames\n"
+
+	group "I_A" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[50]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "I_A"
+
+	group "I_B" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[51]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "I_B"
+
+	group "I_C" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[52]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "I_C"
+
+	group "Xpos_m" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Xpos_m"
+
+	group "Ypos_m" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Ypos_m"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[68]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Constant10" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[95]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant10"
+
+	group "Constant13" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[83]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant13"
+
+	group "Constant14" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[84]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant14"
+
+	group "Constant2" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[93]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant2"
+
+	group "Constant3" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[77]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant3"
+
+	group "Constant4" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[82]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant4"
+
+	group "Constant7" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[97]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant7"
+
+	group "Constant8" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[85]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant8"
+
+	group "Constant9" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		trcref0_I_0
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "I_0"
+		 alias:    "I_0"
+		}
+		trcref0_Value
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "I_0"
+		 alias:    "Value"
+		 flags:    DEPRECATED|HIDDEN
+		}
+
+
+	endgroup -- block-group "Constant9"
+
+	group "Data Type Conversion" -- block-group
+	{
+	 block: "DataTypeConversion"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Data Type Conversion"
+
+	group "Display" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display"
+
+	group "Display1" -- block-group
+	{
+	 block: "Display"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display1"
+
+	group "Display2" -- block-group
+	{
+	 block: "Display"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display2"
+
+	group "Display3" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[36]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_4*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display3"
+
+	group "Display4" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint16_T_3[0]
+		{
+		 type:    uint(16)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display4"
+
+	group "Display5" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[32]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_4*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display5"
+
+	group "Display6" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint32_T_1[1]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT7_3*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display6"
+
+	group "Display7" -- block-group
+	{
+	 block: "Display"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[0]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_32*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Display7"
+
+	group "Gain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[94]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gain"
+
+	group "Gain1" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint16_T_3[2]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_uint8_T_2[1]
+		{
+		 type:    uint(8)*
+		 alias:   "Gain"
+		 desc:    "Uniform Fixed-Point"
+		 scale:   [2^1, 0.0]
+		 bitmask: 0:7
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gain1"
+
+	group "Gain2" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_uint16_T_3[1]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_uint8_T_2[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Gain"
+		 desc:    "Uniform Fixed-Point"
+		 scale:   [2^1, 0.0]
+		 bitmask: 0:7
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gain2"
+
+	group "Gain3" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[44]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		trcref0_plateLQRgain
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "plateLQRgain"
+		 alias:    "plateLQRgain"
+		}
+		trcref0_Gain
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "plateLQRgain"
+		 alias:    "Gain"
+		 flags:    DEPRECATED|HIDDEN
+		}
+
+
+	endgroup -- block-group "Gain3"
+
+	group "Gain4" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[18]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		trcref0_ballLQRgain
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "ballLQRgain"
+		 alias:    "ballLQRgain"
+		}
+		trcref0_Gain
+		{
+		 refgroup: "/Tunable Parameters"
+		 refvar:   "ballLQRgain"
+		 alias:    "Gain"
+		 flags:    DEPRECATED|HIDDEN
+		}
+
+
+	endgroup -- block-group "Gain4"
+
+	group "Gain5" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[96]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gain5"
+
+	group "Gain6" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[47]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[92]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Gain6"
+
+	group "Sine Wave" -- block-group
+	{
+	 block: "Sin"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[73]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Amplitude"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[74]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Bias"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Frequency"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[76]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Phase"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Sine Wave"
+
+	group "Sine Wave1" -- block-group
+	{
+	 block: "Sin"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[78]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Amplitude"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[79]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Bias"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[80]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Frequency"
+		 flags:   PARAM
+		}
+		p_2_Sensors_and_actuators_ball_and_plate_real_T_0[81]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Phase"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Sine Wave1"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint16_T_0[0]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add"
+
+	group "Add1" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_6_Sensors_and_actuators_ball_and_plate_uint16_T_0[1]
+		{
+		 type:    uint(16)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add1"
+
+	group "Add2" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[55]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add2"
+
+	group "Add3" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[56]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add3"
+
+	group "Add4" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[57]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add4"
+
+	group "Sum" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[14]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum"
+
+	group "Sum1" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[38]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum1"
+
+	group "Sum2" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[52]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum2"
+
+	group "Sum3" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[51]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum3"
+
+	group "Sum4" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[50]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum4"
+
+	group "Sum5" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[53]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum5"
+
+	group "Sum6" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[54]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Sum6"
+
+  
+  
+	group "ETHERNET_SETUP_BL1" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_uint32_T_1[1]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT7_3*
+		 alias:   "Link Status"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[36]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_4*
+		 alias:   "Local IP"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "ETHERNET_SETUP_BL1"
+  
+  
+	group "ETHERNET_UDP_RX_BL1" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[0]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_32*
+		 alias:   "Data"
+		 flags:   OUTPUT|READONLY
+		}
+		p_6_Sensors_and_actuators_ball_and_plate_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "Status"
+		 flags:   OUTPUT|READONLY
+		}
+		p_6_Sensors_and_actuators_ball_and_plate_real_T_2[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Received Frames"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_uint32_T_1[0]
+		{
+		 type:    uint(32)*
+		 alias:   "Received Bytes"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_uint8_T_4[32]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT3_4*
+		 alias:   "Remote IP"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_uint16_T_3[0]
+		{
+		 type:    uint(16)*
+		 alias:   "Remote Port"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "ETHERNET_UDP_RX_BL1"
+  
+  
+	group "ETHERNET_UDP_SETUP_BL1" -- subsystem-group
+
+
+	endgroup -- subsystem-group "ETHERNET_UDP_SETUP_BL1"
+  
+  
+	group "Kalman Filter" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[8]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+		 alias:   "xhat"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "A" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[98]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "A"
+
+		group "B" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[114]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "B"
+
+		group "C" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[122]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "C"
+
+		group "D" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[162]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_2_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "D"
+
+		group "Enable" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_boolean_T_1[0]
+			{
+			 type:    uint(8)*
+			 alias:   "Value"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Enable"
+
+		group "G" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[182]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "G"
+
+		group "H" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[198]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "H"
+
+		group "N" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[206]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "N"
+
+		group "P0" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[166]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "P0"
+
+		group "Q" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[214]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Q"
+
+		group "R" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[230]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_2_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "R"
+
+		group "X0" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[69]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "X0"
+
+		group "MemoryX" -- block-group
+		{
+		 block: "Integrator"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[4]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "MemoryX"
+
+		group "ReshapeX0" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[0]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "ReshapeX0"
+
+		group "Reshapeu" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[99]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapeu"
+
+		group "Reshapexhat" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[8]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapexhat"
+
+		group "Reshapey" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[105]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapey"
+
+  
+  
+		group "CalculatePL" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[66]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+			 alias:   "M"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+			 alias:   "L"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Z"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[74]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "P"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "CovarianceZ" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[130]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "CovarianceZ"
+
+			group "KalmanGainL" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[146]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "KalmanGainL"
+
+			group "KalmanGainM" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[154]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "KalmanGainM"
+
+  
+  
+			group "DataTypeConversionL" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionL"
+  
+  
+			group "DataTypeConversionM" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[66]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[66]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[66]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionM"
+  
+  
+			group "DataTypeConversionP" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[74]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[74]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[74]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionP"
+  
+  
+			group "DataTypeConversionZ" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionZ"
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "CalculatePL"
+  
+  
+		group "CalculateYhat" -- subsystem-group
+
+			-- Skipping output y[.]
+
+
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "CalculateYhat"
+  
+  
+		group "CovarianceOutputConfigurator" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[75]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col*
+			 alias:   "Covariance"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+
+		endgroup -- subsystem-group "CovarianceOutputConfigurator"
+  
+  
+		group "DataTypeConversionA" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionA"
+  
+  
+		group "DataTypeConversionB" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionB"
+  
+  
+		group "DataTypeConversionC" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionC"
+  
+  
+		group "DataTypeConversionD" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionD"
+  
+  
+		group "DataTypeConversionEnable" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionEnable"
+  
+  
+		group "DataTypeConversionG" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionG"
+  
+  
+		group "DataTypeConversionH" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionH"
+  
+  
+		group "DataTypeConversionN" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionN"
+  
+  
+		group "DataTypeConversionP" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[0]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_4_4_Col*
+			 alias:   "y"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[0]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_4_4_Col*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Conversion"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+
+				-- Skipping inport In1
+
+				p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[0]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_4_4_Col*
+				 alias:   "In2"
+				 flags:   READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionP"
+  
+  
+		group "DataTypeConversionP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionP0"
+  
+  
+		group "DataTypeConversionQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionQ"
+  
+  
+		group "DataTypeConversionR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionR"
+  
+  
+		group "DataTypeConversionReset" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionReset"
+  
+  
+		group "DataTypeConversionX" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[91]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "y"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[91]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Conversion"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col*
+				 alias:   "In1"
+				 flags:   READONLY
+				}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[91]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "In2"
+				 flags:   READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionX"
+  
+  
+		group "DataTypeConversionX0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionX0"
+  
+  
+		group "DataTypeConversionu" -- subsystem-group
+
+			-- Skipping output
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionu"
+  
+  
+		group "MemoryP" -- subsystem-group
+
+			-- Skipping output P_
+
+
+
+
+		endgroup -- subsystem-group "MemoryP"
+  
+  
+		group "Observer" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[111]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "x[k+1|k]"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "A[k]*xhat[k|k-1]" -- block-group
+			{
+			 block: "Product"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[95]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "A[k]*xhat[k|k-1]"
+
+			group "B[k]*u[k]" -- block-group
+			{
+			 block: "Product"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[101]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "B[k]*u[k]"
+
+			group "Reshape" -- block-group
+			{
+			 block: "Reshape"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[111]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Reshape"
+
+			group "Add" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[107]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Add"
+
+  
+  
+			group "MeasurementUpdate" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[283]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+				 alias:   "L*(y[k]-yhat[k|k-1])"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "C[k]*xhat[k|k-1]" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[275]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "C[k]*xhat[k|k-1]"
+
+				group "D[k]*u[k]" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[277]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "D[k]*u[k]"
+
+				group "Product3" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[283]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product3"
+
+				group "Add1" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[279]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Add1"
+
+				group "Sum" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[281]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum"
+
+
+
+			endgroup -- subsystem-group "MeasurementUpdate"
+
+
+		endgroup -- subsystem-group "Observer"
+  
+  
+		group "ReducedQRN" -- subsystem-group
+
+			-- Skipping output Qbar
+			-- Skipping output Rbar
+			-- Skipping output Nbar
+
+
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "ReducedQRN"
+  
+  
+		group "Reset" -- subsystem-group
+
+			-- Skipping output Out
+
+
+
+
+		endgroup -- subsystem-group "Reset"
+  
+  
+		group "Reshapeyhat" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "Reshapeyhat"
+  
+  
+		group "ScalarExpansionP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionP0"
+  
+  
+		group "ScalarExpansionQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionQ"
+  
+  
+		group "ScalarExpansionR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionR"
+  
+  
+		group "UseCurrentEstimator" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[4]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_4*
+			 alias:   "xhat"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+
+		endgroup -- subsystem-group "UseCurrentEstimator"
+  
+  
+		group "checkA" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkA"
+  
+  
+		group "checkB" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkB"
+  
+  
+		group "checkC" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkC"
+  
+  
+		group "checkD" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkD"
+  
+  
+		group "checkEnable" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkEnable"
+  
+  
+		group "checkG" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkG"
+  
+  
+		group "checkH" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkH"
+  
+  
+		group "checkN" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkN"
+  
+  
+		group "checkP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkP0"
+  
+  
+		group "checkQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkQ"
+  
+  
+		group "checkR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkR"
+  
+  
+		group "checkReset" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkReset"
+  
+  
+		group "checkX0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkX0"
+  
+  
+		group "checku" -- subsystem-group
+
+			-- Skipping output
+
+
+			group "CheckSignalProperties" -- block-group
+			{
+			 block: "S-Function"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "CheckSignalProperties"
+
+
+
+		endgroup -- subsystem-group "checku"
+  
+  
+		group "checky" -- subsystem-group
+
+			-- Skipping output
+
+
+			group "CheckSignalProperties" -- block-group
+			{
+			 block: "S-Function"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "CheckSignalProperties"
+
+
+
+		endgroup -- subsystem-group "checky"
+
+
+	endgroup -- subsystem-group "Kalman Filter"
+  
+  
+	group "Kalman Filter1" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[32]
+		{
+		 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+		 alias:   "xhat"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "A" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[234]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "A"
+
+		group "B" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[270]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "B"
+
+		group "C" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[288]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "C"
+
+		group "D" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[378]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_3_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "D"
+
+		group "Enable" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_boolean_T_1[1]
+			{
+			 type:    uint(8)*
+			 alias:   "Value"
+			 range:   < 0 ; 1 >
+			 bitmask: 0x01
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Enable"
+
+		group "G" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[423]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "G"
+
+		group "H" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[459]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "H"
+
+		group "N" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[477]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "N"
+
+		group "P0" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[387]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "P0"
+
+		group "Q" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[495]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Q"
+
+		group "R" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[531]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_3_Col*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "R"
+
+		group "X0" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[86]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "X0"
+
+		group "MemoryX" -- block-group
+		{
+		 block: "Integrator"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[26]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "MemoryX"
+
+		group "ReshapeX0" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[20]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "ReshapeX0"
+
+		group "Reshapeu" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[200]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapeu"
+
+		group "Reshapexhat" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[32]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapexhat"
+
+		group "Reshapey" -- block-group
+		{
+		 block: "Reshape"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[209]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Reshapey"
+
+  
+  
+		group "CalculatePL" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[133]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+			 alias:   "M"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[115]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+			 alias:   "L"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[152]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Z"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[151]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "P"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "CovarianceZ" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[306]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "CovarianceZ"
+
+			group "KalmanGainL" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[342]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "KalmanGainL"
+
+			group "KalmanGainM" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[360]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "KalmanGainM"
+
+  
+  
+			group "DataTypeConversionL" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[115]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[115]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[115]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionL"
+  
+  
+			group "DataTypeConversionM" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[133]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[133]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[133]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionM"
+  
+  
+			group "DataTypeConversionP" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[151]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[151]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[151]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionP"
+  
+  
+			group "DataTypeConversionZ" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[152]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+				 alias:   "y"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Conversion" -- block-group
+				{
+				 block: "DataTypeConversion"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[152]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Conversion"
+
+				group "Data Type\nDuplicate" -- block-group
+				{
+				 block: "DataTypeDuplicate"
+				}
+
+					-- Skipping inport In1
+
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[152]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+					 alias:   "In2"
+					 flags:   READONLY
+					}
+
+
+
+				endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+			endgroup -- subsystem-group "DataTypeConversionZ"
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "CalculatePL"
+  
+  
+		group "CalculateYhat" -- subsystem-group
+
+			-- Skipping output y[.]
+
+
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "CalculateYhat"
+  
+  
+		group "CovarianceOutputConfigurator" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[152]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col*
+			 alias:   "Covariance"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+
+		endgroup -- subsystem-group "CovarianceOutputConfigurator"
+  
+  
+		group "DataTypeConversionA" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionA"
+  
+  
+		group "DataTypeConversionB" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionB"
+  
+  
+		group "DataTypeConversionC" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionC"
+  
+  
+		group "DataTypeConversionD" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionD"
+  
+  
+		group "DataTypeConversionEnable" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionEnable"
+  
+  
+		group "DataTypeConversionG" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionG"
+  
+  
+		group "DataTypeConversionH" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionH"
+  
+  
+		group "DataTypeConversionN" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionN"
+  
+  
+		group "DataTypeConversionP" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[16]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_6_6_Col*
+			 alias:   "y"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[16]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_6_6_Col*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Conversion"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+
+				-- Skipping inport In1
+
+				p_0_Sensors_and_actuators_ball_and_plate_real32_T_2[16]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT1_6_6_Col*
+				 alias:   "In2"
+				 flags:   READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionP"
+  
+  
+		group "DataTypeConversionP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionP0"
+  
+  
+		group "DataTypeConversionQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionQ"
+  
+  
+		group "DataTypeConversionR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionR"
+  
+  
+		group "DataTypeConversionReset" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionReset"
+  
+  
+		group "DataTypeConversionX" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[188]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "y"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Conversion" -- block-group
+			{
+			 block: "DataTypeConversion"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[188]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Conversion"
+
+			group "Data Type\nDuplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[115]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col*
+				 alias:   "In1"
+				 flags:   READONLY
+				}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[188]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "In2"
+				 flags:   READONLY
+				}
+
+
+
+			endgroup -- block-group "Data Type\nDuplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionX"
+  
+  
+		group "DataTypeConversionX0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+			group "Data Type Duplicate" -- block-group
+			{
+			 block: "DataTypeDuplicate"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "Data Type Duplicate"
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionX0"
+  
+  
+		group "DataTypeConversionu" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[47]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+			 alias:   "u_"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+
+		endgroup -- subsystem-group "DataTypeConversionu"
+  
+  
+		group "MemoryP" -- subsystem-group
+
+			-- Skipping output P_
+
+
+
+
+		endgroup -- subsystem-group "MemoryP"
+  
+  
+		group "Observer" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[218]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "x[k+1|k]"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "A[k]*xhat[k|k-1]" -- block-group
+			{
+			 block: "Product"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[194]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "A[k]*xhat[k|k-1]"
+
+			group "B[k]*u[k]" -- block-group
+			{
+			 block: "Product"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[203]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "B[k]*u[k]"
+
+			group "Reshape" -- block-group
+			{
+			 block: "Reshape"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[218]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Reshape"
+
+			group "Add" -- block-group
+			{
+			 block: "Sum"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[212]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Add"
+
+  
+  
+			group "MeasurementUpdate" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[269]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+				 alias:   "L*(y[k]-yhat[k|k-1])"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "C[k]*xhat[k|k-1]" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[257]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "C[k]*xhat[k|k-1]"
+
+				group "D[k]*u[k]" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[260]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "D[k]*u[k]"
+
+				group "Product3" -- block-group
+				{
+				 block: "Product"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[269]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Product3"
+
+				group "Add1" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[263]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Add1"
+
+				group "Sum" -- block-group
+				{
+				 block: "Sum"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_0[266]
+					{
+					 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "Sum"
+
+
+
+			endgroup -- subsystem-group "MeasurementUpdate"
+
+
+		endgroup -- subsystem-group "Observer"
+  
+  
+		group "ReducedQRN" -- subsystem-group
+
+			-- Skipping output Qbar
+			-- Skipping output Rbar
+			-- Skipping output Nbar
+
+
+  
+  
+			group "Ground" -- subsystem-group
+
+				-- Skipping output Out
+
+
+
+
+			endgroup -- subsystem-group "Ground"
+
+
+		endgroup -- subsystem-group "ReducedQRN"
+  
+  
+		group "Reset" -- subsystem-group
+
+			-- Skipping output Out
+
+
+
+
+		endgroup -- subsystem-group "Reset"
+  
+  
+		group "Reshapeyhat" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "Reshapeyhat"
+  
+  
+		group "ScalarExpansionP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionP0"
+  
+  
+		group "ScalarExpansionQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionQ"
+  
+  
+		group "ScalarExpansionR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "ScalarExpansionR"
+  
+  
+		group "UseCurrentEstimator" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[26]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_6*
+			 alias:   "xhat"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+
+		endgroup -- subsystem-group "UseCurrentEstimator"
+  
+  
+		group "checkA" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkA"
+  
+  
+		group "checkB" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkB"
+  
+  
+		group "checkC" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkC"
+  
+  
+		group "checkD" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkD"
+  
+  
+		group "checkEnable" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkEnable"
+  
+  
+		group "checkG" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkG"
+  
+  
+		group "checkH" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkH"
+  
+  
+		group "checkN" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkN"
+  
+  
+		group "checkP0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkP0"
+  
+  
+		group "checkQ" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkQ"
+  
+  
+		group "checkR" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkR"
+  
+  
+		group "checkReset" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkReset"
+  
+  
+		group "checkX0" -- subsystem-group
+
+			-- Skipping output u_
+
+
+
+
+		endgroup -- subsystem-group "checkX0"
+  
+  
+		group "checku" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[47]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+			 alias:   "y"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "CheckSignalProperties" -- block-group
+			{
+			 block: "S-Function"
+			}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "CheckSignalProperties"
+
+
+
+		endgroup -- subsystem-group "checku"
+  
+  
+		group "checky" -- subsystem-group
+
+			-- Skipping output
+
+
+			group "CheckSignalProperties" -- block-group
+			{
+			 block: "S-Function"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[47]
+				{
+				 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3*
+				 alias:   "In1"
+				 flags:   READONLY
+				}
+				-- Skipping input
+
+
+
+			endgroup -- block-group "CheckSignalProperties"
+
+
+
+		endgroup -- subsystem-group "checky"
+
+
+	endgroup -- subsystem-group "Kalman Filter1"
+  
+  
+	group "Outputs to Amplifier" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[252]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[31]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[253]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[32]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[251]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier"
+  
+  
+	group "Outputs to Amplifier1" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[249]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[250]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[248]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[33]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[34]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier1"
+  
+  
+	group "Outputs to Amplifier2" -- subsystem-group
+
+
+
+		group "Current2V" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[246]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[39]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Current2V"
+
+		group "DSPscale" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[247]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[40]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "DSPscale"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[245]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[37]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[38]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Saturation"
+
+  
+  
+		group "DAC_CLASS1_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DAC_CLASS1_BL1"
+
+
+	endgroup -- subsystem-group "Outputs to Amplifier2"
+  
+  
+	group "Position Measurement" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[243]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[244]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[41]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[44]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[42]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[240]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[43]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[244]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[241]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[238]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[239]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+			}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_10[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[243]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[242]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[45]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[46]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[9]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[8]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[7]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[243]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[47]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_11[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_2_Sensors_and_actuators_ball_and_plate_real_T_8[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_10[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_10[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement"
+  
+  
+	group "Position Measurement1" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[236]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[237]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[50]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[53]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[51]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[233]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[52]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[237]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[58]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[234]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[231]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[232]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+			}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_8[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[236]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[235]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[54]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[55]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[6]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[5]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[4]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[236]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[56]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[57]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_9[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_2_Sensors_and_actuators_ball_and_plate_real_T_6[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_8[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_8[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement1"
+  
+  
+	group "Position Measurement2" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[229]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "init_current"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[230]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Position [m]"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[59]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Pos_offset" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[62]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Pos_offset"
+
+		group "ZP" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[60]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "ZP"
+
+		group "Inc2Pos" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[226]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[61]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Inc2Pos"
+
+		group "mm2m" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[230]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_2_Sensors_and_actuators_ball_and_plate_real_T_0[67]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "mm2m"
+
+		group "AbsPosition" -- block-group
+		{
+		 block: "Sum"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[227]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "AbsPosition"
+
+  
+  
+		group "EMC_ENCODER_BL1" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[224]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Position"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[225]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Speed"
+			 flags:   OUTPUT|READONLY
+			}
+
+		endgroup -- subsystem-group "EMC_ENCODER_BL1"
+  
+  
+		group "EMC_ENCODER_POS_SET_BL1" -- subsystem-group
+
+
+		endgroup -- subsystem-group "EMC_ENCODER_POS_SET_BL1"
+  
+  
+		group "Initial" -- subsystem-group
+
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_6[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pos_offset"
+			 flags:   OUTPUT|READONLY
+			}
+			p_0_Sensors_and_actuators_ball_and_plate_real_T_0[229]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "init_current"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "Abs" -- block-group
+			{
+			 block: "Abs"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[228]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Abs"
+
+			group "Const" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[63]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const"
+
+			group "Const1" -- block-group
+			{
+			 block: "Constant"
+			}
+				-- Skipping output Out1
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[64]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Value"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Const1"
+
+			group "Logical\nOperator2" -- block-group
+			{
+			 block: "Logic"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[3]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Logical\nOperator2"
+
+			group "Relational\nOperator" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[2]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator"
+
+			group "Relational\nOperator1" -- block-group
+			{
+			 block: "RelationalOperator"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_boolean_T_5[1]
+				{
+				 type:    uint(8)*
+				 alias:   "Out1"
+				 range:   < 0 ; 1 >
+				 bitmask: 0x01
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Relational\nOperator1"
+
+			group "Transfer Fcn" -- block-group
+			{
+			 block: "TransferFcn"
+			}
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_0[229]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[65]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "A"
+				 flags:   PARAM
+				}
+				p_2_Sensors_and_actuators_ball_and_plate_real_T_0[66]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "C"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Transfer Fcn"
+
+  
+  
+			group "Enabled\nSubsystem" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_7[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "Constant" -- block-group
+				{
+				 block: "Constant"
+				}
+					-- Skipping output Out1
+					p_2_Sensors_and_actuators_ball_and_plate_real_T_4[1]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Value"
+					 flags:   PARAM
+					}
+
+
+				endgroup -- block-group "Constant"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem"
+  
+  
+			group "Enabled\nSubsystem1" -- subsystem-group
+
+				p_0_Sensors_and_actuators_ball_and_plate_real_T_6[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				}
+					p_0_Sensors_and_actuators_ball_and_plate_real_T_6[0]
+					{
+					 type:    flt(64,IEEE)*
+					 alias:   "Out1"
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+
+
+			endgroup -- subsystem-group "Enabled\nSubsystem1"
+
+
+		endgroup -- subsystem-group "Initial"
+
+
+	endgroup -- subsystem-group "Position Measurement2"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+  
+  
+	group "MATLAB Function" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_13[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_13[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta2"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_13[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta3"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_13[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Zc"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+
+
+	endgroup -- subsystem-group "MATLAB Function"
+  
+  
+	group "MATLAB Function1" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_12[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_12[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta2"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_12[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta3"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_12[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Zc"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+
+
+	endgroup -- subsystem-group "MATLAB Function1"
+  
+  
+	group "MATLAB Function3" -- subsystem-group
+
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[254]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[255]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor2"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_real_T_0[256]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "motor3"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+
+
+	endgroup -- subsystem-group "MATLAB Function3"
+
+
+
+endgroup -- "Model Root"
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[0]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "I_0"
+	 flags:   PARAM
+	}
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[1]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col*
+	 alias:   "ballLQRgain"
+	 flags:   PARAM
+	}
+	p_2_Sensors_and_actuators_ball_and_plate_real_T_0[9]
+	{
+	 type:    Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col*
+	 alias:   "plateLQRgain"
+	 flags:   PARAM
+	}
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+group "State Machine Data"
+
+
+endgroup
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+group "RTT Dynamic Variables"
+
+endgroup
+
+-- ******** User variables from model_usr.trc *********************************
+
+-- RTI_USR_TRC_BEGIN
+
+-- No user file Sensors_and_actuators_ball_and_plate_usr.trc found.
+
+-- RTI_USR_TRC_END
+
+-- ******** EESPort States Variables ******************************************
+group "XIL API"
+{ 
+  
+}
+
+  group "EESPort"
+  {  
+    
+  }
+
+    p_xilapi_eesport_activeerrorset_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Active ErrorSet"
+      desc:    "Index of active ErrorSet or 0 if no ErrorSet is active."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    p_xilapi_eesport_erroractivated_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Activated"
+      desc:    "0 - no error is activated on hardware, 1 - at least one error is activated on hardware."  
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+    }
+
+    p_xilapi_eesport_errorswitching_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Switching"
+      desc:    "0 - no switching operation running on hardware, 1 -  switching operation running on hardware."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+    }
+
+    xilapi_eesport_flags_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Flags"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    xilapi_eesport_trigger_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Trigger"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    endgroup -- "EESPort"
+
+endgroup -- "XILAPI"
+
+
+
+-- ******** [EOF] *************************************************************
+

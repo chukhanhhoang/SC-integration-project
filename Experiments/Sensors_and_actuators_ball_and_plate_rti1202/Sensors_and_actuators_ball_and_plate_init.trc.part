@@ -1,0 +1,23 @@
+
+
+
+-- Type definitions for arrays
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4 flt(64,IEEE)[4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2 flt(64,IEEE)[2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6 flt(64,IEEE)[6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3 flt(64,IEEE)[3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4_2_Col col flt(64,IEEE)[4][2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_4_4_Col col flt(64,IEEE)[4][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6_3_Col col flt(64,IEEE)[6][3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_6_6_Col col flt(64,IEEE)[6][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT7_3 uint(32)[3]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT1_4_4_Col col flt(32,IEEE)[4][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT1_6_6_Col col flt(32,IEEE)[6][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT3_32 uint(8)[32]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT3_4 uint(8)[4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2_4_Col col flt(64,IEEE)[2][4]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3_6_Col col flt(64,IEEE)[3][6]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_2_2_Col col flt(64,IEEE)[2][2]
+typedef Sensors_and_actuators_ball_and_plate_ArrayDT0_3_3_Col col flt(64,IEEE)[3][3]
+
+
