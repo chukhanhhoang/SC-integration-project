@@ -28,9 +28,9 @@ function mpc_controller = defineMPC()
     %% create MPC controller object with sample time
     mpc_controller = mpc(sysc, 0.04);
     %% specify prediction horizon
-    mpc_controller.PredictionHorizon = 20;
+    mpc_controller.PredictionHorizon = 5;
     %% specify control horizon
-    mpc_controller.ControlHorizon = 10;
+    mpc_controller.ControlHorizon = 2;
     %% specify nominal values for inputs and outputs
     mpc_controller.Model.Nominal.U = [0;0];
     mpc_controller.Model.Nominal.Y = [0;0];
