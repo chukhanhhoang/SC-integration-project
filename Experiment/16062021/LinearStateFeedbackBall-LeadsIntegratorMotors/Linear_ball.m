@@ -11,7 +11,8 @@ ballSystem = ss(Ab,Bb,Cb,zeros(2,2));
 Q = [4 0 0 0;0 0 0 0;0 0 4 0;0 0 0 0];
 R = 0.2*eye(2);
 % ballLQRgain = lqr(ballSystem, Q, R);
-ballLQRgain = place(Ab,Bb,[-2.5,-2.49,-2.5,-2.51]);
+ballKgain = place(Ab,Bb,[-2.5,-2.49,-2.5,-2.51])
+observerGain = (place(Ab',Cb',[[-10,-10.1,-10,-10.1]]))'
 
 % Designed controller
 G = 10000;
