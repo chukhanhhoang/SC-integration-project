@@ -1,5 +1,5 @@
 fmin = 1;
-fmax = 300;
+fmax = 200;
 fres = 0.5;
 fs = 1000;
 frat = 1;
@@ -15,8 +15,8 @@ DefFreq.fres = fres;
 DefFreq.frat = frat;
 [ExcitedHarm, N, NewDefFreq] = HarmMultisine(DefFreq, Nblock, Spacing, TypeMultisine);
 
-M = 2;                     % number of realisations random phase multisine
-P = 10;                     % number of consecutive periods
+M = 1;                     % number of realisations random phase multisine
+P = 15;                     % number of consecutive periods
 
 freqall = ([0:1:N-1]*fs/N).';               % all DFT frequencies over full unit circle
 qall = exp(-sqrt(-1)*2*pi*freqall/fs);      % z^-1 over full unit circle
@@ -48,7 +48,7 @@ for ii=1:M
 end
 
 MeasHarm = round(freqmeas/(fs/N));
-save('variables','Uall','ExcitedHarm','MeasHarm','fs','N','Spacing','M','K');
+save('variables','Uall','ExcitedHarm','MeasHarm','fs','N','Spacing','M','P');
 
 
 %% lookup table shit
@@ -56,7 +56,7 @@ save('variables','Uall','ExcitedHarm','MeasHarm','fs','N','Spacing','M','K');
 load('u_1.mat');
 LUTObj = Simulink.LookupTable;
 LUTObj.Table.Value = u;
-t=0:0.001:20;
+t=0:0.001:30;
 t=t(1:end-1);
 t=t';
 LUTObj.Breakpoints(1).Value = t;
