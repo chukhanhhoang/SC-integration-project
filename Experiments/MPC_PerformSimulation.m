@@ -1,6 +1,6 @@
 %% Experiment setting
 SimulateOrMeasure  = 0; % 0 for simulating, any other number for measuring
-t_experiment = 10;
+t_experiment = 20;
 
 %% Controller settings
 mpc_controller = defineMPC();
@@ -56,35 +56,56 @@ else
     % Perform measurement, code not jet implemented
 end
 
+t = out.tout;
+
 %% Plot results
 subplot(3,2,1);
-plot(out.Pp_Aref);
+plot(t, out.Pp_Aref);
 hold on;
-plot(out.Pp_A);
+plot(t, out.Pp_A);
+xlabel("Time [s]");
+ylabel("Position [m]");
 title("Plate position motor A")
+
 subplot(3,2,3);
-plot(out.Pp_Bref);
+plot(t, out.Pp_Bref);
 hold on;
-plot(out.Pp_B);
+plot(t, out.Pp_B);
+xlabel("Time [s]");
+ylabel("Position [m]");
 title("Plate position motor B")
+
 subplot(3,2,5);
-plot(out.Pp_Cref);
+plot(t, out.Pp_Cref);
 hold on;
-plot(out.Pp_C);
+plot(t, out.Pp_C);
+xlabel("Time [s]");
+ylabel("Position [m]");
 title("Plate position motor C")
 
 subplot(3,2,2);
-plot(out.Pb_Xref);
+plot(t, out.Pb_Xref);
 hold on;
-plot(out.Pb_X);
+plot(t, out.Pb_X);
+xlabel("Time [s]");
+ylabel("Position [m]");
+legend("Reference", "Measrued")
 title("Ball position X")
+
 subplot(3,2,4);
-plot(out.Pb_Yref);
+plot(t, out.Pb_Yref);
 hold on;
-plot(out.Pb_Y);
+plot(t, out.Pb_Y);
+xlabel("Time [s]");
+ylabel("Position [m]");
+legend("Reference", "Measrued")
 title("Ball position Y")
+
 subplot(3,2,6);
 plot(out.Pb_Xref, out.Pb_Yref);
 hold on;
 plot(out.Pb_X, out.Pb_Y);
+xlabel("Position [m]");
+ylabel("Position [m]");
+legend("Reference", "Measrued")
 title("Ball position XY")
