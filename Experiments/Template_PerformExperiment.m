@@ -14,6 +14,7 @@ if (SimulateOrMeasure == 0)
 else
     % Measurement
     addpath("../Measurements/RefferenceModel")
+    load("MeasureParameters.mat")
 end
   
 %% Simulation settings
@@ -55,11 +56,23 @@ else
     % Setup measurement system
     disp("Loading measurement model");
     load_system("BallAndPlateMeasurement.slx");
+    configSet = getActiveConfigSet('BallAndPlateMeasurement');
+    load_system(controllerFilename);
+    [pathstr, name, ext] = fileparts(controllerFilename);
+    try
+        removeconfigset(name, 'Build');
+    catch
+        % Do nothing
+    end
+    set_param(configSet,'Name','Build');
+    attachConfigSetCopy(name, configSet)
+    setActiveConfigSet(name,'Build');
     set_param('BallAndPlateMeasurement/Run/Controller', 'ModelFile', controllerFilename)
     
     % Build measurement model
     disp("Building measurement model");
     rtwbuild('BallAndPlateMeasurement');
+    close_system(name, 0);
     close_system("BallAndPlateSimulation.slx",0);
     
     % Wait for measurement results
