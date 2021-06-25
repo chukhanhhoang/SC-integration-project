@@ -1,12 +1,12 @@
 clc; clear; close all;
 addpath(genpath(pwd)); % Add files;
 
-load('Motor1.mat');
+load('Motor2.mat');
 
 % Variables assign
-u_A = Motor1.Y(1).Data;  u_A = u_A';
-r_A  = Motor1.Y(7).Data; r_A = r_A';
-e_A  = Motor1.Y(4).Data; e_A = -e_A';
+u_B = Motor2.Y(2).Data;  u_B = u_B';
+r_B  = Motor2.Y(8).Data; r_B = r_B';
+e_B  = Motor2.Y(5).Data; e_B = -e_B';
 
 % Define identified parameters
 Fs = 1000;
@@ -14,8 +14,8 @@ nfft = 4 * Fs;
 overlap = round(nfft/2);
 window = hann(nfft);
 
-[S_X, hz_X] = tfestimate(r_A, u_A, window, overlap, nfft, Fs);
-[PS_X, hz_X] = tfestimate(r_A, e_A, window, overlap, nfft, Fs);
+[S_X, hz_X] = tfestimate(r_B, u_B, window, overlap, nfft, Fs);
+[PS_X, hz_X] = tfestimate(r_B, e_B, window, overlap, nfft, Fs);
 
 H_X = -PS_X ./ S_X;
 
@@ -27,8 +27,8 @@ dB_H_X = mag2db(abs(H_X));
 phase_H_X = rad2deg(angle(H_X));
 
 % Coherence
-[c_du_X,fc_du_X] = mscohere(r_A, u_A, window, overlap, nfft, Fs);
-[c_de_X,fc_de_X] = mscohere(r_A, e_A, window, overlap, nfft, Fs);
+[c_du_X,fc_du_X] = mscohere(r_B, u_B, window, overlap, nfft, Fs);
+[c_de_X,fc_de_X] = mscohere(r_B, e_B, window, overlap, nfft, Fs);
 
 %% Visualization
 
