@@ -1,5 +1,5 @@
 %% Experiment setting
-SimulateOrMeasure  = 0; % 0 for simulating, any other number for measuring
+SimulateOrMeasure  = 1; % 0 for simulating, any other number for measuring
 t_experiment = 10;
 
 %% Controller settings
@@ -60,14 +60,14 @@ else
     load_system(controllerFilename);
     [pathstr, name, ext] = fileparts(controllerFilename);
     try
-        removeconfigset(name, 'Build');
+        set_param(configSet,'Name','Build');
+        attachConfigSetCopy(name, configSet)
     catch
         % Do nothing
     end
-    set_param(configSet,'Name','Build');
-    attachConfigSetCopy(name, configSet)
     setActiveConfigSet(name,'Build');
-    set_param('BallAndPlateMeasurement/Run/Controller', 'ModelFile', controllerFilename)
+    set_param('BallAndPlateMeasurement/Run/Controller', 'ModelFile', controllerFilename);
+    save_system(name);
     
     % Build measurement model
     disp("Building measurement model");
