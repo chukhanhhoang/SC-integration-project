@@ -70,8 +70,10 @@ else
     save_system(name);
     
     % Build measurement model
+    Simulink.fileGenControl('set', 'CacheFolder', "BuildDir/Cache", 'CodeGenFolder', "BuildDir", 'createDir', true);
     disp("Building measurement model");
     rtwbuild('BallAndPlateMeasurement');
+    setActiveConfigSet(name,'Configuration');
     close_system(name, 0);
     close_system("BallAndPlateSimulation.slx",0);
     
