@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<creator type="key">ControlDesk 7.3</creator>
+	<project>
+		<Creator type="key">ControlDesk</Creator>
+		<MigrationHistory type="key"/>
+		<Name type="key">UI__V01.CDP</Name>
+		<DisplayName type="key">UI__V01</DisplayName>
+		<Flags type="key">4096</Flags>
+		<Type type="key">1</Type>
+		<UniqueID type="key">442519354</UniqueID>
+		<EntityID type="key">{65F1AADF-07BB-46A2-AAB8-7EC6DDBD43FA}</EntityID>
+		<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+		<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+		<ItemInfoDescr type="key"/>
+		<ItemInfoAddInfoDb type="key"/>
+		<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+		<item>
+			<Targets type="key">project</Targets>
+			<Name type="key">UI__V01</Name>
+			<DisplayName type="key">UI__V01</DisplayName>
+			<Path type="key">..</Path>
+			<Flags type="key">4100</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">629814942</UniqueID>
+			<EntityID type="key">{AFE49939-04A8-4E58-B589-63288CA514E8}</EntityID>
+			<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			<item>
+				<Docs type="key">.doc,.docx,.pdf</Docs>
+				<Name type="key">Specifications</Name>
+				<DisplayName type="key">Specifications</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">963783107</UniqueID>
+				<EntityID type="key">{027A9535-CCE4-4112-B323-C1FA8916F6E6}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.doc,.docx,.pdf</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+			<item>
+				<Docs type="key">.mpp</Docs>
+				<Name type="key">Project Plans</Name>
+				<DisplayName type="key">Project Plans</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">990382185</UniqueID>
+				<EntityID type="key">{1B3A873B-C6D7-4FF9-913D-C892023907CE}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.mpp</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">variablesmanagement</Targets>
+				<Name type="key">Variable Descriptions</Name>
+				<DisplayName type="key">Variable Descriptions</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">843306365</UniqueID>
+				<EntityID type="key">{E88B8284-BD0C-416E-9839-13D8962FFE32}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">UI__V01.vdb</Name>
+					<DisplayName type="key">C:\Users\20192433\Documents\SC-integration-project\ControlDeskUI\UI__V01\Variable Descriptions\UI__V01.vdb</DisplayName>
+					<Path type="key">.\Variable Descriptions</Path>
+					<Flags type="key">276</Flags>
+					<Type type="key">18</Type>
+					<UniqueID type="key">439143113</UniqueID>
+					<EntityID type="key">{688428A6-3FCC-446B-B794-7D110C22FA11}</EntityID>
+					<ItemInfoDate type="key">25/06/2021 17:58:32</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">VariablesManagement</Component>
+					<Name type="key">ballandplatemeasurement.sdf</Name>
+					<DisplayName type="key">ballandplatemeasurement.sdf</DisplayName>
+					<Path type="key">.\Variable Descriptions\ballandplatemeasurement.sdf</Path>
+					<Flags type="key">18704</Flags>
+					<Type type="key">7</Type>
+					<UniqueID type="key">756223335</UniqueID>
+					<EntityID type="key">{DCEDC4F8-7AD8-46E1-9A60-4A74255D89AE}</EntityID>
+					<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 15:54:03 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:03:44 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:03:13 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:05:30 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:05:07 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:16:02 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:15:38 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:17:17 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:16:51 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:20:18 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:19:55 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:24:00 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:23:36 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:26:27 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:26:05 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:30:26 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:30:02 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:32:23 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:32:02 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:40:29 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:39:10 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:46:30 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:46:01 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:48:00 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:47:34 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:51:34 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:51:11 (UTC)]
+
+Variable description reloaded on 25.06.2021 18:55:03 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 16:54:06 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:04:18 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:03:24 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:09:47 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:08:44 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:14:56 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:14:24 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:21:52 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:21:23 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:29:03 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:28:36 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:33:04 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:32:12 (UTC)]
+
+Variable description reloaded on 25.06.2021 19:41:19 (C:\Users\20192433\Documents\SC-integration-project\Experiments\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\ballandplatemeasurement.sdf [2021-06-25 17:40:37 (UTC)]
+
+Variable description reloaded on 25.06.2021 21:28:03 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 19:25:05 (UTC)]
+
+Variable description reloaded on 25.06.2021 21:39:07 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 19:37:03 (UTC)]
+
+Variable description reloaded on 25.06.2021 21:42:50 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 19:42:29 (UTC)]
+
+Variable description reloaded on 25.06.2021 22:05:53 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 20:04:46 (UTC)]
+
+Variable description reloaded on 25.06.2021 22:19:27 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 20:19:04 (UTC)]
+
+Variable description reloaded on 25.06.2021 22:21:57 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 20:21:34 (UTC)]
+
+Variable description reloaded on 25.06.2021 22:26:07 (C:\Users\20192433\Documents\SC-integration-project\Experiments\BuildDir\ballandplatemeasurement.sdf)
+Original file added from ..\..\Experiments\BuildDir\ballandplatemeasurement.sdf [2021-06-25 20:24:12 (UTC)]
+</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">ballandplatemeasurement.trc</Name>
+						<DisplayName type="key">ballandplatemeasurement.trc</DisplayName>
+						<Path type="key">.\Variable Descriptions\ballandplatemeasurement.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">161827800</UniqueID>
+						<EntityID type="key">{C4DB6170-186E-489E-B525-E0C113C4A9A5}</EntityID>
+						<ItemInfoDate type="key">25/06/2021 22:26:07</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">ballandplatemeasurement.map</Name>
+						<DisplayName type="key">ballandplatemeasurement.map</DisplayName>
+						<Path type="key">.\Variable Descriptions\ballandplatemeasurement.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">4</Type>
+						<UniqueID type="key">907610033</UniqueID>
+						<EntityID type="key">{DD1C74F5-9AA9-4C98-8BEA-AB7DB4187314}</EntityID>
+						<ItemInfoDate type="key">25/06/2021 22:26:07</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+					</item>
+					<item>
+						<Component type="key">VariablesManagement</Component>
+						<Name type="key">ballandplatemeasurement.rta</Name>
+						<DisplayName type="key">ballandplatemeasurement.rta</DisplayName>
+						<Path type="key">.\Variable Descriptions\ballandplatemeasurement.sdf</Path>
+						<Flags type="key">18692</Flags>
+						<ExtendedFlags type="key">1</ExtendedFlags>
+						<Type type="key">30</Type>
+						<UniqueID type="key">600666723</UniqueID>
+						<EntityID type="key">{71441FD8-1C57-4401-AA5D-DB8C2FB6391C}</EntityID>
+						<ItemInfoDate type="key">25/06/2021 22:26:07</ItemInfoDate>
+						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+						<ItemInfoDescr type="key"/>
+						<ItemInfoAddInfoDb type="key"/>
+						<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+					</item>
+				</item>
+			</item>
+			<item>
+				<Targets type="key">.vfe</Targets>
+				<Name type="key">Variable Filters</Name>
+				<DisplayName type="key">Variable Filters</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">2304</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">603662234</UniqueID>
+				<EntityID type="key">{3DC46081-9059-4B73-AB09-369B630F65D9}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">.lab</Targets>
+				<Docs type="key">.lab,.txt</Docs>
+				<Name type="key">Label Lists</Name>
+				<DisplayName type="key">Label Lists</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">245295202</UniqueID>
+				<EntityID type="key">{E9D1F6D2-91E7-4121-8B00-E9E0E6946C62}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.lab,.txt</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">interpreter,.py</Targets>
+				<Docs type="key">.py</Docs>
+				<Name type="key">Python Scripts</Name>
+				<DisplayName type="key">Python Scripts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">294027008</UniqueID>
+				<EntityID type="key">{4ADDE8D5-DC27-4657-8F28-FC2A84CC42BC}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.py</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">signaleditor</Targets>
+				<Name type="key">Signal Description Sets</Name>
+				<DisplayName type="key">Signal Description Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">810764734</UniqueID>
+				<EntityID type="key">{BBDFEEEF-2013-4798-9602-9819A684E614}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">Events</Name>
+			<DisplayName type="key">Events</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<ExtendedFlags type="key">4</ExtendedFlags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">552058712</UniqueID>
+			<EntityID type="key">{F9B29B9A-1FC0-49AB-A5EB-02A0E9B884C8}</EntityID>
+			<ItemInfoDate type="key">25/06/2021 17:58:32</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			<item>
+				<Name type="key">Project.events</Name>
+				<DisplayName type="key">Project.events</DisplayName>
+				<Path type="key">.\Events</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">52</Type>
+				<UniqueID type="key">660792989</UniqueID>
+				<EntityID type="key">{C496C819-03C6-48FF-BFB9-25ABEEFE5E4B}</EntityID>
+				<ItemInfoDate type="key">25/06/2021 17:58:32</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+			</item>
+		</item>
+	</project>
+	<experiments>
+		<experiment>
+			<Creator type="key">ControlDesk</Creator>
+			<MigrationHistory type="key"/>
+			<Name type="key">Experiment_001.CDE</Name>
+			<DisplayName type="key">Experiment_001</DisplayName>
+			<Path type="key">.\Experiment_001</Path>
+			<Flags type="key">4096</Flags>
+			<Type type="key">2</Type>
+			<UniqueID type="key">105610487</UniqueID>
+			<EntityID type="key">{7D507401-F4D9-4CCC-9D2A-A0F2E39CACFD}</EntityID>
+			<ItemInfoDate type="key">25/06/2021 17:58:31</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+		</experiment>
+	</experiments>
+	<BusNavigator/>
+	<VariablesManagement/>
+	<UserManager/>
+	<XILAPIEESPort/>
+	<SignalEditor/>
+	<Interpreter>
+		<PythonVersion type="key">3.6</PythonVersion>
+	</Interpreter>
+	<ProjectExperiment>
+		<LastActiveExperiment type="key">Experiment_001</LastActiveExperiment>
+	</ProjectExperiment>
+	<Instrumentation Version="1">
+		<UniqueIds Version="3">
+			<Count type="key">1</Count>
+			<File1 type="key">Experiment_001/Layout1</File1>
+			<Id1 type="key">0</Id1>
+		</UniqueIds>
+	</Instrumentation>
+	<DiagnosticsManagement/>
+	<PlatformManagement/>
+	<MeasurementConfiguration/>
+	<MeasureDataManagement/>
+	<DataSetManager>
+		<Version>
+			<Version type="key">2</Version>
+		</Version>
+		<Work/>
+		<ActiveWork/>
+		<Reference/>
+		<ActiveReference/>
+		<Master/>
+		<ActiveMaster/>
+		<InitialMaster/>
+		<Incomplete/>
+		<IncompleteReadonly/>
+		<DataSet/>
+		<Readonly/>
+		<AutomaticDownload/>
+	</DataSetManager>
+</Root>
