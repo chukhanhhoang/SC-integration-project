@@ -79,8 +79,9 @@ else
     
     % Wait for measurement results
     disp("Once the measurement is completed and the data is saved to ""Measurement.mat"", press any key to continue.");
-    pause();
-    load("Measurement.mat");
+    return;
+%     pause();
+%     load("Measurement.mat");
     % Todo import data
     
 end
