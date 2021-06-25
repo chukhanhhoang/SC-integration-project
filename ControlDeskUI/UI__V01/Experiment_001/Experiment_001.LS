@@ -30,7 +30,7 @@
 						<ViewFlags type="key">1</ViewFlags>
 						<item>
 							<Name type="key">ballandplatemeasurement.sdf</Name>
-							<ViewFlags type="key">5</ViewFlags>
+							<ViewFlags type="key">1</ViewFlags>
 							<item>
 								<Name type="key">Data Sets</Name>
 								<ViewFlags type="key">1</ViewFlags>
@@ -44,7 +44,7 @@
 				</item>
 				<item>
 					<Name type="key">Measurement Data</Name>
-					<ViewFlags type="key">1</ViewFlags>
+					<ViewFlags type="key">5</ViewFlags>
 				</item>
 				<item>
 					<Name type="key">Reports</Name>
