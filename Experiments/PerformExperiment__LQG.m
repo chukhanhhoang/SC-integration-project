@@ -3,7 +3,32 @@ SimulateOrMeasure  = 1; % 0 for simulating, any other number for measuring
 t_experiment = 10;
 
 %% Controller settings
-controllerFilename = "Template_Controller.slx";
+controllerFilename = "LQG_ball.slx";
+
+load("ModelParameters.mat")
+I_b = 2.2578e-05;
+
+Ab = [0 1 0 0; 0 0 0 0; 0 0 0 1; 0 0 0 0];
+Bb = [0 0; 0 g/(1+I_b/(m_b*r_b^2)); 0 0; -g/(1+I_b/(m_b*r_b^2)) 0];
+Cb = [1 0 0 0; 0 0 1 0];
+
+ballSystem = ss(Ab,Bb,Cb,zeros(2,2));
+Q = [4 0 0 0;0 0.1 0 0;0 0 4 0;0 0 0 0.1];
+R = 0.5*eye(2);
+ballLQRgain = lqr(ballSystem, Q, R);
+eig(Ab-Bb*ballLQRgain)
+% ballLQRgain = place(Ab,Bb,[-10 -2.49 -10 -2.51]);
+
+ballFFgain = [-1/(m_b*g)*(m_b+I_b/r_b^2);1/(m_b*g)*(m_b+I_b/r_b^2)];
+
+% Designed controller
+G = 10000;
+L1 = tf([1/((200/3)) 1], [1/((200*3)) 1]);
+L2 = tf([1/((200/6)) 1], [1/((200*6)) 1]);
+
+Controller = G * L1 * L2; 
+numc_mi = Controller.Numerator{1};
+denc_mi = Controller.Denominator{1};
 
 %% Load enviroment settings (Do not change)
 addpath("../Controllers")
@@ -15,6 +40,8 @@ else
     % Measurement
     addpath("../Measurements/RefferenceModel")
     load("MeasureParameters.mat")
+    UseUserDefinedPlateReference = true;
+    UseUserDefinedBallReference = true;
 end
   
 %% Simulation settings
