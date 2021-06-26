@@ -1,12 +1,12 @@
 clc; clear; close all;
 addpath(genpath(pwd)); % Add files;
 
-load('data0416_3points_ballplate.mat');
+load('theta1_trial3.mat');
 
 % Variables assign
-u_th1 = data0416_3points.Y(3).Data;
-d_bY  = data0416_3points.Y(5).Data;
-e_bY  = data0416_3points.Y(2).Data;
+u_th1 = theta1_trial3.Y(3).Data;
+d_bY  = theta1_trial3.Y(1).Data;
+e_bY  = theta1_trial3.Y(6).Data;
 
 % Define identified parameters
 Fs = 1000;
