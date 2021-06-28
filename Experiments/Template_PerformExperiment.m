@@ -74,12 +74,12 @@ else
     disp("Building measurement model");
     rtwbuild('BallAndPlateMeasurement');
     setActiveConfigSet(name,'Configuration');
-    close_system(name, 0);
+    close_system(name, 1);
     close_system("BallAndPlateSimulation.slx",0);
     
-    % Wait for measurement results
-    disp("Once the measurement is completed and the data is saved to ""Measurement.mat"", press any key to continue.");
     return;
+    % Wait for measurement results
+%     disp("Once the measurement is completed and the data is saved to ""Measurement.mat"", press any key to continue.");
 %     pause();
 %     load("Measurement.mat");
     % Todo import data
