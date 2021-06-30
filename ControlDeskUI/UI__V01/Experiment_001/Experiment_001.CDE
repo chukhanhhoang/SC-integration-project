@@ -134,6 +134,12 @@
 							<ItemInfoAddInfoDb type="key"/>
 							<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
 						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">242436689</UniqueID>
+							<LinkedItem type="key">899667896</LinkedItem>
+						</item>
 					</item>
 				</item>
 			</item>
@@ -177,6 +183,26 @@
 					<UniqueID type="key">359035619</UniqueID>
 					<EntityID type="key">{462B56B1-325B-42C0-A485-04F19C101AEE}</EntityID>
 					<ItemInfoDate type="key">30/06/2021 15:55:05</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: ballandplatemeasurement.sdf, ballandplatemeasurement.rta
+Variable description: ballandplatemeasurement.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20200910</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_003.mf4</Name>
+					<DisplayName type="key">rec1_003.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">899667896</UniqueID>
+					<EntityID type="key">{124AC0F1-7083-48B7-BD9B-247CC12E80E8}</EntityID>
+					<ItemInfoDate type="key">30/06/2021 16:09:49</ItemInfoDate>
 					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
 					<ItemInfoLog type="key">
 Software revision: ballandplatemeasurement.sdf, ballandplatemeasurement.rta
@@ -714,7 +740,7 @@ ControlDesk version: 7.3</ItemInfoLog>
 					<AutomaticExportFolder type="key"/>
 					<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
 					<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
-					<AutomaticNamingStartIndex type="key">3</AutomaticNamingStartIndex>
+					<AutomaticNamingStartIndex type="key">4</AutomaticNamingStartIndex>
 					<Description type="key"/>
 					<FileNamePrefix type="key">rec1_</FileNamePrefix>
 					<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>

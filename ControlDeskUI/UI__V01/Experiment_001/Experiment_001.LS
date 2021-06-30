@@ -39,6 +39,10 @@
 								<Name type="key">Data Sets</Name>
 								<ViewFlags type="key">1</ViewFlags>
 							</item>
+							<item>
+								<Name type="key">rec1_003.mf4</Name>
+								<ViewFlags type="key">1</ViewFlags>
+							</item>
 						</item>
 					</item>
 				</item>
@@ -51,6 +55,10 @@
 					<ViewFlags type="key">1</ViewFlags>
 					<item>
 						<Name type="key">rec1_002.mf4</Name>
+						<ViewFlags type="key">1</ViewFlags>
+					</item>
+					<item>
+						<Name type="key">rec1_003.mf4</Name>
 						<ViewFlags type="key">5</ViewFlags>
 					</item>
 				</item>
@@ -108,4 +116,7 @@
 			</Layout1>
 		</Layouts>
 	</Instrumentation>
+	<XILAPIEESPort>
+		<ErrorConfigurationDocuments Version="1"/>
+	</XILAPIEESPort>
 </Root>
