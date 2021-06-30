@@ -31,6 +31,7 @@
 			<ItemInfoAddInfoDb type="key"/>
 			<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
 			<item>
+				<Component type="key">Instrumentation</Component>
 				<Targets type="key">instrumentation</Targets>
 				<Name type="key">Experiment Layouts</Name>
 				<DisplayName type="key">Experiment Layouts</DisplayName>
@@ -113,6 +114,12 @@
 						<UniqueID type="key">145957356</UniqueID>
 						<LinkedItem type="key">756223335</LinkedItem>
 						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">1062228123</UniqueID>
+							<LinkedItem type="key">359035619</LinkedItem>
+						</item>
+						<item>
 							<Component type="key">DataSetManager</Component>
 							<Name type="key">Data Sets</Name>
 							<DisplayName type="key">Data Sets</DisplayName>
@@ -160,6 +167,26 @@
 				<ItemInfoDescr type="key"/>
 				<ItemInfoAddInfoDb type="key"/>
 				<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_002.mf4</Name>
+					<DisplayName type="key">rec1_002.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">359035619</UniqueID>
+					<EntityID type="key">{462B56B1-325B-42C0-A485-04F19C101AEE}</EntityID>
+					<ItemInfoDate type="key">30/06/2021 15:55:05</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: ballandplatemeasurement.sdf, ballandplatemeasurement.rta
+Variable description: ballandplatemeasurement.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20200910</ItemInfoAuthor>
+				</item>
 			</item>
 			<item>
 				<Targets type="key">.rtf,.pdf,.html,.xml,.txt,.csv</Targets>
@@ -276,6 +303,20 @@
 	<VariablesManagement>
 		<Favorites>
 			<Labels/>
+			<Favorite>
+				<VariableName type="key">In1</VariableName>
+				<VariableUniqueName type="key">Model Root/Pb_Xm/In1</VariableUniqueName>
+				<VariableDescriptionName type="key">ballandplatemeasurement.sdf</VariableDescriptionName>
+				<PlatformId type="key">70ab9959-fc5e-4265-817a-e414eb33246b</PlatformId>
+				<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+			</Favorite>
+			<Favorite>
+				<VariableName type="key">In1</VariableName>
+				<VariableUniqueName type="key">Model Root/Pb_Ym/In1</VariableUniqueName>
+				<VariableDescriptionName type="key">ballandplatemeasurement.sdf</VariableDescriptionName>
+				<PlatformId type="key">70ab9959-fc5e-4265-817a-e414eb33246b</PlatformId>
+				<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+			</Favorite>
 		</Favorites>
 	</VariablesManagement>
 	<UserManager/>
@@ -475,14 +516,6 @@
 		<SortAscending type="key">-1</SortAscending>
 		<SignalList>
 			<Variable>
-				<Name type="key">Model Root/Pb_X/In1</Name>
-				<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
-				<Active type="key">-1</Active>
-				<Signal>
-					<Raster type="key">HostService</Raster>
-				</Signal>
-			</Variable>
-			<Variable>
 				<Name type="key">Model Root/Pb_Xm/In1</Name>
 				<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
 				<Active type="key">-1</Active>
@@ -491,7 +524,7 @@
 				</Signal>
 			</Variable>
 			<Variable>
-				<Name type="key">Model Root/Pb_Y/In1</Name>
+				<Name type="key">Model Root/Pb_Xref/In1</Name>
 				<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
 				<Active type="key">-1</Active>
 				<Signal>
@@ -500,6 +533,14 @@
 			</Variable>
 			<Variable>
 				<Name type="key">Model Root/Pb_Ym/In1</Name>
+				<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Pb_Yref/In1</Name>
 				<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
 				<Active type="key">-1</Active>
 				<Signal>
@@ -673,22 +714,13 @@
 					<AutomaticExportFolder type="key"/>
 					<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
 					<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
-					<AutomaticNamingStartIndex type="key">2</AutomaticNamingStartIndex>
+					<AutomaticNamingStartIndex type="key">3</AutomaticNamingStartIndex>
 					<Description type="key"/>
 					<FileNamePrefix type="key">rec1_</FileNamePrefix>
 					<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
 					<RecordingFileType type="key">ASAM MDF 4.1 Files (*.mf4)</RecordingFileType>
 				</StorageInformation>
 				<SignalList>
-					<Variable>
-						<Name type="key">Model Root/Pb_X/In1</Name>
-						<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
-						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
-						<Recorded type="key">-1</Recorded>
-						<Signal>
-							<Raster type="key">HostService</Raster>
-						</Signal>
-					</Variable>
 					<Variable>
 						<Name type="key">Model Root/Pb_Xm/In1</Name>
 						<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
@@ -699,7 +731,7 @@
 						</Signal>
 					</Variable>
 					<Variable>
-						<Name type="key">Model Root/Pb_Y/In1</Name>
+						<Name type="key">Model Root/Pb_Xref/In1</Name>
 						<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
 						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
 						<Recorded type="key">-1</Recorded>
@@ -709,6 +741,15 @@
 					</Variable>
 					<Variable>
 						<Name type="key">Model Root/Pb_Ym/In1</Name>
+						<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Pb_Yref/In1</Name>
 						<Platform type="key">70ab9959-fc5e-4265-817a-e414eb33246b</Platform>
 						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
 						<Recorded type="key">-1</Recorded>

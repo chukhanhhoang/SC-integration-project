@@ -1,5 +1,5 @@
 %% Experiment setting
-SimulateOrMeasure  = 0; % 0 for simulating, any other number for measuring
+SimulateOrMeasure  = 1; % 0 for simulating, any other number for measuring
 t_experiment = 10;
 
 %% Controller settings
@@ -14,10 +14,10 @@ Cb = [1 0 0 0; 0 0 1 0];
 
 ballSystem = ss(Ab,Bb,Cb,zeros(2,2));
 Q = [4 0 0 0;0 0.1 0 0;0 0 4 0;0 0 0 0.1];
-R = 0.5*eye(2);
-% ballLQRgain = lqr(ballSystem, Q, R);
-% eig(Ab-Bb*ballLQRgain)
-ballLQRgain = place(Ab,Bb,[-2.5 -2.49 -2.5 -2.51]);
+R = 1*eye(2);
+ballLQRgain = lqr(ballSystem, Q, R);
+eig(Ab-Bb*ballLQRgain)
+% ballLQRgain = place(Ab,Bb,[-2.5 -2.49 -2.5 -2.51]);
 
 ballFFgain = [-1/(m_b*g)*(m_b+I_b/r_b^2);1/(m_b*g)*(m_b+I_b/r_b^2)];
 

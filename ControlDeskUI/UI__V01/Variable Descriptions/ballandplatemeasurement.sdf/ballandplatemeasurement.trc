@@ -3,7 +3,7 @@
 --  Trace file: BallAndPlateMeasurement.trc
 --
 --  RTI1202 7.15 (02-Nov-2020)
---  Fri Jun 25 22:47:49 2021
+--  Wed Jun 30 16:07:49 2021
 --
 --  Copyright 2021, dSPACE GmbH. All rights reserved.
 --
@@ -26,7 +26,7 @@
 
 _genname     "RTI"
 _genversion  "7.15"
-_gendate     "06/25/2021 22:47:53"
+_gendate     "06/30/2021 16:07:53"
 _description ""
 _author      "RTI1202 7.15 (02-Nov-2020)"
 _model       "BallAndPlateMeasurement"
@@ -65,7 +65,7 @@ finalTime
  desc:  "Simulation stop time. When reached, simState switches to STOP."
  flags:  READONLY
  unit:  "s"
- addr:    0x4804BF04
+ addr:    0x4804B36C
 }
 
 currentTime
@@ -75,7 +75,7 @@ currentTime
  desc:  "Current simulation time. Increments with execution of Timer Task 1."
  flags: READONLY
  unit:  "s"
- addr:    0x4804BF00
+ addr:    0x4804B368
 }
 
 modelStepSize
@@ -85,7 +85,7 @@ modelStepSize
  desc:  "Fixed step size of the model, sample time of Timer Task 1."
  flags: READONLY
  unit:  "s"
- addr:    0x4804BF08
+ addr:    0x4804B370
 }
 
 simState
@@ -94,7 +94,7 @@ simState
  alias: "simState"
  desc:  "Simulation state: STOP=0 RUN=2"
  unit:  "-"
- addr:    0x4804A180
+ addr:    0x480495F0
 }
 
 p_msg_last_error_no
@@ -104,7 +104,7 @@ p_msg_last_error_no
  desc:  "Error number of last error message (zero if no error)."
  unit:  "-"
  flags: READONLY
- addr:    0x48048568
+ addr:    0x480485F8
 }
 
 p_dsts_sum_of_reset_time
@@ -114,7 +114,7 @@ p_dsts_sum_of_reset_time
  desc:  "Internal variable for summing up reset time."
  unit:  "s"
  flags: READONLY|HIDDEN
- addr:    0x48048564
+ addr:    0x480485F4
 }
 
 
@@ -133,63 +133,63 @@ group "Task Info"
    type:  flt(64,IEEE)*
    alias: "sampleTime"
    flags: READONLY
- addr:    0x4804BF2C
-}
+		 addr:    0x4804B394
+		}
   pRti_TIMERA_TTime
   {
    type:  flt(64,IEEE)*
    alias: "turnaroundTime"
    flags: READONLY
-		 addr:    0x4804BF30
+		 addr:    0x4804B398
 		}
   pRti_TIMERA_TState
   {
    type:  int(32)*
    alias: "state"
    flags: READONLY
-		 addr:    0x4804BF34
+		 addr:    0x4804B39C
 		}
   pRti_TIMERA_OType
   {
    type:  int(32)*
    alias: "overrunCheckType"
    flags: READONLY
- addr:    0x4804BF38
-}
+		 addr:    0x4804B3A0
+		}
   pRti_TIMERA_OMax
   {
    type:  int(32)*
    alias: "overrunQueueMax"
    flags: READONLY
- addr:    0x4804BF3C
+ addr:    0x4804B3A4
 }
   pRti_TIMERA_ORpt
   {
    type:  int(32)*
    alias: "overrunQueueCount"
    flags: READONLY
- addr:    0x4804BF40
+ addr:    0x4804B3A8
 }
   pRti_TIMERA_OCnt
   {
    type:  int(32)*
    alias: "overrunCount"
    flags: READONLY
-		 addr:    0x4804BF44
+		 addr:    0x4804B3AC
 		}
   pRti_TIMERA_TCnt
   {
    type:  flt(64,IEEE)*
    alias: "taskCallCount"
    flags: READONLY
- addr:    0x4804BF48
-}
+		 addr:    0x4804B3B0
+		}
   pRti_TIMERA_Prio
   {
    type:  int(32)*
    alias: "priority"
    flags: READONLY
-		 addr:    0x4804BF4C
+		 addr:    0x4804B3B4
 		}
   endgroup
 
@@ -209,7 +209,7 @@ group "Model Root"
 		 type:    uint(32)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF0
+		 addr:    0x4804B358
 		}
 
 
@@ -225,7 +225,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF4
+		 addr:    0x4804B35C
 		}
 
 
@@ -241,8 +241,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF4
-		}
+ addr:    0x4804B35C
+}
 
 
 
@@ -257,7 +257,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF4
+		 addr:    0x4804B35C
 		}
 
 
@@ -273,8 +273,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF4
-		}
+ addr:    0x4804B35C
+}
 
 
 
@@ -289,8 +289,8 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BEF8
-}
+		 addr:    0x4804B360
+		}
 
 
 
@@ -305,7 +305,7 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF8
+		 addr:    0x4804B360
 		}
 
 
@@ -321,7 +321,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -337,8 +337,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 
@@ -353,7 +353,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -369,7 +369,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -385,8 +385,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 
@@ -401,8 +401,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 
@@ -412,13 +412,13 @@ group "Model Root"
 	{
 	 block: "Outport"
 	}
-		p_3_BallAndPlateMeasurement_real_T_3[6]
+		p_0_BallAndPlateMeasurement_real_T_0[18]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BEFC
-}
+		 addr:    0x4804B2D0
+		}
 
 
 
@@ -428,12 +428,12 @@ group "Model Root"
 	{
 	 block: "Outport"
 	}
-		p_3_BallAndPlateMeasurement_real_T_3[7]
+		p_0_BallAndPlateMeasurement_real_T_0[19]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BEFC
+ addr:    0x4804B2D0
 }
 
 
@@ -449,7 +449,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEFC
+		 addr:    0x4804B364
 		}
 
 
@@ -465,8 +465,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BEFC
-}
+		 addr:    0x4804B364
+		}
 
 
 
@@ -481,7 +481,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -496,8 +496,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 	endgroup -- block-group "Abs1"
@@ -511,7 +511,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -522,13 +522,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[106]
+		p_1_BallAndPlateMeasurement_real_T_0[109]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 	endgroup -- block-group "Constant"
@@ -538,13 +538,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[98]
+		p_1_BallAndPlateMeasurement_real_T_0[101]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Constant1"
@@ -554,13 +554,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[103]
+		p_1_BallAndPlateMeasurement_real_T_0[106]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Constant2"
@@ -570,13 +570,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[104]
+		p_1_BallAndPlateMeasurement_real_T_0[107]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Constant3"
@@ -586,13 +586,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[105]
+		p_1_BallAndPlateMeasurement_real_T_0[108]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Constant4"
@@ -602,12 +602,12 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[113]
+		p_1_BallAndPlateMeasurement_real_T_0[116]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -618,13 +618,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[101]
+		p_1_BallAndPlateMeasurement_real_T_0[104]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Constant6"
@@ -634,13 +634,13 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[99]
+		p_1_BallAndPlateMeasurement_real_T_0[102]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Init"
@@ -650,12 +650,12 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_BallAndPlateMeasurement_real_T_0[100]
+		p_1_BallAndPlateMeasurement_real_T_0[103]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -672,7 +672,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -687,7 +687,7 @@ group "Model Root"
 		 type:    uint(32)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE6C
+		 addr:    0x4804B2D4
 		}
 
 
@@ -703,8 +703,8 @@ group "Model Root"
 		 type:    uint(32)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF0
-		}
+ addr:    0x4804B358
+}
 
 
 
@@ -719,8 +719,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BEF4
-		}
+ addr:    0x4804B35C
+}
 
 
 
@@ -735,7 +735,7 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT3_4*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BE74
+ addr:    0x4804B2DC
 }
 
 
@@ -751,8 +751,8 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BE70
-}
+		 addr:    0x4804B2D8
+		}
 
 
 
@@ -767,7 +767,7 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT3_4*
 		 alias:   "In1"
 		 flags:   READONLY
- addr:    0x4804BE74
+ addr:    0x4804B2DC
 }
 
 
@@ -783,7 +783,7 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT7_3*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE6C
+		 addr:    0x4804B2D4
 		}
 
 
@@ -799,8 +799,8 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT3_32*
 		 alias:   "In1"
 		 flags:   READONLY
-		 addr:    0x4804BE74
-		}
+ addr:    0x4804B2DC
+}
 
 
 
@@ -815,7 +815,7 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE70
+		 addr:    0x4804B2D8
 		}
 		p_1_BallAndPlateMeasurement_uint8_T_2[1]
 		{
@@ -825,7 +825,7 @@ group "Model Root"
 		 scale:   [2^1, 0.0]
 		 bitmask: 0:7
 		 flags:   PARAM
-		 addr:    0x4804BEA4
+		 addr:    0x4804B30C
 		}
 
 
@@ -840,8 +840,8 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE70
-		}
+ addr:    0x4804B2D8
+}
 		p_1_BallAndPlateMeasurement_uint8_T_2[0]
 		{
 		 type:    uint(8)*
@@ -850,7 +850,7 @@ group "Model Root"
 		 scale:   [2^1, 0.0]
 		 bitmask: 0:7
 		 flags:   PARAM
-		 addr:    0x4804BEA4
+		 addr:    0x4804B30C
 		}
 
 
@@ -867,7 +867,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -882,7 +882,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -897,8 +897,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 	endgroup -- block-group "Multiport\nSwitch1"
@@ -912,8 +912,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 	endgroup -- block-group "Multiport\nSwitch2"
@@ -927,7 +927,7 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -944,7 +944,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -961,7 +961,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -978,7 +978,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -995,7 +995,7 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -1012,8 +1012,8 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 	endgroup -- block-group "Less Than1"
@@ -1029,8 +1029,8 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
-}
+		 addr:    0x4804B2E0
+		}
 
 
 	endgroup -- block-group "Less Than2"
@@ -1044,21 +1044,21 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
-		p_1_BallAndPlateMeasurement_real_T_0[107]
+		p_1_BallAndPlateMeasurement_real_T_0[110]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "UpperLimit"
 		 flags:   PARAM
- addr:    0x4804BE9C
-}
-		p_1_BallAndPlateMeasurement_real_T_0[108]
+		 addr:    0x4804B304
+		}
+		p_1_BallAndPlateMeasurement_real_T_0[111]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "LowerLimit"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -1073,22 +1073,22 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
-		p_1_BallAndPlateMeasurement_real_T_0[109]
+		p_1_BallAndPlateMeasurement_real_T_0[112]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "UpperLimit"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
-		p_1_BallAndPlateMeasurement_real_T_0[110]
+ addr:    0x4804B304
+}
+		p_1_BallAndPlateMeasurement_real_T_0[113]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "LowerLimit"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Saturation1"
@@ -1102,22 +1102,22 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
-		p_1_BallAndPlateMeasurement_real_T_0[111]
+		p_1_BallAndPlateMeasurement_real_T_0[114]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "UpperLimit"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
-		p_1_BallAndPlateMeasurement_real_T_0[112]
+		p_1_BallAndPlateMeasurement_real_T_0[115]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "LowerLimit"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 	endgroup -- block-group "Saturation2"
@@ -1131,7 +1131,7 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEF8
+ addr:    0x4804B360
 }
 
 
@@ -1146,8 +1146,8 @@ group "Model Root"
 		 type:    uint(16)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEF8
-}
+		 addr:    0x4804B360
+		}
 
 
 	endgroup -- block-group "Add1"
@@ -1161,14 +1161,14 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-		p_1_BallAndPlateMeasurement_real_T_0[102]
+		 addr:    0x4804B2D0
+		}
+		p_1_BallAndPlateMeasurement_real_T_0[105]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "InitialCondition"
 		 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -1178,47 +1178,47 @@ group "Model Root"
   
 	group "CalibrateBallPosition" -- subsystem-group
 
-		p_0_BallAndPlateMeasurement_real_T_0[98]
+		p_0_BallAndPlateMeasurement_real_T_0[100]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_A"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-		p_0_BallAndPlateMeasurement_real_T_0[97]
+		 addr:    0x4804B2D0
+		}
+		p_0_BallAndPlateMeasurement_real_T_0[99]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_B"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
-		p_0_BallAndPlateMeasurement_real_T_0[96]
+		p_0_BallAndPlateMeasurement_real_T_0[98]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_C"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 		p_0_BallAndPlateMeasurement_real_T_11[0]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_Xavg"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE94
+		 addr:    0x4804B2FC
 		}
 		p_0_BallAndPlateMeasurement_real_T_12[0]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_Yavg"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE98
+		 addr:    0x4804B300
 		}
-		p_0_BallAndPlateMeasurement_real_T_0[106]
+		p_0_BallAndPlateMeasurement_real_T_0[108]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_target"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 		p_0_BallAndPlateMeasurement_boolean_T_4[25]
 		{
@@ -1227,20 +1227,20 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 		group "Abs" -- block-group
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[81]
+			p_0_BallAndPlateMeasurement_real_T_0[83]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -1250,12 +1250,12 @@ group "Model Root"
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[83]
+			p_0_BallAndPlateMeasurement_real_T_0[85]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -1265,13 +1265,13 @@ group "Model Root"
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[85]
+			p_0_BallAndPlateMeasurement_real_T_0[87]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 		endgroup -- block-group "Abs2"
@@ -1280,13 +1280,13 @@ group "Model Root"
 		{
 		 block: "Clock"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[86]
+			p_0_BallAndPlateMeasurement_real_T_0[88]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 		endgroup -- block-group "Clock"
@@ -1301,8 +1301,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Constant"
@@ -1317,8 +1317,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Constant6"
@@ -1327,13 +1327,13 @@ group "Model Root"
 		{
 		 block: "DataTypeConversion"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[102]
+			p_0_BallAndPlateMeasurement_real_T_0[104]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 		endgroup -- block-group "Data Type Conversion"
@@ -1342,12 +1342,12 @@ group "Model Root"
 		{
 		 block: "DataTypeConversion"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[104]
+			p_0_BallAndPlateMeasurement_real_T_0[106]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -1357,20 +1357,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[89]
+			p_0_BallAndPlateMeasurement_real_T_0[91]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-			 addr:    0x4804BE68
-			}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[11]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Gain"
@@ -1379,20 +1379,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[92]
+			p_0_BallAndPlateMeasurement_real_T_0[94]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[12]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Gain1"
@@ -1401,19 +1401,19 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[95]
+			p_0_BallAndPlateMeasurement_real_T_0[97]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[13]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -1423,19 +1423,19 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[96]
+			p_0_BallAndPlateMeasurement_real_T_0[98]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+			 addr:    0x4804B2D0
+			}
 			p_1_BallAndPlateMeasurement_real_T_0[14]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -1445,20 +1445,20 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[97]
+			p_0_BallAndPlateMeasurement_real_T_0[99]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[15]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Integrator1"
@@ -1467,19 +1467,19 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[98]
+			p_0_BallAndPlateMeasurement_real_T_0[100]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[16]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -1496,8 +1496,8 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
-}
+			 addr:    0x4804B2E0
+			}
 
 
 		endgroup -- block-group "Logical\nOperator1"
@@ -1506,13 +1506,13 @@ group "Model Root"
 		{
 		 block: "RateTransition"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[103]
+			p_0_BallAndPlateMeasurement_real_T_0[105]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 		endgroup -- block-group "Rate Transition"
@@ -1521,12 +1521,12 @@ group "Model Root"
 		{
 		 block: "RateTransition"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[105]
+			p_0_BallAndPlateMeasurement_real_T_0[107]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -1543,7 +1543,7 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -1560,7 +1560,7 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
+ addr:    0x4804B2E0
 }
 
 
@@ -1577,8 +1577,8 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 		endgroup -- block-group "Less Than1"
@@ -1594,7 +1594,7 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
+ addr:    0x4804B2E0
 }
 
 
@@ -1604,12 +1604,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[94]
+			p_0_BallAndPlateMeasurement_real_T_0[96]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -1619,12 +1619,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[88]
+			p_0_BallAndPlateMeasurement_real_T_0[90]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -1634,12 +1634,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[91]
+			p_0_BallAndPlateMeasurement_real_T_0[93]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -1649,13 +1649,13 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[99]
+			p_0_BallAndPlateMeasurement_real_T_0[101]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-			 addr:    0x4804BE68
-			}
+		 addr:    0x4804B2D0
+		}
 			trcref0_Default_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
@@ -1690,13 +1690,13 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[100]
+			p_0_BallAndPlateMeasurement_real_T_0[102]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+			 addr:    0x4804B2D0
+			}
 			trcref0_Default_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
@@ -1708,7 +1708,7 @@ group "Model Root"
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_denc_mi"
 			 alias:    "Default_denc_mi"
-}
+		}
 			trcref0_Numerator
 			{
 			 refgroup: "/Tunable Parameters"
@@ -1731,39 +1731,39 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[101]
+			p_0_BallAndPlateMeasurement_real_T_0[103]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			trcref0_Default_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Default_numc_mi"
-		}
+}
 			trcref1_Default_denc_mi
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_denc_mi"
 			 alias:    "Default_denc_mi"
-			}
+}
 			trcref0_Numerator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-}
+		}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_denc_mi"
 			 alias:    "Denominator"
 			 flags:    DEPRECATED|HIDDEN
-		}
+}
 
 
 		endgroup -- block-group "Transfer Fcn3"
@@ -1772,32 +1772,32 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[90]
+			p_0_BallAndPlateMeasurement_real_T_0[92]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			trcref0_LowPass_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_numc_mi"
 			 alias:    "LowPass_numc_mi"
-}
+		}
 			trcref1_LowPass_denc_mi
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_denc_mi"
 			 alias:    "LowPass_denc_mi"
-		}
+}
 			trcref0_Numerator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-}
+		}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
@@ -1813,12 +1813,12 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[93]
+			p_0_BallAndPlateMeasurement_real_T_0[95]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			trcref0_LowPass_numc_mi
 			{
@@ -1831,21 +1831,21 @@ group "Model Root"
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_denc_mi"
 			 alias:    "LowPass_denc_mi"
-		}
+}
 			trcref0_Numerator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-		}
+}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_denc_mi"
 			 alias:    "Denominator"
 			 flags:    DEPRECATED|HIDDEN
-		}
+}
 
 
 		endgroup -- block-group "Transfer Fcn5"
@@ -1854,12 +1854,12 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[87]
+			p_0_BallAndPlateMeasurement_real_T_0[89]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			trcref0_LowPass_numc_mi
 			{
@@ -1872,7 +1872,7 @@ group "Model Root"
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "LowPass_denc_mi"
 			 alias:    "LowPass_denc_mi"
-		}
+}
 			trcref0_Numerator
 			{
 			 refgroup: "/Tunable Parameters"
@@ -1895,20 +1895,20 @@ group "Model Root"
 		{
 		 block: "Delay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[80]
+			p_0_BallAndPlateMeasurement_real_T_0[82]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[6]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Delay"
@@ -1917,19 +1917,19 @@ group "Model Root"
 		{
 		 block: "Delay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[82]
+			p_0_BallAndPlateMeasurement_real_T_0[84]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[7]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -1939,20 +1939,20 @@ group "Model Root"
 		{
 		 block: "Delay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[84]
+			p_0_BallAndPlateMeasurement_real_T_0[86]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[8]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Delay2"
@@ -1966,7 +1966,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE94
+		 addr:    0x4804B2FC
 		}
 
 
@@ -1981,8 +1981,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE98
-		}
+ addr:    0x4804B300
+}
 
 
 		endgroup -- block-group "Moving\nAverage1"
@@ -1991,34 +1991,34 @@ group "Model Root"
   
 		group "GetTargetCorner" -- subsystem-group
 
-			p_0_BallAndPlateMeasurement_real_T_0[106]
+			p_0_BallAndPlateMeasurement_real_T_0[108]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Pb_target"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
-			p_0_BallAndPlateMeasurement_real_T_0[107]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Pp_Aref"
-			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
-			p_0_BallAndPlateMeasurement_real_T_0[108]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Pp_Bref"
-			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_0_BallAndPlateMeasurement_real_T_0[109]
 			{
 			 type:    flt(64,IEEE)*
+			 alias:   "Pp_Aref"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[110]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Pp_Bref"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[111]
+			{
+			 type:    flt(64,IEEE)*
 			 alias:   "Pp_Cref"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 
@@ -2036,14 +2036,14 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT7_3*
 		 alias:   "Link Status"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE6C
+		 addr:    0x4804B2D4
 		}
 		p_0_BallAndPlateMeasurement_uint8_T_3[36]
 		{
 		 type:    BallAndPlateMeasurement_ArrayDT3_4*
 		 alias:   "Local IP"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE74
+		 addr:    0x4804B2DC
 		}
 
 	endgroup -- subsystem-group "ETHERNET_SETUP_BL1"
@@ -2056,42 +2056,42 @@ group "Model Root"
 		 type:    BallAndPlateMeasurement_ArrayDT3_32*
 		 alias:   "Data"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE74
+		 addr:    0x4804B2DC
 		}
 		p_3_BallAndPlateMeasurement_uint32_T_0[0]
 		{
 		 type:    uint(32)*
 		 alias:   "Status"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BEF0
+		 addr:    0x4804B358
 		}
 		p_3_BallAndPlateMeasurement_real_T_1[0]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Received Frames"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEF4
+ addr:    0x4804B35C
 }
 		p_0_BallAndPlateMeasurement_uint32_T_1[0]
 		{
 		 type:    uint(32)*
 		 alias:   "Received Bytes"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE6C
-}
+		 addr:    0x4804B2D4
+		}
 		p_0_BallAndPlateMeasurement_uint8_T_3[32]
 		{
 		 type:    BallAndPlateMeasurement_ArrayDT3_4*
 		 alias:   "Remote IP"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE74
+		 addr:    0x4804B2DC
 		}
 		p_0_BallAndPlateMeasurement_uint16_T_2[0]
 		{
 		 type:    uint(16)*
 		 alias:   "Remote Port"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE70
+		 addr:    0x4804B2D8
 		}
 
 	endgroup -- subsystem-group "ETHERNET_UDP_RX_BL1"
@@ -2105,27 +2105,27 @@ group "Model Root"
   
 	group "EnableMotors" -- subsystem-group
 
-		p_0_BallAndPlateMeasurement_real_T_0[72]
+		p_0_BallAndPlateMeasurement_real_T_0[74]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_A"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-		p_0_BallAndPlateMeasurement_real_T_0[73]
+		 addr:    0x4804B2D0
+		}
+		p_0_BallAndPlateMeasurement_real_T_0[75]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_B"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
-		p_0_BallAndPlateMeasurement_real_T_0[74]
+		p_0_BallAndPlateMeasurement_real_T_0[76]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_C"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 		p_0_BallAndPlateMeasurement_boolean_T_4[20]
 		{
 		 type:    uint(8)*
@@ -2133,20 +2133,20 @@ group "Model Root"
 		 range:   < 0 ; 1 >
 		 bitmask: 0x01
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 		group "Abs" -- block-group
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[56]
+			p_0_BallAndPlateMeasurement_real_T_0[58]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -2156,12 +2156,12 @@ group "Model Root"
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[57]
+			p_0_BallAndPlateMeasurement_real_T_0[59]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -2171,12 +2171,12 @@ group "Model Root"
 		{
 		 block: "Abs"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[58]
+			p_0_BallAndPlateMeasurement_real_T_0[60]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -2192,7 +2192,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2208,8 +2208,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Imax"
@@ -2224,7 +2224,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2240,8 +2240,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Istep"
@@ -2250,20 +2250,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[61]
+			p_0_BallAndPlateMeasurement_real_T_0[63]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[23]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Gain"
@@ -2272,20 +2272,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[63]
+			p_0_BallAndPlateMeasurement_real_T_0[65]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[24]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Gain1"
@@ -2294,20 +2294,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[65]
+			p_0_BallAndPlateMeasurement_real_T_0[67]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[25]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-			 addr:    0x4804BE9C
-			}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Gain2"
@@ -2316,19 +2316,19 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[67]
+			p_0_BallAndPlateMeasurement_real_T_0[69]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[32]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2338,19 +2338,19 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[69]
+			p_0_BallAndPlateMeasurement_real_T_0[71]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[37]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2360,20 +2360,20 @@ group "Model Root"
 		{
 		 block: "Integrator"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[71]
+			p_0_BallAndPlateMeasurement_real_T_0[73]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[42]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Integrator2"
@@ -2389,8 +2389,8 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 		endgroup -- block-group "Logical\nOperator"
@@ -2406,8 +2406,8 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 		endgroup -- block-group "Logical\nOperator1"
@@ -2416,40 +2416,40 @@ group "Model Root"
 		{
 		 block: "Relay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[66]
+			p_0_BallAndPlateMeasurement_real_T_0[68]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[28]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnSwitchValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 			p_1_BallAndPlateMeasurement_real_T_0[29]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffSwitchValue"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[30]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnOutputValue"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 			p_1_BallAndPlateMeasurement_real_T_0[31]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffOutputValue"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2459,40 +2459,40 @@ group "Model Root"
 		{
 		 block: "Relay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[68]
+			p_0_BallAndPlateMeasurement_real_T_0[70]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[33]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnSwitchValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[34]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffSwitchValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[35]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnOutputValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[36]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffOutputValue"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -2502,40 +2502,40 @@ group "Model Root"
 		{
 		 block: "Relay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[70]
+			p_0_BallAndPlateMeasurement_real_T_0[72]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[38]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnSwitchValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[39]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffSwitchValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[40]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OnOutputValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[41]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "OffOutputValue"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -2552,7 +2552,7 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -2569,7 +2569,7 @@ group "Model Root"
 			 range:   < 0 ; 1 >
 			 bitmask: 0x01
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -2579,12 +2579,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[64]
+			p_0_BallAndPlateMeasurement_real_T_0[66]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -2594,13 +2594,13 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[62]
+			p_0_BallAndPlateMeasurement_real_T_0[64]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 		endgroup -- block-group "Sum1"
@@ -2609,13 +2609,13 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[60]
+			p_0_BallAndPlateMeasurement_real_T_0[62]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 		endgroup -- block-group "Sum2"
@@ -2624,12 +2624,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[79]
+			p_0_BallAndPlateMeasurement_real_T_0[81]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -2639,19 +2639,19 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[72]
+			p_0_BallAndPlateMeasurement_real_T_0[74]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[43]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -2661,20 +2661,20 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[73]
+			p_0_BallAndPlateMeasurement_real_T_0[75]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Switch1"
@@ -2683,19 +2683,19 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[74]
+			p_0_BallAndPlateMeasurement_real_T_0[76]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[45]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -2705,12 +2705,12 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[75]
+			p_0_BallAndPlateMeasurement_real_T_0[77]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -2720,12 +2720,12 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[76]
+			p_0_BallAndPlateMeasurement_real_T_0[78]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			trcref0_Default_numc_mi
 			{
@@ -2745,7 +2745,7 @@ group "Model Root"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-}
+		}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
@@ -2761,13 +2761,13 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[77]
+			p_0_BallAndPlateMeasurement_real_T_0[79]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			trcref0_Default_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
@@ -2786,14 +2786,14 @@ group "Model Root"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-		}
+}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_denc_mi"
 			 alias:    "Denominator"
 			 flags:    DEPRECATED|HIDDEN
-		}
+}
 
 
 		endgroup -- block-group "Transfer Fcn1"
@@ -2802,19 +2802,19 @@ group "Model Root"
 		{
 		 block: "TransferFcn"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[78]
+			p_0_BallAndPlateMeasurement_real_T_0[80]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			trcref0_Default_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Default_numc_mi"
-		}
+}
 			trcref1_Default_denc_mi
 			{
 			 refgroup: "/Tunable Parameters"
@@ -2827,14 +2827,14 @@ group "Model Root"
 			 refvar:   "Default_numc_mi"
 			 alias:    "Numerator"
 			 flags:    DEPRECATED|HIDDEN
-}
+		}
 			trcref1_Denominator
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "Default_denc_mi"
 			 alias:    "Denominator"
 			 flags:    DEPRECATED|HIDDEN
-			}
+}
 
 
 		endgroup -- block-group "Transfer Fcn2"
@@ -2843,20 +2843,20 @@ group "Model Root"
 		{
 		 block: "Delay"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[59]
+			p_0_BallAndPlateMeasurement_real_T_0[61]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[22]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "InitialCondition"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Delay"
@@ -2874,20 +2874,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[54]
+			p_0_BallAndPlateMeasurement_real_T_0[56]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Current2V"
@@ -2896,19 +2896,19 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[55]
+			p_0_BallAndPlateMeasurement_real_T_0[57]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[49]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -2918,27 +2918,27 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[53]
+			p_0_BallAndPlateMeasurement_real_T_0[55]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[46]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[47]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Saturation"
@@ -2962,20 +2962,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[51]
+			p_0_BallAndPlateMeasurement_real_T_0[53]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 			p_1_BallAndPlateMeasurement_real_T_0[52]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Current2V"
@@ -2984,20 +2984,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[52]
+			p_0_BallAndPlateMeasurement_real_T_0[54]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[53]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "DSPscale"
@@ -3006,27 +3006,27 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[50]
+			p_0_BallAndPlateMeasurement_real_T_0[52]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[50]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 			p_1_BallAndPlateMeasurement_real_T_0[51]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Saturation"
@@ -3050,20 +3050,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[48]
+			p_0_BallAndPlateMeasurement_real_T_0[50]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[56]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Current2V"
@@ -3072,20 +3072,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[49]
+			p_0_BallAndPlateMeasurement_real_T_0[51]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[57]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "DSPscale"
@@ -3094,27 +3094,27 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[47]
+			p_0_BallAndPlateMeasurement_real_T_0[49]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[54]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "UpperLimit"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[55]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "LowerLimit"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "Saturation"
@@ -3132,19 +3132,19 @@ group "Model Root"
   
 	group "Position Measurement" -- subsystem-group
 
-		p_0_BallAndPlateMeasurement_real_T_0[46]
+		p_0_BallAndPlateMeasurement_real_T_0[48]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 		p_3_BallAndPlateMeasurement_real_T_1[1]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEF4
+ addr:    0x4804B35C
 }
 
 
@@ -3158,7 +3158,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3174,8 +3174,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-			 addr:    0x4804BE9C
-			}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Pos_offset"
@@ -3190,8 +3190,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "ZP"
@@ -3200,19 +3200,19 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[43]
+			p_0_BallAndPlateMeasurement_real_T_0[45]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[60]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3227,14 +3227,14 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BEF4
+ addr:    0x4804B35C
 }
 			p_1_BallAndPlateMeasurement_real_T_0[66]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3244,12 +3244,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[44]
+			p_0_BallAndPlateMeasurement_real_T_0[46]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -3259,19 +3259,19 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_BallAndPlateMeasurement_real_T_0[41]
+			p_0_BallAndPlateMeasurement_real_T_0[43]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
-			 addr:    0x4804BE68
-			}
-			p_0_BallAndPlateMeasurement_real_T_0[42]
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 		endgroup -- subsystem-group "EMC_ENCODER_BL1"
@@ -3290,27 +3290,27 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
-			 addr:    0x4804BE8C
-			}
-			p_0_BallAndPlateMeasurement_real_T_0[46]
+		 addr:    0x4804B2F4
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 
 			group "Abs" -- block-group
 			{
 			 block: "Abs"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[45]
+				p_0_BallAndPlateMeasurement_real_T_0[47]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -3326,8 +3326,8 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 			endgroup -- block-group "Const"
@@ -3342,7 +3342,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3359,7 +3359,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
+ addr:    0x4804B2E0
 }
 
 
@@ -3376,8 +3376,8 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
-}
+		 addr:    0x4804B2E0
+		}
 
 
 			endgroup -- block-group "Relational\nOperator"
@@ -3393,7 +3393,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -3403,26 +3403,26 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[46]
+				p_0_BallAndPlateMeasurement_real_T_0[48]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 				p_1_BallAndPlateMeasurement_real_T_0[64]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "A"
 				 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 				p_1_BallAndPlateMeasurement_real_T_0[65]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "C"
 				 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -3437,7 +3437,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE90
+		 addr:    0x4804B2F8
 		}
 
 
@@ -3451,8 +3451,8 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
 					 flags:   PARAM
- addr:    0x4804BEBC
-}
+		 addr:    0x4804B324
+		}
 
 
 				endgroup -- block-group "Constant"
@@ -3469,7 +3469,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE8C
+ addr:    0x4804B2F4
 }
 
 
@@ -3482,7 +3482,7 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
 					 flags:   OUTPUT|READONLY
- addr:    0x4804BE8C
+ addr:    0x4804B2F4
 }
 
 
@@ -3501,20 +3501,20 @@ group "Model Root"
   
 	group "Position Measurement1" -- subsystem-group
 
-		p_0_BallAndPlateMeasurement_real_T_0[40]
+		p_0_BallAndPlateMeasurement_real_T_0[42]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 		p_3_BallAndPlateMeasurement_real_T_1[2]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEF4
-}
+		 addr:    0x4804B35C
+		}
 
 
 		group "Constant" -- block-group
@@ -3527,8 +3527,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Constant"
@@ -3543,8 +3543,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Pos_offset"
@@ -3559,7 +3559,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -3569,19 +3569,19 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[37]
+			p_0_BallAndPlateMeasurement_real_T_0[39]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[69]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3596,15 +3596,15 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BEF4
-}
+		 addr:    0x4804B35C
+		}
 			p_1_BallAndPlateMeasurement_real_T_0[75]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "mm2m"
@@ -3613,12 +3613,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[38]
+			p_0_BallAndPlateMeasurement_real_T_0[40]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
+ addr:    0x4804B2D0
 }
 
 
@@ -3628,20 +3628,20 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_BallAndPlateMeasurement_real_T_0[35]
+			p_0_BallAndPlateMeasurement_real_T_0[37]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
-			p_0_BallAndPlateMeasurement_real_T_0[36]
+ addr:    0x4804B2D0
+}
+			p_0_BallAndPlateMeasurement_real_T_0[38]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 
 		endgroup -- subsystem-group "EMC_ENCODER_BL1"
   
@@ -3659,27 +3659,27 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE84
+		 addr:    0x4804B2EC
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[40]
+			p_0_BallAndPlateMeasurement_real_T_0[42]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 			group "Abs" -- block-group
 			{
 			 block: "Abs"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[39]
+				p_0_BallAndPlateMeasurement_real_T_0[41]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -3695,7 +3695,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3711,8 +3711,8 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 			endgroup -- block-group "Const1"
@@ -3728,8 +3728,8 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
-		}
+ addr:    0x4804B2E0
+}
 
 
 			endgroup -- block-group "Logical\nOperator2"
@@ -3745,7 +3745,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
+ addr:    0x4804B2E0
 }
 
 
@@ -3762,7 +3762,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -3772,26 +3772,26 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[40]
+				p_0_BallAndPlateMeasurement_real_T_0[42]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 				p_1_BallAndPlateMeasurement_real_T_0[73]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "A"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 				p_1_BallAndPlateMeasurement_real_T_0[74]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "C"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -3806,7 +3806,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE88
+		 addr:    0x4804B2F0
 		}
 
 
@@ -3820,8 +3820,8 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
 					 flags:   PARAM
- addr:    0x4804BEB4
-}
+		 addr:    0x4804B31C
+		}
 
 
 				endgroup -- block-group "Constant"
@@ -3838,8 +3838,8 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE84
-}
+		 addr:    0x4804B2EC
+		}
 
 
 				group "In1" -- block-group
@@ -3851,8 +3851,8 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
 					 flags:   OUTPUT|READONLY
- addr:    0x4804BE84
-}
+		 addr:    0x4804B2EC
+		}
 
 
 				endgroup -- block-group "In1"
@@ -3870,19 +3870,19 @@ group "Model Root"
   
 	group "Position Measurement2" -- subsystem-group
 
-		p_0_BallAndPlateMeasurement_real_T_0[34]
+		p_0_BallAndPlateMeasurement_real_T_0[36]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 		p_3_BallAndPlateMeasurement_real_T_1[3]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BEF4
+		 addr:    0x4804B35C
 		}
 
 
@@ -3896,8 +3896,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Constant"
@@ -3912,7 +3912,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -3928,8 +3928,8 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "ZP"
@@ -3938,20 +3938,20 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[31]
+			p_0_BallAndPlateMeasurement_real_T_0[33]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_1_BallAndPlateMeasurement_real_T_0[78]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
- addr:    0x4804BE9C
-}
+		 addr:    0x4804B304
+		}
 
 
 		endgroup -- block-group "Inc2Pos"
@@ -3965,15 +3965,15 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BEF4
+		 addr:    0x4804B35C
 		}
 			p_1_BallAndPlateMeasurement_real_T_0[84]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Gain"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
-		}
+ addr:    0x4804B304
+}
 
 
 		endgroup -- block-group "mm2m"
@@ -3982,12 +3982,12 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[32]
+			p_0_BallAndPlateMeasurement_real_T_0[34]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -3997,20 +3997,20 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_BallAndPlateMeasurement_real_T_0[29]
+			p_0_BallAndPlateMeasurement_real_T_0[31]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[30]
+			p_0_BallAndPlateMeasurement_real_T_0[32]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 		endgroup -- subsystem-group "EMC_ENCODER_BL1"
   
@@ -4028,14 +4028,14 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE7C
+		 addr:    0x4804B2E4
 		}
-			p_0_BallAndPlateMeasurement_real_T_0[34]
+			p_0_BallAndPlateMeasurement_real_T_0[36]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -4043,12 +4043,12 @@ group "Model Root"
 			{
 			 block: "Abs"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[33]
+				p_0_BallAndPlateMeasurement_real_T_0[35]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 
 
@@ -4064,7 +4064,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -4080,7 +4080,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Value"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -4097,7 +4097,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -4114,7 +4114,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE78
+		 addr:    0x4804B2E0
 		}
 
 
@@ -4131,7 +4131,7 @@ group "Model Root"
 				 range:   < 0 ; 1 >
 				 bitmask: 0x01
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE78
+ addr:    0x4804B2E0
 }
 
 
@@ -4141,26 +4141,26 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_BallAndPlateMeasurement_real_T_0[34]
+				p_0_BallAndPlateMeasurement_real_T_0[36]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 				p_1_BallAndPlateMeasurement_real_T_0[82]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "A"
 				 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 				p_1_BallAndPlateMeasurement_real_T_0[83]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "C"
 				 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -4175,7 +4175,7 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE80
+		 addr:    0x4804B2E8
 		}
 
 
@@ -4189,7 +4189,7 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Value"
 					 flags:   PARAM
-		 addr:    0x4804BEAC
+		 addr:    0x4804B314
 		}
 
 
@@ -4207,8 +4207,8 @@ group "Model Root"
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
 				 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE7C
-		}
+ addr:    0x4804B2E4
+}
 
 
 				group "In1" -- block-group
@@ -4220,8 +4220,8 @@ group "Model Root"
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
 					 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE7C
-		}
+ addr:    0x4804B2E4
+}
 
 
 				endgroup -- block-group "In1"
@@ -4250,57 +4250,57 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "I_A"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 		p_0_BallAndPlateMeasurement_real_T_0[13]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_B"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 		p_0_BallAndPlateMeasurement_real_T_0[14]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "I_C"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 		p_0_BallAndPlateMeasurement_real_T_0[15]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pp_Aref"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 		p_0_BallAndPlateMeasurement_real_T_0[16]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pp_Bref"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 		p_0_BallAndPlateMeasurement_real_T_0[17]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pp_Cref"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
-		p_3_BallAndPlateMeasurement_real_T_3[6]
+		p_0_BallAndPlateMeasurement_real_T_0[18]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_Xref"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
-}
-		p_3_BallAndPlateMeasurement_real_T_3[7]
+		 addr:    0x4804B2D0
+		}
+		p_0_BallAndPlateMeasurement_real_T_0[19]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_Yref"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
-}
+		 addr:    0x4804B2D0
+		}
 
 
 		group "Constant" -- block-group
@@ -4313,7 +4313,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -4329,7 +4329,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
- addr:    0x4804BE9C
+ addr:    0x4804B304
 }
 
 
@@ -4345,7 +4345,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -4361,7 +4361,7 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
@@ -4377,11 +4377,59 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
 			 flags:   PARAM
-		 addr:    0x4804BE9C
+		 addr:    0x4804B304
 		}
 
 
 		endgroup -- block-group "Constant4"
+
+		group "Period" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[100]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4804B304
+}
+
+
+		endgroup -- block-group "Period"
+
+		group "ellipse_a" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[98]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+ addr:    0x4804B304
+}
+
+
+		endgroup -- block-group "ellipse_a"
+
+		group "ellipse_b" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_BallAndPlateMeasurement_real_T_0[99]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+		 addr:    0x4804B304
+		}
+
+
+		endgroup -- block-group "ellipse_b"
 
 		group "Controller" -- referenced block group
 			p_0_BallAndPlateMeasurement_real_T_0[12]
@@ -4389,140 +4437,140 @@ group "Model Root"
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_0_BallAndPlateMeasurement_real_T_0[13]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out2"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_0_BallAndPlateMeasurement_real_T_0[14]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out3"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
+		 addr:    0x4804B2D0
+		}
 			p_0_BallAndPlateMeasurement_real_T_0[15]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out4"
 			 flags:   OUTPUT|READONLY
-			 addr:    0x4804BE68
-			}
+		 addr:    0x4804B2D0
+		}
 			p_0_BallAndPlateMeasurement_real_T_0[16]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out5"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_0_BallAndPlateMeasurement_real_T_0[17]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out6"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-			p_3_BallAndPlateMeasurement_real_T_3[6]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out7"
-			 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
-}
-			p_3_BallAndPlateMeasurement_real_T_3[7]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out8"
-			 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
+ addr:    0x4804B2D0
 }
 			p_0_BallAndPlateMeasurement_real_T_0[18]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out9"
+			 alias:   "Out7"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 			p_0_BallAndPlateMeasurement_real_T_0[19]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out10"
+			 alias:   "Out8"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[20]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out11"
+			 alias:   "Out9"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[21]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out12"
+			 alias:   "Out10"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[22]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out13"
+			 alias:   "Out11"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[23]
 			{
 			 type:    flt(64,IEEE)*
-			 alias:   "Out14"
+			 alias:   "Out12"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[24]
 			{
 			 type:    flt(64,IEEE)*
+			 alias:   "Out13"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[25]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out14"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[26]
+			{
+			 type:    flt(64,IEEE)*
 			 alias:   "Out15"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-			p_0_BallAndPlateMeasurement_real_T_0[25]
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[27]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out16"
 			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-			p_0_BallAndPlateMeasurement_real_T_0[26]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out17"
-			 flags:   OUTPUT|READONLY
- addr:    0x4804BE68
-}
-			p_0_BallAndPlateMeasurement_real_T_0[27]
-			{
-			 type:    flt(64,IEEE)*
-			 alias:   "Out18"
-			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			p_0_BallAndPlateMeasurement_real_T_0[28]
 			{
 			 type:    flt(64,IEEE)*
+			 alias:   "Out17"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out18"
+			 flags:   OUTPUT|READONLY
+		 addr:    0x4804B2D0
+		}
+			p_0_BallAndPlateMeasurement_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
 			 alias:   "Out19"
 			 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
+		 addr:    0x4804B2D0
 		}
 			trcref0_ballFFgain
 			{
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "ballFFgain"
 			 alias:    "ballFFgain"
-		}
+}
 			trcref1_ballLQRgain
 			{
 			 refgroup: "/Tunable Parameters"
@@ -4534,7 +4582,7 @@ group "Model Root"
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "denc_mi"
 			 alias:    "denc_mi"
-		}
+}
 			trcref3_numc_mi
 			{
 			 refgroup: "/Tunable Parameters"
@@ -4546,7 +4594,7 @@ group "Model Root"
 			 refgroup: "/Tunable Parameters"
 			 refvar:   "UseUserDefinedBallReference"
 			 alias:    "UseUserDefinedBallReference"
-		}
+}
 			trcref5_UseUserDefinedPlateReference
 			{
 			 refgroup: "/Tunable Parameters"
@@ -4576,14 +4624,14 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_X_corrected"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
-}
+		 addr:    0x4804B364
+		}
 		p_3_BallAndPlateMeasurement_real_T_3[9]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Pb_Y_corrected"
 		 flags:   OUTPUT|READONLY
- addr:    0x4804BEFC
+ addr:    0x4804B364
 }
 
 
@@ -4599,8 +4647,8 @@ group "Model Root"
 		 type:    flt(64,IEEE)*
 		 alias:   "outputState"
 		 flags:   OUTPUT|READONLY
-		 addr:    0x4804BE68
-		}
+ addr:    0x4804B2D0
+}
 
 
 
@@ -4619,57 +4667,57 @@ group "Tunable Parameters"
 	 type:    BallAndPlateMeasurement_ArrayDT0_3
 	 alias:   "Default_denc_mi"
 	 flags:   PARAM
-	 addr:    0x4804A168
-	}
+ addr:    0x480495D8
+}
 	rtP_Default_numc_mi
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_3
 	 alias:   "Default_numc_mi"
 	 flags:   PARAM
-	 addr:    0x4804A150
-	}
+ addr:    0x480495C0
+}
 	rtP_LowPass_denc_mi
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_2
 	 alias:   "LowPass_denc_mi"
 	 flags:   PARAM
-	 addr:    0x4804A140
-	}
+ addr:    0x480495B0
+}
 	rtP_LowPass_numc_mi
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_2
 	 alias:   "LowPass_numc_mi"
 	 flags:   PARAM
-	 addr:    0x4804A130
-	}
+ addr:    0x480495A0
+}
 	rtP_ballFFgain
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_2
 	 alias:   "ballFFgain"
 	 flags:   PARAM
-	 addr:    0x4804A120
+	 addr:    0x48049590
 	}
 	rtP_ballLQRgain
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_2_4_Col
 	 alias:   "ballLQRgain"
 	 flags:   PARAM
- addr:    0x4804A0E0
-}
+	 addr:    0x48049550
+	}
 	rtP_denc_mi
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_3
 	 alias:   "denc_mi"
 	 flags:   PARAM
-	 addr:    0x4804A0C8
+	 addr:    0x48049538
 	}
 	rtP_numc_mi
 	{
 	 type:    BallAndPlateMeasurement_ArrayDT0_3
 	 alias:   "numc_mi"
 	 flags:   PARAM
- addr:    0x4804A0B0
-}
+	 addr:    0x48049520
+	}
 	rtP_UseUserDefinedBallReference
 	{
 	 type:    uint(8)
@@ -4677,7 +4725,7 @@ group "Tunable Parameters"
 	 bitmask: 0x01
 	 range:   < 0 ; 1 >
 	 flags:   PARAM
- addr:    0x4804A0A9
+ addr:    0x48049519
 }
 	rtP_UseUserDefinedPlateReference
 	{
@@ -4686,7 +4734,7 @@ group "Tunable Parameters"
 	 bitmask: 0x01
 	 range:   < 0 ; 1 >
 	 flags:   PARAM
- addr:    0x4804A0A8
+ addr:    0x48049518
 }
 
 endgroup
@@ -4735,8 +4783,8 @@ group "XIL API"
       desc:    "Index of active ErrorSet or 0 if no ErrorSet is active."
       flags:   OUTPUT|READONLY
       range:   < 0 ; 4294967295 >
-		 addr:    0x4804A6C8
-		}
+	 addr:    0x48049B20
+	}
 
     p_xilapi_eesport_erroractivated_uint32_T
     {
@@ -4745,8 +4793,8 @@ group "XIL API"
       desc:    "0 - no error is activated on hardware, 1 - at least one error is activated on hardware."  
       flags:   OUTPUT|READONLY
       range:   < 0 ; 1 >
- addr:    0x4804A6C4
-}
+	 addr:    0x48049B1C
+	}
 
     p_xilapi_eesport_errorswitching_uint32_T
     {
@@ -4755,7 +4803,7 @@ group "XIL API"
       desc:    "0 - no switching operation running on hardware, 1 -  switching operation running on hardware."
       flags:   OUTPUT|READONLY
       range:   < 0 ; 1 >
-		 addr:    0x4804A6C0
+		 addr:    0x48049B18
 		}
 
     xilapi_eesport_flags_uint32_T
@@ -4764,8 +4812,8 @@ group "XIL API"
       alias:   "Flags"
       flags:   OUTPUT|READONLY
       range:   < 0 ; 4294967295 >
- addr:    0x4804BF5C
-}
+		 addr:    0x4804B3C4
+		}
 
     xilapi_eesport_trigger_uint32_T
     {
@@ -4773,8 +4821,8 @@ group "XIL API"
       alias:   "Trigger"
       flags:   OUTPUT|READONLY
       range:   < 0 ; 4294967295 >
-	 addr:    0x4804BF58
-	}
+		 addr:    0x4804B3C0
+		}
 
     endgroup -- "EESPort"
 
