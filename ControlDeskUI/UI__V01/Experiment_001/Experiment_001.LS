@@ -36,11 +36,11 @@
 								<ViewFlags type="key">1</ViewFlags>
 							</item>
 							<item>
-								<Name type="key">Data Sets</Name>
+								<Name type="key">rec1_003.mf4</Name>
 								<ViewFlags type="key">1</ViewFlags>
 							</item>
 							<item>
-								<Name type="key">rec1_003.mf4</Name>
+								<Name type="key">Data Sets</Name>
 								<ViewFlags type="key">1</ViewFlags>
 							</item>
 						</item>

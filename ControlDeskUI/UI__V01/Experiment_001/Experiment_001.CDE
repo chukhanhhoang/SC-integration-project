@@ -120,6 +120,12 @@
 							<LinkedItem type="key">359035619</LinkedItem>
 						</item>
 						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">242436689</UniqueID>
+							<LinkedItem type="key">899667896</LinkedItem>
+						</item>
+						<item>
 							<Component type="key">DataSetManager</Component>
 							<Name type="key">Data Sets</Name>
 							<DisplayName type="key">Data Sets</DisplayName>
@@ -133,12 +139,6 @@
 							<ItemInfoDescr type="key"/>
 							<ItemInfoAddInfoDb type="key"/>
 							<ItemInfoAuthor type="key">20192433</ItemInfoAuthor>
-						</item>
-						<item>
-							<Component type="key">MeasureDataManagement</Component>
-							<Flags type="key">1380</Flags>
-							<UniqueID type="key">242436689</UniqueID>
-							<LinkedItem type="key">899667896</LinkedItem>
 						</item>
 					</item>
 				</item>
@@ -184,12 +184,12 @@
 					<EntityID type="key">{462B56B1-325B-42C0-A485-04F19C101AEE}</EntityID>
 					<ItemInfoDate type="key">30/06/2021 15:55:05</ItemInfoDate>
 					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
 					<ItemInfoLog type="key">
 Software revision: ballandplatemeasurement.sdf, ballandplatemeasurement.rta
 Variable description: ballandplatemeasurement.sdf
     Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
 ControlDesk version: 7.3</ItemInfoLog>
-					<ItemInfoDescr type="key"/>
 					<ItemInfoAddInfoDb type="key"/>
 					<ItemInfoAuthor type="key">20200910</ItemInfoAuthor>
 				</item>
@@ -204,12 +204,12 @@ ControlDesk version: 7.3</ItemInfoLog>
 					<EntityID type="key">{124AC0F1-7083-48B7-BD9B-247CC12E80E8}</EntityID>
 					<ItemInfoDate type="key">30/06/2021 16:09:49</ItemInfoDate>
 					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoDescr type="key"/>
 					<ItemInfoLog type="key">
 Software revision: ballandplatemeasurement.sdf, ballandplatemeasurement.rta
 Variable description: ballandplatemeasurement.sdf
     Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
 ControlDesk version: 7.3</ItemInfoLog>
-					<ItemInfoDescr type="key"/>
 					<ItemInfoAddInfoDb type="key"/>
 					<ItemInfoAuthor type="key">20200910</ItemInfoAuthor>
 				</item>
